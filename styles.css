@@ -63,6 +63,25 @@ ul { list-style: none; }
 .eyebrow::after { left: 100%; }
 .eyebrow--gold { color: var(--gold-500); }
 .eyebrow--gold::before, .eyebrow--gold::after { background: var(--gold-500); }
+.eyebrow--gold-soft {
+  color: #b88a3a;
+  font-weight: 700;
+}
+.eyebrow--gold-soft::before, .eyebrow--gold-soft::after { display: none; }
+
+.accent-blue { color: var(--blue-500); font-weight: 700; }
+
+.divider-line {
+  width: 1px;
+  height: 60px;
+  background: #d8dde6;
+  margin: 36px auto 24px;
+}
+
+.section__desc strong {
+  color: var(--text);
+  font-weight: 700;
+}
 
 .section__title {
   font-size: clamp(26px, 3.4vw, 38px);
@@ -371,20 +390,23 @@ ul { list-style: none; }
 /* ============== PILL GROUP ============== */
 .pill-group {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
   gap: 12px;
-  justify-content: center;
-  margin: 36px 0 8px;
+  margin: 40px 0 8px;
 }
 .pill {
-  padding: 12px 24px;
-  background: #fff;
-  border: 1px solid var(--border);
+  padding: 14px 36px;
+  background: #f4f5f8;
   border-radius: 999px;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   color: var(--text);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  min-width: 360px;
+  text-align: center;
+}
+@media (max-width: 560px) {
+  .pill { min-width: 0; width: 100%; padding: 12px 24px; font-size: 14px; }
 }
 
 /* ============== STATS BAND (DARK) ============== */
