@@ -712,10 +712,10 @@ ul { list-style: none; }
 }
 .case-band__copy .section__title { text-align: left; }
 .case-band__icon {
-  width: 84px; height: 84px;
-  color: #d8dde6;
-  margin-top: 32px;
+  width: 110px; height: auto;
+  margin-top: 36px;
   display: block;
+  object-fit: contain;
 }
 
 .case-slider { position: relative; }
