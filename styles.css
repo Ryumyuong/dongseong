@@ -163,7 +163,7 @@ ul { list-style: none; }
   font-weight: 700; font-size: 15px;
   color: var(--text);
 }
-.phone__icon { font-size: 14px; color: var(--blue-500); }
+.phone__icon { width: 18px; height: 18px; display: block; object-fit: contain; }
 .header__cta .btn {
   padding: 10px 22px;
   font-size: 14px;
