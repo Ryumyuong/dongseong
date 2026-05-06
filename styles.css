@@ -706,12 +706,13 @@ ul { list-style: none; }
 
 /* ============== CASE BAND (이미지 슬라이더) ============== */
 .case-band {
+  /* 5번째 섹션 .cases-viewport와 동일한 max-width로 정렬 (no padding) */
+  max-width: 1296px;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(320px, 420px) 1fr;
+  grid-template-columns: minmax(300px, 380px) 1fr;
   gap: 60px;
   align-items: center;
-  /* 좌측은 .container와 동일한 라인에 정렬, 우측은 화면 끝까지 (bleed) */
-  padding-left: max(24px, calc((100vw - 1200px) / 2 + 24px));
 }
 .case-band .eyebrow {
   font-size: 15px;
