@@ -407,7 +407,8 @@ ul { list-style: none; }
   font-style: italic;
   color: var(--gold-500);
   font-size: 18px;
-  font-family: 'Georgia', serif;
+  font-weight: 300;
+  letter-spacing: 0.02em;
 }
 .stats-band__grid {
   display: grid;
