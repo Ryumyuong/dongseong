@@ -94,6 +94,7 @@ ul { list-style: none; }
 .eyebrow--gold-soft::before, .eyebrow--gold-soft::after { display: none; }
 
 .accent-blue { color: var(--blue-500); font-weight: 700; }
+.accent-deep { color: #0C1E3C; font-weight: 700; }
 
 .divider-line {
   width: 1px;
@@ -866,32 +867,34 @@ ul { list-style: none; }
 }
 
 /* ============== FAQ ============== */
-.faq { margin-top: 50px; }
+.faq { margin-top: 70px; }
 .faq details {
   border-bottom: 1px solid var(--border);
-  padding: 22px 0;
+  padding: 26px 0;
 }
 .faq summary {
   list-style: none;
   cursor: pointer;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 16px;
+  color: var(--text);
   display: flex; justify-content: space-between; align-items: center;
   position: relative;
-  padding-right: 32px;
+  padding-right: 36px;
 }
 .faq summary::-webkit-details-marker { display: none; }
 .faq summary::after {
   content: '+';
   position: absolute; right: 0;
-  font-size: 22px;
+  font-size: 26px;
   font-weight: 300;
-  color: var(--text-mute);
+  color: #c79a3d;
+  line-height: 1;
   transition: transform .2s;
 }
-.faq details[open] summary::after { content: '−'; color: var(--blue-500); }
+.faq details[open] summary::after { content: '−'; }
 .faq p {
-  margin-top: 14px;
+  margin-top: 16px;
   color: var(--text-soft);
   font-size: 14px;
   line-height: 1.8;
