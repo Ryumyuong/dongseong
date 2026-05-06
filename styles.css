@@ -727,6 +727,7 @@ ul { list-style: none; }
 .case-slider__track {
   display: flex;
   gap: 24px;
+  align-items: flex-start;
   transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform;
 }
@@ -735,11 +736,12 @@ ul { list-style: none; }
   position: relative;
   border-radius: 18px;
   overflow: hidden;
-  aspect-ratio: 631 / 401;
   background: #1a2030;
 }
 .case-slide img {
-  width: 100%; height: 100%;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 631 / 401;
   object-fit: cover;
   display: block;
 }
