@@ -742,7 +742,7 @@ ul { list-style: none; }
   will-change: transform;
 }
 .case-slide {
-  flex: 0 0 calc(100% - 240px);  /* 다음 카드를 충분히 노출 (~240px peek) */
+  flex: 0 0 min(680px, calc(100% - 240px));  /* 최대 680px, 다음 카드 ~240px peek */
   position: relative;
   border-radius: 18px;
   overflow: hidden;
