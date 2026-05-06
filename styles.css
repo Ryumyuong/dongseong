@@ -722,6 +722,9 @@ ul { list-style: none; }
   font-size: clamp(30px, 3.6vw, 46px);
   line-height: 1.35;
 }
+.case-band .section__title .accent-blue {
+  color: #0C1E3C;
+}
 .case-band__copy .section__title { text-align: left; }
 .case-band__icon {
   width: 140px; height: auto;
