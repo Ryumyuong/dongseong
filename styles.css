@@ -35,7 +35,7 @@ ul { list-style: none; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 .container.narrow { max-width: 880px; }
 .center { text-align: center; }
-.section { padding: 100px 0; }
+.section { padding: 100px 0; scroll-margin-top: 120px; }
 .section--light { background: #fff; }
 .section--soft { background: var(--soft-bg); }
 .section--dark { background: var(--navy-900); color: #fff; }
