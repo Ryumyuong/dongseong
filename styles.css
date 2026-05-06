@@ -1,3 +1,26 @@
+/* ============== WEB FONTS ============== */
+@font-face {
+  font-family: 'KoPubBatang';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2107@1.1/KoPubWorldBatangLight.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'KoPubBatang';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2107@1.1/KoPubWorldBatangMedium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'KoPubBatang';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2107@1.1/KoPubWorldBatangBold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ============== RESET & BASE ============== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -301,13 +324,15 @@ ul { list-style: none; }
   border-top: 1px solid rgba(255,255,255,0.1);
 }
 .stat__num {
-  font-size: 36px;
+  font-family: 'KoPubBatang_Pro', 'KoPub Batang Pro', 'KoPubBatang', serif;
+  font-size: 40px;
   font-weight: 700;
   color: var(--gold-500);
   line-height: 1.1;
   margin-bottom: 6px;
+  letter-spacing: -0.01em;
 }
-.stat__num span { font-size: 22px; margin-left: 2px; }
+.stat__num span { font-size: 24px; margin-left: 2px; font-weight: 500; }
 .stat__label {
   font-size: 13px;
   color: rgba(255,255,255,0.6);
@@ -485,14 +510,16 @@ ul { list-style: none; }
   display: block;
 }
 .big-stat__num {
-  font-size: 52px;
-  font-weight: 300;
+  font-family: 'KoPub Batang', 'KoPubBatang', serif;
+  font-size: 56px;
+  font-weight: 500;
   color: #fff;
   line-height: 1;
   margin-bottom: 14px;
   letter-spacing: -0.02em;
 }
 .big-stat__num span {
+  font-family: 'KoPub Batang', 'KoPubBatang', serif;
   font-size: 32px;
   font-weight: 300;
   color: rgba(255,255,255,0.7);
@@ -621,7 +648,7 @@ ul { list-style: none; }
   margin-bottom: 4px;
 }
 .success-card__rate {
-  font-family: 'Times New Roman', serif;
+  font-family: 'KoPub Batang', 'KoPubBatang', serif;
   font-size: 76px;
   font-weight: 700;
   color: var(--navy-800);
@@ -632,8 +659,9 @@ ul { list-style: none; }
   letter-spacing: -0.02em;
 }
 .success-card__rate span {
+  font-family: 'KoPub Batang', 'KoPubBatang', serif;
   font-size: 32px;
-  font-weight: 600;
+  font-weight: 500;
   margin-left: 4px;
 }
 .success-card__details {
