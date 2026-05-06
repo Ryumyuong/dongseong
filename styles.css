@@ -712,7 +712,7 @@ ul { list-style: none; }
   display: grid;
   grid-template-columns: minmax(300px, 380px) 1fr;
   gap: 60px;
-  align-items: center;
+  align-items: start;
 }
 .case-band .eyebrow {
   font-size: 15px;
@@ -725,7 +725,7 @@ ul { list-style: none; }
 .case-band__copy .section__title { text-align: left; }
 .case-band__icon {
   width: 140px; height: auto;
-  margin-top: 44px;
+  margin-top: 110px;
   display: block;
   object-fit: contain;
 }
