@@ -703,61 +703,118 @@ ul { list-style: none; }
 .success-card--highlight .success-card__details em,
 .success-card.is-center .success-card__details em { color: #ff8a8a; }
 
-/* ============== CASE BAND ============== */
+/* ============== CASE BAND (이미지 슬라이더) ============== */
 .case-band {
   display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: 60px;
+  grid-template-columns: 320px 1fr;
+  gap: 50px;
   align-items: center;
 }
 .case-band__copy .section__title { text-align: left; }
-.case-band__cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+.case-band__icon {
+  width: 84px; height: 84px;
+  color: #d8dde6;
+  margin-top: 32px;
+  display: block;
 }
-.case-card {
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 16px;
+
+.case-slider { position: relative; }
+.case-slider__viewport {
   overflow: hidden;
-  transition: all .25s;
+  border-radius: 18px;
+  position: relative;
 }
-.case-card:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(0,0,0,0.08); }
-.case-card__image {
-  width: 100%;
-  height: 180px;
-  background: var(--soft-bg);
+.case-slider__track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
 }
-.case-card__image--1 {
-  background: linear-gradient(135deg, #4a6789, #2c4a6e);
-  background-image:
-    linear-gradient(135deg, rgba(74,103,137,0.6), rgba(44,74,110,0.8)),
-    url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&h=400&fit=crop');
-  background-size: cover;
-  background-position: center;
+.case-slide {
+  flex: 0 0 calc(100% - 80px);  /* 다음 카드 살짝 노출 */
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: #1a2030;
 }
-.case-card__image--2 {
-  background: linear-gradient(135deg, #5a7794, #3a5a7a);
-  background-image:
-    linear-gradient(135deg, rgba(90,119,148,0.6), rgba(58,90,122,0.8)),
-    url('https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?w=600&h=400&fit=crop');
-  background-size: cover;
-  background-position: center;
+.case-slide img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
 }
-.case-card__body { padding: 22px; }
-.case-card__tag {
+.case-slide__overlay {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 36px 40px 36px;
+  background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.85) 100%);
+  color: #fff;
+}
+.case-slide__badge {
   display: inline-block;
-  padding: 4px 10px;
-  background: var(--soft-bg);
+  padding: 8px 18px;
+  background: var(--navy-800);
+  color: #fff;
   border-radius: 999px;
-  font-size: 11px;
-  color: var(--blue-500);
-  font-weight: 600;
-  margin-bottom: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 18px;
 }
-.case-card h4 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
-.case-card p { font-size: 13px; color: var(--text-soft); line-height: 1.6; }
+.case-slide__title {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+.case-slide__desc {
+  font-size: 14px;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.7;
+}
+
+/* 컨트롤 (진행바 + 화살표) */
+.case-slider__controls {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 24px;
+  padding-right: 80px;
+}
+.case-slider__progress {
+  flex: 1;
+  height: 3px;
+  background: #e5e8ef;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.case-slider__bar {
+  display: block;
+  width: 33.333%;
+  height: 100%;
+  background: var(--navy-800);
+  border-radius: 2px;
+  transition: width 0.5s ease, transform 0.5s ease;
+}
+.case-slider__nav {
+  display: flex;
+  gap: 8px;
+}
+.case-slider__btn {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: #f4f6fa;
+  color: var(--text-soft);
+  display: grid; place-items: center;
+  transition: all .2s;
+}
+.case-slider__btn svg { width: 14px; height: 14px; }
+.case-slider__btn:hover { background: #e5e8ef; }
+.case-slider__btn--primary {
+  background: var(--navy-800);
+  color: #fff;
+}
+.case-slider__btn--primary:hover { background: var(--navy-700); }
 
 /* ============== QUALIFY (CHECKLIST) ============== */
 .qualify .section__title strong { color: var(--blue-500); }
@@ -915,6 +972,12 @@ ul { list-style: none; }
   .case-band { grid-template-columns: 1fr; gap: 40px; }
   .case-band__copy .section__title { text-align: center; }
   .case-band__copy { text-align: center; }
+  .case-band__icon { margin: 24px auto 0; }
+  .case-slide { flex: 0 0 calc(100% - 40px); }
+  .case-slide__overlay { padding: 24px 22px; }
+  .case-slide__title { font-size: 20px; }
+  .case-slide__desc { font-size: 13px; }
+  .case-slider__controls { padding-right: 0; }
   .check-list { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
   .footer__inner { grid-template-columns: 1fr; gap: 24px; }

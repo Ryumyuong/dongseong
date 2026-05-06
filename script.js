@@ -80,3 +80,53 @@ window.addEventListener('scroll', () => {
   track.addEventListener('mouseleave', () => { timer = setInterval(slide, INTERVAL); });
   window.addEventListener('resize', applyClasses);
 })();
+
+// ============== 이미지 카드 슬라이더 (6번째 섹션) ==============
+(() => {
+  const track = document.getElementById('caseSlideTrack');
+  const bar   = document.getElementById('caseSlideBar');
+  const prev  = document.getElementById('caseSlidePrev');
+  const next  = document.getElementById('caseSlideNext');
+  if (!track || !bar) return;
+
+  const slides = [...track.children];
+  const total  = slides.length;
+  let idx = 0;
+  const AUTO_MS = 5000;
+
+  function step() {
+    const first = slides[0];
+    const styles = getComputedStyle(track);
+    const gap = parseFloat(styles.columnGap || styles.gap || '0');
+    return first.getBoundingClientRect().width + gap;
+  }
+
+  function update() {
+    track.style.transform = `translateX(-${idx * step()}px)`;
+    bar.style.width = (100 / total) + '%';
+    bar.style.transform = `translateX(${idx * 100}%)`;
+  }
+
+  function go(n) {
+    idx = (n + total) % total;
+    update();
+  }
+
+  next && next.addEventListener('click', () => { go(idx + 1); reset(); });
+  prev && prev.addEventListener('click', () => { go(idx - 1); reset(); });
+
+  let timer = setInterval(() => go(idx + 1), AUTO_MS);
+  function reset() {
+    clearInterval(timer);
+    timer = setInterval(() => go(idx + 1), AUTO_MS);
+  }
+
+  // 호버 시 일시정지
+  track.addEventListener('mouseenter', () => clearInterval(timer));
+  track.addEventListener('mouseleave', () => { timer = setInterval(() => go(idx + 1), AUTO_MS); });
+
+  // 리사이즈 시 위치 보정
+  window.addEventListener('resize', update);
+
+  update();
+})();
