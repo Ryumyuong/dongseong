@@ -260,37 +260,104 @@
 
   <!-- ============== SECTION: 숫자가 증명하는 ============== -->
   <section class="section section--soft" id="numbers">
-    <div class="container">
-      <div class="center">
-        <span class="eyebrow">실제 데이터</span>
-        <h2 class="section__title">숫자가 증명하는 변화의 이야기</h2>
-        <p class="section__desc">최근 진행된 실제 케이스입니다. 의뢰인 개인정보 보호를 위해 비식별처리되었습니다.</p>
-        <a href="#contact" class="btn btn--outline">나의 변제율 사례 확인하기 →</a>
-      </div>
-      <div class="cards">
-        <article class="card">
-          <span class="card__tag">신청유형 · 개인회생</span>
-          <div class="card__rate-label">변제율</div>
-          <div class="card__rate">84<span>%</span></div>
-          <p>채무 8,400만원 → 변제 1,344만원<br />40대 직장인, 카드·대출 통합</p>
+    <div class="container center">
+      <span class="eyebrow eyebrow--gold-soft">실제진행사례</span>
+      <h2 class="section__title">숫자가 증명하는 <strong class="accent-navy">변화의 이야기</strong></h2>
+      <p class="section__desc">최근 진행된 실제 케이스입니다. 이름은 개인정보 보호를 위해 처리되었습니다.</p>
+      <a href="#contact" class="btn btn--primary cases-cta">나와 비슷한 사례 확인하기 →</a>
+    </div>
+
+    <div class="cases-viewport">
+      <div class="cases-track" id="casesTrack">
+        <article class="success-card">
+          <div class="success-card__badge"><span class="check">✓</span> 인가결정완료</div>
+          <div class="success-card__court">대전회생법원</div>
+          <div class="success-card__rate-label">탕감률</div>
+          <div class="success-card__rate">92<span>%</span></div>
+          <ul class="success-card__details">
+            <li><span>채무자:</span> 30대 직장인 김OO님</li>
+            <li><span>총 채무:</span> 1억 1,200만원</li>
+            <li><span>월 상환액:</span> 기존 410만원 → <em>월 38만원</em></li>
+            <li><span>채무 유형:</span> 신용대출·카드</li>
+          </ul>
         </article>
-        <article class="card card--accent">
-          <span class="card__tag">신청유형 · 개인회생</span>
-          <div class="card__rate-label">변제율</div>
-          <div class="card__rate">89<span>%</span></div>
-          <p>채무 1억 2천만원 → 변제 1,320만원<br />30대 자영업자, 사업 실패 후</p>
+
+        <article class="success-card">
+          <div class="success-card__badge"><span class="check">✓</span> 인가결정완료</div>
+          <div class="success-card__court">대구회생법원</div>
+          <div class="success-card__rate-label">탕감률</div>
+          <div class="success-card__rate">84<span>%</span></div>
+          <ul class="success-card__details">
+            <li><span>채무자:</span> 50대 주부 박OO님</li>
+            <li><span>총 채무:</span> 5,600만원</li>
+            <li><span>월 상환액:</span> 기존 190만원 → <em>월 32만원</em></li>
+            <li><span>채무 유형:</span> 생활비·보험 대출</li>
+          </ul>
         </article>
-        <article class="card">
-          <span class="card__tag">신청유형 · 개인회생</span>
-          <div class="card__rate-label">변제율</div>
-          <div class="card__rate">86<span>%</span></div>
-          <p>채무 5,500만원 → 변제 770만원<br />50대 주부, 보증으로 인한 채무</p>
+
+        <article class="success-card">
+          <div class="success-card__badge"><span class="check">✓</span> 인가결정완료</div>
+          <div class="success-card__court">부산회생법원</div>
+          <div class="success-card__rate-label">탕감률</div>
+          <div class="success-card__rate">89<span>%</span></div>
+          <ul class="success-card__details">
+            <li><span>채무자:</span> 30대 자영업자 최OO님</li>
+            <li><span>총 채무:</span> 9,500만원</li>
+            <li><span>월 상환액:</span> 기존 320만원 → <em>월 42만원</em></li>
+            <li><span>채무 유형:</span> 사업자 대출 + 카드</li>
+          </ul>
         </article>
-        <article class="card">
-          <span class="card__tag">신청유형 · 개인파산</span>
-          <div class="card__rate-label">면책률</div>
-          <div class="card__rate">86<span>%</span></div>
-          <p>채무 9,200만원 → 전액 면책<br />60대 무직, 의료비 누적</p>
+
+        <article class="success-card">
+          <div class="success-card__badge"><span class="check">✓</span> 인가결정완료</div>
+          <div class="success-card__court">광주회생법원</div>
+          <div class="success-card__rate-label">탕감률</div>
+          <div class="success-card__rate">86<span>%</span></div>
+          <ul class="success-card__details">
+            <li><span>채무자:</span> 40대 직장인 정OO님</li>
+            <li><span>총 채무:</span> 7,800만원</li>
+            <li><span>월 상환액:</span> 기존 265만원 → <em>월 35만원</em></li>
+            <li><span>채무 유형:</span> 카드·생활비 대출</li>
+          </ul>
+        </article>
+
+        <article class="success-card">
+          <div class="success-card__badge"><span class="check">✓</span> 인가결정완료</div>
+          <div class="success-card__court">인천회생법원</div>
+          <div class="success-card__rate-label">탕감률</div>
+          <div class="success-card__rate">87<span>%</span></div>
+          <ul class="success-card__details">
+            <li><span>채무자:</span> 30대 직장인 강OO님</li>
+            <li><span>총 채무:</span> 6,400만원</li>
+            <li><span>월 상환액:</span> 기존 220만원 → <em>월 28만원</em></li>
+            <li><span>채무 유형:</span> 카드·대부업</li>
+          </ul>
+        </article>
+
+        <article class="success-card">
+          <div class="success-card__badge"><span class="check">✓</span> 인가결정완료</div>
+          <div class="success-card__court">수원회생법원</div>
+          <div class="success-card__rate-label">탕감률</div>
+          <div class="success-card__rate">90<span>%</span></div>
+          <ul class="success-card__details">
+            <li><span>채무자:</span> 50대 자영업자 윤OO님</li>
+            <li><span>총 채무:</span> 1억 4,500만원</li>
+            <li><span>월 상환액:</span> 기존 450만원 → <em>월 45만원</em></li>
+            <li><span>채무 유형:</span> 사업자·신용대출</li>
+          </ul>
+        </article>
+
+        <article class="success-card">
+          <div class="success-card__badge"><span class="check">✓</span> 인가결정완료</div>
+          <div class="success-card__court">서울회생법원</div>
+          <div class="success-card__rate-label">탕감률</div>
+          <div class="success-card__rate">88<span>%</span></div>
+          <ul class="success-card__details">
+            <li><span>채무자:</span> 40대 자영업자 이OO님</li>
+            <li><span>총 채무:</span> 8,300만원</li>
+            <li><span>월 상환액:</span> 기존 280만원 → <em>월 33만원</em></li>
+            <li><span>채무 유형:</span> 사업자 대출</li>
+          </ul>
         </article>
       </div>
     </div>
