@@ -706,7 +706,7 @@ ul { list-style: none; }
 .footer__copy { margin-top: 16px; color: rgba(255,255,255,0.4); }
 
 /* ============== RESPONSIVE ============== */
-@media (max-width: 960px) {
+@media (max-width: 900px) {
   .section { padding: 70px 0; }
   .hero__inner { grid-template-columns: 1fr; gap: 40px; }
   .hero-form { position: static; }
