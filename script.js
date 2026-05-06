@@ -24,17 +24,26 @@ window.addEventListener('scroll', () => {
   const track = document.getElementById('casesTrack');
   if (!track) return;
 
-  const VISIBLE = 5;          // 한 번에 보이는 카드 수
-  const CENTER_IDX = 2;       // 가운데 카드 인덱스 (0..VISIBLE-1)
-  const INTERVAL = 3500;      // 자동 슬라이드 주기(ms)
-  const ANIM_MS = 600;        // 슬라이드 애니메이션 시간
+  const INTERVAL = 3500;
+  const ANIM_MS = 600;
+
+  // 화면 폭에 따라 보이는 카드 수 결정
+  function getVisibleCount() {
+    const w = window.innerWidth;
+    if (w <= 560) return 1;
+    if (w <= 900) return 3;
+    return 5;
+  }
 
   function applyClasses() {
+    const visible = getVisibleCount();
+    const centerIdx = Math.floor(visible / 2);
     [...track.children].forEach((c, i) => {
       c.classList.remove('is-center', 'is-edge', 'is-near');
-      if (i === CENTER_IDX) c.classList.add('is-center');
-      else if (i === 0 || i === VISIBLE - 1) c.classList.add('is-edge');
-      else if (i < VISIBLE) c.classList.add('is-near');
+      if (i >= visible) return;
+      if (i === centerIdx) c.classList.add('is-center');
+      else if (visible >= 5 && (i === 0 || i === visible - 1)) c.classList.add('is-edge');
+      else c.classList.add('is-near');
     });
   }
 
@@ -58,7 +67,7 @@ window.addEventListener('scroll', () => {
       track.style.transition = 'none';
       track.appendChild(track.firstElementChild);
       track.style.transform = 'translateX(0)';
-      void track.offsetHeight; // reflow
+      void track.offsetHeight;
       applyClasses();
       isAnimating = false;
     }, ANIM_MS);
@@ -67,10 +76,7 @@ window.addEventListener('scroll', () => {
   applyClasses();
   let timer = setInterval(slide, INTERVAL);
 
-  // 마우스 올리면 일시 정지
   track.addEventListener('mouseenter', () => clearInterval(timer));
   track.addEventListener('mouseleave', () => { timer = setInterval(slide, INTERVAL); });
-
-  // 리사이즈 시 클래스 재적용 (간격·폭이 바뀔 수 있으므로)
   window.addEventListener('resize', applyClasses);
 })();
