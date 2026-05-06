@@ -1,21 +1,21 @@
 /* ============== WEB FONTS ============== */
 @font-face {
   font-family: 'KoPubBatang';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2107@1.1/KoPubWorldBatangLight.woff') format('woff');
+  src: url('./fonts/KoPubBatang-Light.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'KoPubBatang';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2107@1.1/KoPubWorldBatangMedium.woff') format('woff');
+  src: url('./fonts/KoPubBatang-Medium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'KoPubBatang';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2107@1.1/KoPubWorldBatangBold.woff') format('woff');
+  src: url('./fonts/KoPubBatang-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
