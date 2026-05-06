@@ -726,13 +726,13 @@ ul { list-style: none; }
 }
 .case-slider__track {
   display: flex;
-  gap: 24px;
+  gap: 0;
   align-items: flex-start;
   transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform;
 }
 .case-slide {
-  flex: 0 0 calc(100% - 80px);  /* 다음 카드 살짝 노출 */
+  flex: 0 0 100%;
   position: relative;
   border-radius: 18px;
   overflow: hidden;
@@ -946,7 +946,6 @@ ul { list-style: none; }
   .case-band__copy .section__title { text-align: center; }
   .case-band__copy { text-align: center; }
   .case-band__icon { margin: 24px auto 0; }
-  .case-slide { flex: 0 0 calc(100% - 40px); }
   .case-slider__controls { padding-right: 0; }
   .check-list { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
