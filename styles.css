@@ -858,8 +858,12 @@ ul { list-style: none; }
   font-size: 15px;
   min-width: 220px;
 }
-.qualify__btn svg { width: 16px; height: 16px; }
-.phone-mini { width: 16px; height: 16px; filter: brightness(0) invert(1); }
+.qualify__btn-icon {
+  width: 18px;
+  height: 18px;
+  display: block;
+  object-fit: contain;
+}
 
 /* ============== FAQ ============== */
 .faq { margin-top: 50px; }
