@@ -1022,7 +1022,7 @@ ul { list-style: none; }
   display: grid;
   grid-template-columns: minmax(280px, 360px) 1fr;
   gap: 80px;
-  align-items: center;
+  align-items: start;
 }
 .apply__title {
   font-size: 18px;
