@@ -134,6 +134,61 @@ window.addEventListener('scroll', () => {
   update();
 })();
 
+// ============== 폼 → Google Apps Script 전송 ==============
+// 배포 후 GAS_URL 값에 Web App URL을 채워주세요. (예: https://script.google.com/macros/s/.../exec)
+const GAS_URL = '';
+
+(() => {
+  const forms = document.querySelectorAll('form[data-gas-form]');
+  if (!forms.length) return;
+
+  function collect(form) {
+    const data = { type: form.dataset.gasType || 'unknown' };
+    new FormData(form).forEach((v, k) => {
+      if (k === 'agree') data[k] = true;
+      else data[k] = v;
+    });
+    data.submittedAt = new Date().toISOString();
+    data.userAgent = navigator.userAgent;
+    return data;
+  }
+
+  async function send(form) {
+    if (!GAS_URL) {
+      alert('상담 신청이 접수되었습니다. 빠르게 연락드리겠습니다.');
+      console.warn('[GAS_URL이 비어 있습니다] — script.js 상단 GAS_URL 상수에 배포한 Apps Script 웹 앱 URL을 채워주세요.');
+      form.reset();
+      return;
+    }
+    const submitBtn = form.querySelector('button[type="submit"], [type="submit"]');
+    const originalLabel = submitBtn ? submitBtn.textContent : '';
+    if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = '전송 중...'; }
+    try {
+      // GAS는 application/json preflight를 처리하지 못하므로 text/plain 으로 전송
+      await fetch(GAS_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(collect(form))
+      });
+      alert('상담 신청이 접수되었습니다. 빠르게 연락드리겠습니다.');
+      form.reset();
+    } catch (err) {
+      console.error(err);
+      alert('전송 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.');
+    } finally {
+      if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalLabel; }
+    }
+  }
+
+  forms.forEach(form => {
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      send(form);
+    });
+  });
+})();
+
 // ============== 정책 모달 (개인정보처리방침 / 이용약관) ==============
 (() => {
   const triggers = document.querySelectorAll('[data-modal]');

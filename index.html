@@ -95,7 +95,7 @@
       </div>
 
       <!-- Hero form card -->
-      <form class="hero-form" onsubmit="event.preventDefault(); alert('상담 신청이 접수되었습니다. 빠르게 연락드리겠습니다.');">
+      <form class="hero-form" data-gas-form data-gas-type="estimate">
         <div class="hero-form__head">
           <h3>나의 예상 변제 금액 확인</h3>
           <div class="hero-form__sub">
@@ -105,7 +105,7 @@
         </div>
         <label class="field">
           <span>총 채무 금액</span>
-          <select required>
+          <select name="totalDebt" required>
             <option value="">선택해주세요</option>
             <option>1,000만원 미만</option>
             <option>1,000만원 ~ 3,000만원</option>
@@ -116,7 +116,7 @@
         </label>
         <label class="field">
           <span>월 소득 (세후)</span>
-          <select required>
+          <select name="monthlyIncome" required>
             <option value="">선택해주세요</option>
             <option>100만원 미만</option>
             <option>100만원 ~ 200만원</option>
@@ -127,7 +127,7 @@
         </label>
         <label class="field">
           <span>부양가족수 (본인 포함)</span>
-          <select required>
+          <select name="dependents" required>
             <option value="">선택해주세요</option>
             <option>1명 (본인)</option>
             <option>2명</option>
@@ -143,17 +143,17 @@
     </div>
 
     <!-- 히어로 하단 빠른상담신청 바 -->
-    <form class="pc-quick" onsubmit="event.preventDefault(); alert('상담 신청이 접수되었습니다. 빠르게 연락드리겠습니다.');">
+    <form class="pc-quick" data-gas-form data-gas-type="quick">
       <div class="pc-quick__label">
         <img src="./images/quick-chat.png" alt="" class="pc-quick__chat" />
         <span>빠른상담신청</span>
       </div>
       <div class="pc-quick__fields">
-        <input type="text" placeholder="이름" required class="pc-quick__input" />
-        <input type="tel" placeholder="연락처" required class="pc-quick__input" />
+        <input type="text" name="name" placeholder="이름" required class="pc-quick__input" />
+        <input type="tel" name="phone" placeholder="연락처" required class="pc-quick__input" />
       </div>
       <label class="pc-quick__agree">
-        <input type="checkbox" required />
+        <input type="checkbox" name="agree" required />
         <span>개인정보 수집 및 활용 동의</span>
       </label>
       <button type="submit" class="pc-quick__submit">상담신청</button>
@@ -553,24 +553,24 @@
           070-8095-3018
         </a>
       </div>
-      <form class="apply__form" onsubmit="event.preventDefault(); alert('상담 신청이 접수되었습니다. 빠르게 연락드리겠습니다.');">
+      <form class="apply__form" data-gas-form data-gas-type="apply">
         <div class="apply__row">
           <label class="apply__field">
             <span>이름<i>*</i></span>
-            <input type="text" required />
+            <input type="text" name="name" required />
           </label>
           <label class="apply__field">
             <span>연락처<i>*</i></span>
-            <input type="tel" required />
+            <input type="tel" name="phone" required />
           </label>
         </div>
         <label class="apply__field">
           <span>문의사항</span>
-          <textarea rows="4"></textarea>
+          <textarea name="message" rows="4"></textarea>
         </label>
         <div class="apply__bottom">
           <label class="apply__agree">
-            <input type="checkbox" required />
+            <input type="checkbox" name="agree" required />
             <span>개인정보 수집 및 활용에 동의합니다.</span>
           </label>
           <button type="submit" class="apply__submit">신청하기</button>
