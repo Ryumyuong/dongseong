@@ -954,6 +954,7 @@ ul { list-style: none; }
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  padding: 200px 0;
 }
 .qualify__sub {
   font-size: 22px;
