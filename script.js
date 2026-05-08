@@ -133,3 +133,41 @@ window.addEventListener('scroll', () => {
 
   update();
 })();
+
+// ============== 정책 모달 (개인정보처리방침 / 이용약관) ==============
+(() => {
+  const triggers = document.querySelectorAll('[data-modal]');
+  if (!triggers.length) return;
+
+  function open(id) {
+    const modal = document.getElementById('modal-' + id);
+    if (!modal) return;
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+  }
+  function close(modal) {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    if (!document.querySelector('.modal.is-open')) {
+      document.body.classList.remove('modal-open');
+    }
+  }
+
+  triggers.forEach(t => t.addEventListener('click', e => {
+    e.preventDefault();
+    open(t.dataset.modal);
+  }));
+
+  document.querySelectorAll('.modal').forEach(modal => {
+    modal.querySelectorAll('[data-close]').forEach(el => {
+      el.addEventListener('click', () => close(modal));
+    });
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal.is-open').forEach(close);
+    }
+  });
+})();
