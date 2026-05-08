@@ -381,7 +381,7 @@ ul { list-style: none; }
 .pc-quick__agree input { width: 16px; height: 16px; accent-color: var(--gold-500); }
 .pc-quick__submit {
   height: 40px;
-  padding: 0 28px;
+  padding: 0 48px;
   background: #04143E;
   color: #fff;
   border-radius: 24.16px;
