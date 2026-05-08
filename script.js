@@ -331,20 +331,17 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbztxNjcvxJlrN6fue-1nRy5
     let depUsed = dependents;
     let minCost = MIN_COST[depUsed];
     let monthlyRepay = income - minCost;
-    let usedFallback = false;
-    let depAdjusted = false;
 
     while (monthlyRepay <= 0 && depUsed > 1) {
       depUsed -= 1;
-      depAdjusted = true;
       minCost = MIN_COST[depUsed];
       monthlyRepay = income - minCost;
     }
     if (monthlyRepay <= 0) {
       monthlyRepay = 400000;
-      usedFallback = true;
     }
 
+    // 변제 기간(60→48→36) 산정 — 결과 메시지엔 노출하지 않지만 향후 확장용으로 유지
     let term = 60;
     if (monthlyRepay * 60 > totalDebt) {
       term = 48;
@@ -353,32 +350,14 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbztxNjcvxJlrN6fue-1nRy5
       }
     }
 
-    const totalRepay = monthlyRepay * term;
-    const forgiven = Math.max(0, totalDebt - totalRepay);
-
-    let adjustNote = '';
-    if (usedFallback) {
-      adjustNote = `<div class="estimate__warning">월 소득이 가구원수 1인 기준 최저생계비보다 낮아 기본 월 변제금 40만원을 적용해 추정했습니다. 실제 산정은 상담 시 정확하게 안내드립니다.</div>`;
-    } else if (depAdjusted) {
-      adjustNote = `<div class="estimate__warning">월 소득과 입력하신 가구원수의 최저생계비 차이로 변제 가능액 산정을 위해 가구원수 ${depUsed}인 기준으로 조정해 계산했습니다.</div>`;
-    }
-
     render(`
-      ${adjustNote}
       <div class="estimate__hero">
-        <div class="estimate__label">월 변제금</div>
+        <div class="estimate__label">예상 월 변제금</div>
         <div class="estimate__amount">${formatKR(monthlyRepay)}</div>
-        <div class="estimate__sub">${term / 12}년 (${term}개월) 동안 매월 상환</div>
-      </div>
-      <div class="estimate__rows">
-        <div class="estimate__row"><span>총 채무 금액</span><strong>${formatKR(totalDebt)}</strong></div>
-        <div class="estimate__row"><span>총 변제 예상액</span><strong>${formatKR(totalRepay)}</strong></div>
-        <div class="estimate__row"><span>탕감 예상액</span><strong>${formatKR(forgiven)}</strong></div>
       </div>
       <p class="estimate__note">
-        * 위 결과는 입력하신 정보를 기반으로 한 단순 추정치입니다.<br />
-        실제 인가 결정 금액은 법원 심사와 개인의 사정에 따라 달라질 수 있으며,<br />
-        정확한 안내는 변호사 상담을 통해 확인해드립니다.
+        자세한 내용은 전문 상담을 통해<br />
+        정확한 진행 가능 여부를 확인해드립니다.
       </p>
     `);
   });
