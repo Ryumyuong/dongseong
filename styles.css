@@ -999,10 +999,10 @@ ul { list-style: none; }
   display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
 }
 .qualify__btn {
-  display: inline-flex; align-items: center; gap: 8px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
   padding: 13px 30px;
   font-size: 14px;
-  min-width: 190px;
+  width: 240px;
 }
 .qualify__btn-icon {
   width: 18px;
