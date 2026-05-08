@@ -164,6 +164,21 @@ const GAS_URL = '';
     } catch (e) { return {}; }
   }
 
+  // 연락처 정규화: 01012345678 또는 12345678 모두 010-1234-5678 로 변환
+  // 그 외 자릿수/접두사는 null 반환 → 호출부에서 유효성 실패 처리
+  function normalizePhone(raw) {
+    const digits = String(raw || '').replace(/\D/g, '');
+    let core;
+    if (digits.length === 11 && digits.startsWith('010')) {
+      core = digits.slice(3);
+    } else if (digits.length === 8) {
+      core = digits;
+    } else {
+      return null;
+    }
+    return '010-' + core.slice(0, 4) + '-' + core.slice(4);
+  }
+
   function collect(form) {
     const data = { type: form.dataset.gasType || 'unknown' };
     new FormData(form).forEach((v, k) => {
@@ -179,6 +194,22 @@ const GAS_URL = '';
   }
 
   async function send(form) {
+    const data = collect(form);
+
+    // 연락처 정규화 + 유효성
+    if (Object.prototype.hasOwnProperty.call(data, 'phone')) {
+      const normalized = normalizePhone(data.phone);
+      if (!normalized) {
+        alert('연락처 형식이 올바르지 않습니다.\n예) 01012345678 또는 12345678 형태로 입력해주세요.');
+        const phoneInput = form.querySelector('input[name="phone"]');
+        if (phoneInput) phoneInput.focus();
+        return;
+      }
+      data.phone = normalized;
+      const phoneInput = form.querySelector('input[name="phone"]');
+      if (phoneInput) phoneInput.value = normalized;
+    }
+
     if (!GAS_URL) {
       alert('상담 신청이 접수되었습니다. 빠르게 연락드리겠습니다.');
       console.warn('[GAS_URL이 비어 있습니다] — script.js 상단 GAS_URL 상수에 배포한 Apps Script 웹 앱 URL을 채워주세요.');
@@ -194,7 +225,7 @@ const GAS_URL = '';
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify(collect(form))
+        body: JSON.stringify(data)
       });
       alert('상담 신청이 접수되었습니다. 빠르게 연락드리겠습니다.');
       form.reset();
