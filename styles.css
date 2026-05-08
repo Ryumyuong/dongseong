@@ -722,7 +722,7 @@ ul { list-style: none; }
   margin: 60px auto 0;
   overflow: hidden;
   position: relative;
-  padding: 12px 0 24px;
+  padding: 48px 0 24px;
 }
 .cases-track {
   display: flex;
@@ -785,12 +785,12 @@ ul { list-style: none; }
 }
 .success-card__rate {
   font-family: 'KoPub Batang', 'KoPubBatang', serif;
-  font-size: 76px;
+  font-size: 64px;
   font-weight: 700;
   color: var(--navy-800);
   line-height: 1;
-  margin-bottom: 24px;
-  padding-bottom: 22px;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
   border-bottom: 1px solid #e5e8ef;
   letter-spacing: -0.02em;
 }
@@ -802,7 +802,7 @@ ul { list-style: none; }
 }
 .success-card__details {
   font-size: 13.5px;
-  line-height: 2;
+  line-height: 1.75;
   color: var(--text);
 }
 .success-card__details li { display: block; }
