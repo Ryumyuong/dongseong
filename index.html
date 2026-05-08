@@ -142,6 +142,31 @@
         <p class="form-foot">🔒 익명 상담 가능 · 개인정보 안전 보호</p>
       </form>
     </div>
+
+    <!-- 히어로 하단 빠른상담신청 바 -->
+    <form class="pc-quick" onsubmit="event.preventDefault(); alert('상담 신청이 접수되었습니다. 빠르게 연락드리겠습니다.');">
+      <div class="pc-quick__label">
+        <img src="./images/quick-chat.png" alt="" class="pc-quick__chat" />
+        <span>빠른상담신청</span>
+      </div>
+      <div class="pc-quick__fields">
+        <input type="text" placeholder="이름" required class="pc-quick__input" />
+        <input type="tel" placeholder="연락처" required class="pc-quick__input" />
+      </div>
+      <label class="pc-quick__agree">
+        <input type="checkbox" required />
+        <span>개인정보 수집 및 활용 동의</span>
+      </label>
+      <button type="submit" class="pc-quick__submit">상담신청</button>
+      <div class="pc-floats" aria-label="빠른 연락">
+        <a href="#" class="pc-floats__btn pc-floats__btn--kakao" aria-label="카카오톡 상담">
+          <img src="./images/quick-kakao.png" alt="" />
+        </a>
+        <a href="tel:070-8095-3018" class="pc-floats__btn pc-floats__btn--call" aria-label="전화 상담">
+          <img src="./images/quick-call.png" alt="" />
+        </a>
+      </div>
+    </form>
   </section>
 
   <!-- ============== SECTION: 채무 문제 ============== -->
@@ -581,32 +606,6 @@
       </p>
     </div>
   </footer>
-
-  <!-- ============== PC QUICK CONSULT BAR ============== -->
-  <form class="pc-quick" onsubmit="event.preventDefault(); alert('상담 신청이 접수되었습니다. 빠르게 연락드리겠습니다.');">
-    <div class="pc-quick__label">
-      <img src="./images/quick-chat.png" alt="" class="pc-quick__chat" />
-      <span>빠른상담신청</span>
-    </div>
-    <div class="pc-quick__fields">
-      <input type="text" placeholder="이름" required class="pc-quick__input" />
-      <input type="tel" placeholder="연락처" required class="pc-quick__input" />
-    </div>
-    <label class="pc-quick__agree">
-      <input type="checkbox" required />
-      <span>개인정보 수집 및 활용 동의</span>
-    </label>
-    <button type="submit" class="pc-quick__submit">상담신청</button>
-  </form>
-
-  <div class="pc-floats" aria-label="빠른 연락">
-    <a href="#" class="pc-floats__btn pc-floats__btn--kakao" aria-label="카카오톡 상담">
-      <img src="./images/quick-kakao.png" alt="" />
-    </a>
-    <a href="tel:070-8095-3018" class="pc-floats__btn pc-floats__btn--call" aria-label="전화 상담">
-      <img src="./images/quick-call.png" alt="" />
-    </a>
-  </div>
 
   <!-- ============== MOBILE BOTTOM BAR ============== -->
   <nav class="mobile-bar" aria-label="모바일 빠른 상담">

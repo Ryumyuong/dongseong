@@ -272,7 +272,7 @@ ul { list-style: none; }
   background: #000;
   color: #fff;
   overflow: hidden;
-  padding: 120px 0 140px;
+  padding: 120px 0 200px;
   min-height: 680px;
 }
 .hero__video {
@@ -326,18 +326,18 @@ ul { list-style: none; }
 /* ============== MOBILE BOTTOM BAR (default hidden) ============== */
 .mobile-bar { display: none; }
 
-/* ============== PC QUICK CONSULT BAR ============== */
+/* ============== PC QUICK CONSULT BAR (히어로 하단 내장) ============== */
 .pc-quick {
-  position: fixed;
+  position: absolute;
   left: 0; right: 0; bottom: 0;
-  z-index: 150;
+  z-index: 3;
   display: flex;
   align-items: center;
   gap: 28px;
   padding: 16px 32px;
-  background: #1A2A54;
+  background: rgba(26, 42, 84, 0.92);
   color: #fff;
-  box-shadow: 0 -6px 24px rgba(0,0,0,0.25);
+  backdrop-filter: blur(6px);
 }
 .pc-quick__label {
   display: flex; align-items: center; gap: 10px;
@@ -389,15 +389,12 @@ ul { list-style: none; }
 }
 .pc-quick__submit:hover { background: var(--blue-600); }
 
-/* PC FLOATING CIRCLES */
+/* PC FLOATING CIRCLES (바 우측 끝) */
 .pc-floats {
-  position: fixed;
-  right: 28px;
-  bottom: 92px;
-  z-index: 160;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   gap: 12px;
+  flex-shrink: 0;
 }
 .pc-floats__btn {
   width: 56px; height: 56px;
@@ -1283,8 +1280,6 @@ ul { list-style: none; }
   margin: 0 auto;
 }
 
-/* PC quick bar 높이만큼 본문 하단 여백 확보 (데스크톱) */
-body { padding-bottom: 80px; }
 
 /* ============== RESPONSIVE ============== */
 @media (max-width: 900px) {
