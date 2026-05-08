@@ -189,7 +189,6 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbztxNjcvxJlrN6fue-1nRy5
     data.ref = tracking.ref || '';
     data.referrer = tracking.referrer || document.referrer || '';
     data.submittedAt = new Date().toISOString();
-    data.userAgent = navigator.userAgent;
     return data;
   }
 
