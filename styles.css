@@ -982,7 +982,7 @@ ul { list-style: none; }
   display: flex; align-items: center; gap: 14px;
   padding: 18px 28px;
   background: #fff;
-  border-radius: 999px;
+  border-radius: 1.08px;
   font-size: 16px;
   font-weight: 500;
   color: var(--text);
