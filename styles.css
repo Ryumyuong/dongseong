@@ -1039,9 +1039,10 @@ ul { list-style: none; }
   font-weight: 700;
   color: var(--navy-900);
 }
-.apply__phone svg {
+.apply__phone img {
   width: 26px; height: 26px;
-  color: var(--blue-500);
+  object-fit: contain;
+  display: block;
 }
 .apply__form { display: flex; flex-direction: column; gap: 16px; }
 .apply__row {
