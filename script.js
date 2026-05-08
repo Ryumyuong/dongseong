@@ -134,23 +134,18 @@ window.addEventListener('scroll', () => {
   update();
 })();
 
-// ============== 광고 유입 경로 캡처 (ref / utm_*) ==============
-// 첫 진입 시 URL 파라미터를 sessionStorage에 저장 — 이후 폼 전송 시 함께 보냄
+// ============== 광고 유입 경로 캡처 (ref) ==============
+// 첫 진입 시 URL의 ?ref= 값을 sessionStorage에 저장 — 이후 폼 전송 시 함께 보냄
 (() => {
   try {
-    const params = new URLSearchParams(location.search);
-    const KEYS = ['ref', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
-    const captured = {};
-    let hasAny = false;
-    KEYS.forEach(k => {
-      const v = params.get(k);
-      if (v) { captured[k] = v; hasAny = true; }
-    });
-    if (hasAny) {
-      captured.landingUrl = location.href;
-      captured.referrer = document.referrer || '';
-      captured.capturedAt = new Date().toISOString();
-      sessionStorage.setItem('__tracking', JSON.stringify(captured));
+    const ref = new URLSearchParams(location.search).get('ref');
+    if (ref) {
+      sessionStorage.setItem('__tracking', JSON.stringify({
+        ref,
+        landingUrl: location.href,
+        referrer: document.referrer || '',
+        capturedAt: new Date().toISOString()
+      }));
     }
   } catch (e) { /* noop */ }
 })();
@@ -178,11 +173,6 @@ const GAS_URL = '';
     });
     const tracking = getTracking();
     data.ref = tracking.ref || '';
-    data.utm_source = tracking.utm_source || '';
-    data.utm_medium = tracking.utm_medium || '';
-    data.utm_campaign = tracking.utm_campaign || '';
-    data.utm_content = tracking.utm_content || '';
-    data.utm_term = tracking.utm_term || '';
     data.landingUrl = tracking.landingUrl || location.href;
     data.referrer = tracking.referrer || document.referrer || '';
     data.submittedAt = new Date().toISOString();
