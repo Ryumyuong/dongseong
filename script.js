@@ -341,7 +341,7 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbztxNjcvxJlrN6fue-1nRy5
       monthlyRepay = 400000;
     }
 
-    // 변제 기간(60→48→36) 산정 — 결과 메시지엔 노출하지 않지만 향후 확장용으로 유지
+    // 변제 기간(60→48→36) 산정
     let term = 60;
     if (monthlyRepay * 60 > totalDebt) {
       term = 48;
@@ -349,11 +349,12 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbztxNjcvxJlrN6fue-1nRy5
         term = 36;
       }
     }
+    const totalRepay = monthlyRepay * term;
 
     render(`
       <div class="estimate__hero">
-        <div class="estimate__label">예상 월 변제금</div>
-        <div class="estimate__amount">${formatKR(monthlyRepay)}</div>
+        <div class="estimate__label">예상 총 변제 금액</div>
+        <div class="estimate__amount">${formatKR(totalRepay)}</div>
       </div>
       <p class="estimate__note">
         자세한 내용은 전문 상담을 통해<br />
