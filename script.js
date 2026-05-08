@@ -261,7 +261,6 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbztxNjcvxJlrN6fue-1nRy5
 
   // 채무 금액 — 범위의 중간값 또는 보수적 추정 (원)
   const DEBT_MAP = {
-    '1,000만원 미만': 700 * 10000,
     '1,000만원 ~ 3,000만원': 2000 * 10000,
     '3,000만원 ~ 5,000만원': 4000 * 10000,
     '5,000만원 ~ 1억원': 7500 * 10000,
