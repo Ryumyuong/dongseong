@@ -409,7 +409,7 @@ ul { list-style: none; }
 .pc-floats__btn:hover { transform: translateY(-2px); }
 .pc-floats__btn img { width: 20px; height: 20px; object-fit: contain; }
 .pc-floats__btn--kakao { background: #FEE500; }
-.pc-floats__btn--call { background: var(--blue-500); }
+.pc-floats__btn--call { background: #20387A; }
 .pc-floats__btn--call img { filter: brightness(0) invert(1); }
 
 .hero__stats {
