@@ -891,7 +891,10 @@ ul { list-style: none; }
   border-radius: 18px;
   overflow: hidden;
   background: #1a2030;
+  opacity: 0.3;
+  transition: opacity 0.5s ease;
 }
+.case-slide.is-active { opacity: 1; }
 .case-slide img {
   width: 100%;
   height: auto;

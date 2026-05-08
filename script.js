@@ -105,6 +105,9 @@ window.addEventListener('scroll', () => {
     track.style.transform = `translateX(-${idx * step()}px)`;
     bar.style.width = (100 / total) + '%';
     bar.style.transform = `translateX(${idx * 100}%)`;
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('is-active', i === idx);
+    });
   }
 
   function go(n) {
