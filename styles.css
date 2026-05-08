@@ -682,7 +682,7 @@ ul { list-style: none; }
   margin-top: 70px;
 }
 .process__item {
-  padding: 30px 28px;
+  padding: 30px 14px;
   text-align: center;
   position: relative;
 }
@@ -706,9 +706,10 @@ ul { list-style: none; }
   color: var(--navy-800);
 }
 .process__item p {
-  font-size: 14px;
+  font-size: 13.5px;
   color: var(--text-soft);
   line-height: 1.7;
+  word-break: keep-all;
 }
 
 /* ============== CASES CAROUSEL ============== */
