@@ -349,7 +349,8 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbztxNjcvxJlrN6fue-1nRy5
         term = 36;
       }
     }
-    const totalRepay = monthlyRepay * term;
+    // 변제 총액은 실제 채무 금액을 넘지 않도록 캡
+    const totalRepay = Math.min(monthlyRepay * term, totalDebt);
 
     render(`
       <div class="estimate__hero">
