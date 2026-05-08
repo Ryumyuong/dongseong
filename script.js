@@ -151,7 +151,7 @@ window.addEventListener('scroll', () => {
 
 // ============== 폼 → Google Apps Script 전송 ==============
 // 배포 후 GAS_URL 값에 Web App URL을 채워주세요. (예: https://script.google.com/macros/s/.../exec)
-const GAS_URL = '';
+const GAS_URL = 'https://script.google.com/macros/s/AKfycbztxNjcvxJlrN6fue-1nRy5t9G5gT3byvmO0ykKi0XLqObA8gwfF4NCPNdISo5YVYh07w/exec';
 
 (() => {
   const forms = document.querySelectorAll('form[data-gas-form]');
