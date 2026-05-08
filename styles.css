@@ -957,9 +957,9 @@ ul { list-style: none; }
   padding: 200px 0;
 }
 .qualify__sub {
-  font-size: 28px;
+  font-size: 30px;
   color: var(--text-mute);
-  margin-bottom: 22px;
+  margin-bottom: 14px;
   font-weight: 400;
 }
 .qualify__title {
