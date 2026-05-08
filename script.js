@@ -353,7 +353,7 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbztxNjcvxJlrN6fue-1nRy5
 
     render(`
       <div class="estimate__hero">
-        <div class="estimate__label">예상 총 변제 금액</div>
+        <div class="estimate__label">예상 변제금액</div>
         <div class="estimate__amount">${formatKR(totalRepay)}</div>
       </div>
       <p class="estimate__note">
