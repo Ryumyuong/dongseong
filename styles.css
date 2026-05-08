@@ -756,9 +756,9 @@ ul { list-style: none; }
   align-items: center;
   gap: 6px;
   padding: 7px 14px;
-  background: #22c55e;
+  background: #3BC91B;
   color: #fff;
-  border-radius: 999px;
+  border-radius: 5.1px;
   font-size: 13px;
   font-weight: 700;
   margin-bottom: 28px;
@@ -767,7 +767,7 @@ ul { list-style: none; }
 .success-card__badge .check {
   display: inline-grid; place-items: center;
   width: 16px; height: 16px;
-  background: #fff; color: #22c55e;
+  background: #fff; color: #3BC91B;
   border-radius: 50%;
   font-size: 10px; font-weight: 800;
 }
