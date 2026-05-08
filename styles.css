@@ -419,6 +419,7 @@ ul { list-style: none; }
   padding-top: 40px;
   border-top: 1px solid rgba(255,255,255,0.1);
 }
+.hero__stats .stat { text-align: center; }
 .stat__num {
   font-family: 'KoPubBatang_Pro', 'KoPub Batang Pro', 'KoPubBatang', serif;
   font-size: 40px;
