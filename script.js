@@ -326,19 +326,23 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbztxNjcvxJlrN6fue-1nRy5
       return;
     }
 
-    const minCost = MIN_COST[dependents] || MIN_COST[5];
-    const monthlyRepay = income - minCost;
+    // 소득 - 최저생계비 ≤ 0 이면 가구원수를 한 명씩 줄여가며 재계산
+    // 1인까지 줄여도 부족하면 기본 월 변제금 40만원으로 산정
+    let depUsed = dependents;
+    let minCost = MIN_COST[depUsed];
+    let monthlyRepay = income - minCost;
+    let usedFallback = false;
+    let depAdjusted = false;
 
+    while (monthlyRepay <= 0 && depUsed > 1) {
+      depUsed -= 1;
+      depAdjusted = true;
+      minCost = MIN_COST[depUsed];
+      monthlyRepay = income - minCost;
+    }
     if (monthlyRepay <= 0) {
-      render(`
-        <div class="estimate__warning">
-          입력하신 월 소득이 부양가족 ${dependents}인 기준 최저생계비
-          (${formatKR(minCost)}) 이하입니다. 이 경우 변제 금액 산정이 어려워
-          전문 상담을 통해 정확한 진행 가능 여부를 확인해드립니다.
-        </div>
-        <p class="estimate__note">* 익명 상담으로도 자격 조건을 먼저 확인해드립니다.</p>
-      `);
-      return;
+      monthlyRepay = 400000;
+      usedFallback = true;
     }
 
     let term = 60;
@@ -352,7 +356,15 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbztxNjcvxJlrN6fue-1nRy5
     const totalRepay = monthlyRepay * term;
     const forgiven = Math.max(0, totalDebt - totalRepay);
 
+    let adjustNote = '';
+    if (usedFallback) {
+      adjustNote = `<div class="estimate__warning">월 소득이 가구원수 1인 기준 최저생계비보다 낮아 기본 월 변제금 40만원을 적용해 추정했습니다. 실제 산정은 상담 시 정확하게 안내드립니다.</div>`;
+    } else if (depAdjusted) {
+      adjustNote = `<div class="estimate__warning">월 소득과 입력하신 가구원수의 최저생계비 차이로 변제 가능액 산정을 위해 가구원수 ${depUsed}인 기준으로 조정해 계산했습니다.</div>`;
+    }
+
     render(`
+      ${adjustNote}
       <div class="estimate__hero">
         <div class="estimate__label">월 변제금</div>
         <div class="estimate__amount">${formatKR(monthlyRepay)}</div>
