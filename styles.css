@@ -383,15 +383,15 @@ ul { list-style: none; }
 .pc-quick__submit {
   height: 40px;
   padding: 0 28px;
-  background: var(--blue-500);
+  background: #04143E;
   color: #fff;
-  border-radius: 6px;
+  border-radius: 24.16px;
   font-weight: 700;
   font-size: 14px;
   flex-shrink: 0;
   transition: background .2s;
 }
-.pc-quick__submit:hover { background: var(--blue-600); }
+.pc-quick__submit:hover { background: #0a1f5c; }
 
 /* PC FLOATING CIRCLES (바 우측 끝) */
 .pc-floats {
