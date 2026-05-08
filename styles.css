@@ -745,7 +745,7 @@ ul { list-style: none; }
   pointer-events: none;
 }
 .success-card.is-center {
-  background: linear-gradient(180deg, #0C1E3C 0%, #2051A2 100%);
+  background: linear-gradient(90deg, #2051A2 0%, #0C1E3C 100%);
   color: #fff;
   box-shadow: none;
   transform: translateY(-24px);
@@ -820,7 +820,7 @@ ul { list-style: none; }
 /* center (highlight) card overrides */
 .success-card--highlight,
 .success-card.is-center {
-  background: linear-gradient(180deg, #0C1E3C 0%, #2051A2 100%);
+  background: linear-gradient(90deg, #2051A2 0%, #0C1E3C 100%);
   color: #fff;
 }
 .success-card--highlight .success-card__court,
