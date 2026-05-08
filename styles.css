@@ -717,8 +717,8 @@ ul { list-style: none; }
 #numbers .section__title { margin-bottom: 8px; }
 
 .cases-viewport {
-  /* 5 cards × 240 + 4 gaps × 24 = 1296px */
-  max-width: 1296px;
+  /* 5 cards × 280 + 4 gaps × 24 = 1496px */
+  max-width: 1496px;
   margin: 60px auto 0;
   overflow: hidden;
   position: relative;
@@ -730,7 +730,7 @@ ul { list-style: none; }
   will-change: transform;
 }
 .success-card {
-  flex: 0 0 240px;
+  flex: 0 0 280px;
   background: #fff;
   border-radius: 16px;
   padding: 28px 26px 32px;
@@ -1262,7 +1262,7 @@ body { padding-bottom: 80px; }
   .process { grid-template-columns: repeat(2, 1fr); }
   .process__item + .process__item::before { display: none; }
   .process__item { border-bottom: 1px solid var(--border); }
-  .cases-viewport { max-width: 776px; /* 3 × 240 + 2 × 28 */ }
+  .cases-viewport { max-width: 896px; /* 3 × 280 + 2 × 28 */ }
   .cases-track { gap: 28px; }
   .case-band {
     grid-template-columns: 1fr;
