@@ -713,6 +713,9 @@ ul { list-style: none; }
 .accent-navy { color: var(--navy-800); font-weight: 700; }
 .cases-cta { margin-top: 28px; padding: 14px 32px; }
 
+/* #numbers 섹션 타이틀과 설명 간격 축소 */
+#numbers .section__title { margin-bottom: 8px; }
+
 .cases-viewport {
   /* 5 cards × 240 + 4 gaps × 24 = 1296px */
   max-width: 1296px;
@@ -742,9 +745,9 @@ ul { list-style: none; }
   pointer-events: none;
 }
 .success-card.is-center {
-  background: #1247B4;
+  background: #214B91;
   color: #fff;
-  box-shadow: 0 16px 40px rgba(18, 71, 180, 0.35);
+  box-shadow: 0 16px 40px rgba(12, 30, 60, 0.4);
 }
 
 .success-card__badge {
@@ -816,7 +819,7 @@ ul { list-style: none; }
 /* center (highlight) card overrides */
 .success-card--highlight,
 .success-card.is-center {
-  background: #1247B4;
+  background: #214B91;
   color: #fff;
 }
 .success-card--highlight .success-card__court,
