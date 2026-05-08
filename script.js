@@ -142,7 +142,6 @@ window.addEventListener('scroll', () => {
     if (ref) {
       sessionStorage.setItem('__tracking', JSON.stringify({
         ref,
-        landingUrl: location.href,
         referrer: document.referrer || '',
         capturedAt: new Date().toISOString()
       }));
@@ -173,7 +172,6 @@ const GAS_URL = '';
     });
     const tracking = getTracking();
     data.ref = tracking.ref || '';
-    data.landingUrl = tracking.landingUrl || location.href;
     data.referrer = tracking.referrer || document.referrer || '';
     data.submittedAt = new Date().toISOString();
     data.userAgent = navigator.userAgent;
