@@ -526,6 +526,8 @@ ul { list-style: none; }
 #about.section--light { background: #FEFCF6; }
 #about .divider-line { background: #000; }
 #about .accent-blue { color: #0C1E3C; }
+#about .section__lead { font-size: 24px; }
+#about .section__desc { font-size: 17px; }
 
 /* ============== PILL GROUP ============== */
 .pill-group {
@@ -647,16 +649,30 @@ ul { list-style: none; }
   letter-spacing: 0.02em;
 }
 
+/* ============== SECTION: 진행절차 (#process) ============== */
+#process.section--light { background: #0F1F3B; color: #fff; }
+#process .section__title,
+#process .process__no { color: #fff; }
+#process .eyebrow--gold-soft { color: #E4CFA0; }
+#process .process__sub {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.85);
+}
+#process .process__item p { color: rgba(255,255,255,0.7); }
+#process .process__item + .process__item::before { background: rgba(255,255,255,0.12); }
+
 /* ============== PROCESS ============== */
 .process__sub {
-  display: inline-block;
-  margin-top: 16px;
-  padding: 18px 36px;
+  display: block;
+  margin-top: 36px;
+  padding: 22px 36px;
   background: #f4f6fa;
   border-radius: 12px;
   font-size: 15px;
   color: var(--text-soft);
   font-weight: 500;
+  text-align: center;
 }
 .process {
   display: grid;
