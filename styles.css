@@ -895,14 +895,35 @@ ul { list-style: none; }
   display: block;
 }
 
-/* 컨트롤 (진행바 + 화살표) */
+/* 컨트롤 (화살표 좌측 + 진행바 우측) */
 .case-slider__controls {
   display: flex;
   align-items: center;
-  gap: 24px;
-  margin-top: 24px;
+  gap: 28px;
+  margin-top: 28px;
   padding-right: 80px;
 }
+.case-slider__nav {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.case-slider__btn {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid #cdd3df;
+  color: #6b7384;
+  display: grid; place-items: center;
+  transition: all .2s;
+}
+.case-slider__btn svg { width: 14px; height: 14px; }
+.case-slider__btn:hover { background: #f4f6fa; }
+.case-slider__btn--primary {
+  border-color: var(--navy-800);
+  color: var(--navy-800);
+}
+.case-slider__btn--primary:hover { background: var(--navy-800); color: #fff; }
 .case-slider__progress {
   flex: 1;
   height: 3px;
@@ -918,25 +939,6 @@ ul { list-style: none; }
   border-radius: 2px;
   transition: width 0.5s ease, transform 0.5s ease;
 }
-.case-slider__nav {
-  display: flex;
-  gap: 8px;
-}
-.case-slider__btn {
-  width: 38px; height: 38px;
-  border-radius: 50%;
-  background: #f4f6fa;
-  color: var(--text-soft);
-  display: grid; place-items: center;
-  transition: all .2s;
-}
-.case-slider__btn svg { width: 14px; height: 14px; }
-.case-slider__btn:hover { background: #e5e8ef; }
-.case-slider__btn--primary {
-  background: var(--navy-800);
-  color: #fff;
-}
-.case-slider__btn--primary:hover { background: var(--navy-700); }
 
 /* ============== QUALIFY (CHECKLIST) ============== */
 .qualify {
