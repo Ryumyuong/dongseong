@@ -1381,7 +1381,7 @@ ul { list-style: none; }
   .case-band__icon { margin: 24px auto 0; }
   .case-slider__controls { padding-right: 0; }
   .check-list { grid-template-columns: 1fr; }
-  .contact-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: repeat(3, 1fr); gap: 12px; }
   .apply { padding: 60px 0; }
   .apply__inner { grid-template-columns: 1fr; gap: 32px; }
   .apply__bottom { flex-direction: column; align-items: stretch; gap: 14px; }
@@ -1402,4 +1402,7 @@ ul { list-style: none; }
   .success-card__rate { font-size: 60px; }
   .qualify__cta { flex-direction: column; }
   .qualify__cta .btn { width: 100%; }
+}
+@media (max-width: 500px) {
+  .contact-grid { grid-template-columns: 1fr; }
 }
