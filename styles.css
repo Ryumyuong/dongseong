@@ -731,6 +731,7 @@ ul { list-style: none; }
 }
 .success-card {
   flex: 0 0 280px;
+  aspect-ratio: 313.94 / 376.9;
   background: #fff;
   border-radius: 16px;
   padding: 28px 26px 32px;
