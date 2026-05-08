@@ -559,7 +559,11 @@ ul { list-style: none; }
 }
 .stats-band__bg {
   position: absolute; inset: 0;
-  background: url('./images/stats-bg.jpg') center/cover no-repeat;
+  background:
+    linear-gradient(180deg, rgba(0,17,43,0.61) 0%, rgba(0,17,43,0) 100%),
+    linear-gradient(rgba(1,9,20,0.62), rgba(1,9,20,0.62)),
+    url('./images/stats-bg.jpg') center/cover no-repeat;
+  background-color: #192D54;
   z-index: 0;
 }
 .stats-band__inner {
@@ -616,8 +620,8 @@ ul { list-style: none; }
   text-align: center;
 }
 .big-stat__icon {
-  width: 36px; height: 36px;
-  color: rgba(255,255,255,0.55);
+  width: 44px; height: 44px;
+  object-fit: contain;
   margin: 0 auto 18px;
   display: block;
 }
@@ -639,7 +643,7 @@ ul { list-style: none; }
 }
 .big-stat__label {
   font-size: 14px;
-  color: rgba(255,255,255,0.6);
+  color: #E4CFA0;
   letter-spacing: 0.02em;
 }
 
