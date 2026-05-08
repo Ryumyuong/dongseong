@@ -95,7 +95,7 @@
       </div>
 
       <!-- Hero form card -->
-      <form class="hero-form" data-gas-form data-gas-type="estimate">
+      <form class="hero-form" data-estimate-form>
         <div class="hero-form__head">
           <h3>나의 예상 변제 금액 확인</h3>
           <div class="hero-form__sub">
@@ -618,6 +618,20 @@
       <span>카톡상담</span>
     </a>
   </nav>
+
+  <!-- ============== ESTIMATE RESULT MODAL ============== -->
+  <div class="modal" id="modal-estimate" aria-hidden="true">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modal-estimate-title">
+      <div class="modal__head">
+        <h3 id="modal-estimate-title" class="modal__title">예상 변제 금액</h3>
+        <button type="button" class="modal__close" data-close aria-label="닫기">×</button>
+      </div>
+      <div class="modal__body">
+        <div class="estimate" id="estimate-result"></div>
+      </div>
+    </div>
+  </div>
 
   <!-- ============== POLICY MODALS ============== -->
   <div class="modal" id="modal-terms" aria-hidden="true">

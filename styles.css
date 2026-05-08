@@ -1346,6 +1346,63 @@ ul { list-style: none; }
 .modal__body strong { color: var(--text); font-weight: 600; }
 body.modal-open { overflow: hidden; }
 
+/* 예상 변제 금액 결과 */
+.estimate__hero {
+  background: linear-gradient(135deg, #0C1E3C 0%, #2051A2 100%);
+  color: #fff;
+  border-radius: 12px;
+  padding: 26px 24px;
+  text-align: center;
+  margin-bottom: 18px;
+}
+.estimate__label {
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 8px;
+}
+.estimate__amount {
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+.estimate__sub {
+  margin-top: 10px;
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.85);
+}
+.estimate__rows {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.estimate__row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px 18px;
+  background: #f5f7fb;
+  border-radius: 10px;
+  font-size: 14px;
+}
+.estimate__row span:first-child { color: var(--text-soft); }
+.estimate__row strong { color: var(--text); font-weight: 700; }
+.estimate__warning {
+  background: #fff7ed;
+  color: #92400e;
+  border: 1px solid #fde68a;
+  padding: 14px 16px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+.estimate__note {
+  font-size: 12.5px;
+  color: var(--text-mute);
+  line-height: 1.7;
+  text-align: center;
+}
+
 /* ============== RESPONSIVE ============== */
 @media (max-width: 900px) {
   body { padding-bottom: 68px; }

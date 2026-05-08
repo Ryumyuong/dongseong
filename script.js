@@ -244,6 +244,134 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbztxNjcvxJlrN6fue-1nRy5
   });
 })();
 
+// ============== 예상 변제 금액 계산 (히어로 폼) ==============
+(() => {
+  const form = document.querySelector('form[data-estimate-form]');
+  if (!form) return;
+
+  // 부양가족수별 최저생계비 (원)
+  const MIN_COST = {
+    1: 1538543,
+    2: 2519575,
+    3: 3215422,
+    4: 3896843,
+    5: 4534031,
+    6: 5133571
+  };
+
+  // 채무 금액 — 범위의 중간값 또는 보수적 추정 (원)
+  const DEBT_MAP = {
+    '1,000만원 미만': 700 * 10000,
+    '1,000만원 ~ 3,000만원': 2000 * 10000,
+    '3,000만원 ~ 5,000만원': 4000 * 10000,
+    '5,000만원 ~ 1억원': 7500 * 10000,
+    '1억원 이상': 12000 * 10000
+  };
+
+  // 월 소득 (원)
+  const INCOME_MAP = {
+    '100만원 미만': 80 * 10000,
+    '100만원 ~ 200만원': 150 * 10000,
+    '200만원 ~ 300만원': 250 * 10000,
+    '300만원 ~ 400만원': 350 * 10000,
+    '400만원 이상': 500 * 10000
+  };
+
+  // 부양가족수
+  const DEP_MAP = {
+    '1명 (본인)': 1,
+    '2명': 2,
+    '3명': 3,
+    '4명': 4,
+    '5명 이상': 5
+  };
+
+  function formatKR(amount) {
+    const won = Math.round(amount);
+    if (won >= 100000000) {
+      const eok = won / 100000000;
+      const m = Math.round((won % 100000000) / 10000);
+      return m
+        ? `약 ${eok.toFixed(0).replace(/\.0$/, '')}억 ${m.toLocaleString()}만원`
+        : `약 ${eok.toFixed(1).replace(/\.0$/, '')}억원`;
+    }
+    if (won >= 10000) {
+      return '약 ' + Math.round(won / 10000).toLocaleString() + '만원';
+    }
+    return won.toLocaleString() + '원';
+  }
+
+  function openEstimateModal() {
+    const m = document.getElementById('modal-estimate');
+    if (!m) return;
+    m.classList.add('is-open');
+    m.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+  }
+
+  function render(html) {
+    document.getElementById('estimate-result').innerHTML = html;
+    openEstimateModal();
+  }
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    const totalDebt = DEBT_MAP[form.totalDebt.value];
+    const income = INCOME_MAP[form.monthlyIncome.value];
+    const dependents = DEP_MAP[form.dependents.value];
+
+    if (!totalDebt || !income || !dependents) {
+      alert('모든 항목을 선택해주세요.');
+      return;
+    }
+
+    const minCost = MIN_COST[dependents] || MIN_COST[5];
+    const monthlyRepay = income - minCost;
+
+    if (monthlyRepay <= 0) {
+      render(`
+        <div class="estimate__warning">
+          입력하신 월 소득이 부양가족 ${dependents}인 기준 최저생계비
+          (${formatKR(minCost)}) 이하입니다. 이 경우 변제 금액 산정이 어려워
+          전문 상담을 통해 정확한 진행 가능 여부를 확인해드립니다.
+        </div>
+        <p class="estimate__note">* 익명 상담으로도 자격 조건을 먼저 확인해드립니다.</p>
+      `);
+      return;
+    }
+
+    let term = 60;
+    if (monthlyRepay * 60 > totalDebt) {
+      term = 48;
+      if (monthlyRepay * 48 > totalDebt) {
+        term = 36;
+      }
+    }
+
+    const totalRepay = monthlyRepay * term;
+    const forgiven = Math.max(0, totalDebt - totalRepay);
+
+    render(`
+      <div class="estimate__hero">
+        <div class="estimate__label">월 변제금</div>
+        <div class="estimate__amount">${formatKR(monthlyRepay)}</div>
+        <div class="estimate__sub">${term / 12}년 (${term}개월) 동안 매월 상환</div>
+      </div>
+      <div class="estimate__rows">
+        <div class="estimate__row"><span>총 채무 금액</span><strong>${formatKR(totalDebt)}</strong></div>
+        <div class="estimate__row"><span>총 변제 예상액</span><strong>${formatKR(totalRepay)}</strong></div>
+        <div class="estimate__row"><span>탕감 예상액</span><strong>${formatKR(forgiven)}</strong></div>
+      </div>
+      <p class="estimate__note">
+        * 위 결과는 입력하신 정보를 기반으로 한 단순 추정치입니다.<br />
+        실제 인가 결정 금액은 법원 심사와 개인의 사정에 따라 달라질 수 있으며,<br />
+        정확한 안내는 변호사 상담을 통해 확인해드립니다.
+      </p>
+    `);
+  });
+})();
+
 // ============== 정책 모달 (개인정보처리방침 / 이용약관) ==============
 (() => {
   const triggers = document.querySelectorAll('[data-modal]');
