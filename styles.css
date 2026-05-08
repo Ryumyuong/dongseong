@@ -525,6 +525,7 @@ ul { list-style: none; }
 /* ============== SECTION: 채무 문제 (#about) ============== */
 #about.section--light { background: #FEFCF6; }
 #about .divider-line { background: #000; }
+#about .accent-blue { color: #0C1E3C; }
 
 /* ============== PILL GROUP ============== */
 .pill-group {
@@ -536,7 +537,8 @@ ul { list-style: none; }
 }
 .pill {
   padding: 14px 36px;
-  background: #f4f5f8;
+  background: #fff;
+  border: 1px solid #8A681B52;
   border-radius: 999px;
   font-size: 15px;
   font-weight: 500;
@@ -557,11 +559,7 @@ ul { list-style: none; }
 }
 .stats-band__bg {
   position: absolute; inset: 0;
-  background:
-    linear-gradient(90deg, #00112B 0%, rgba(0,17,43,0) 61%),
-    rgba(1,9,20,0.62),
-    url('./images/stats-bg.png') center/cover no-repeat;
-  background-blend-mode: normal;
+  background: url('./images/stats-bg.jpg') center/cover no-repeat;
   z-index: 0;
 }
 .stats-band__inner {
