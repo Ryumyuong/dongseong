@@ -182,20 +182,18 @@ ul { list-style: none; }
 .nav a:hover { color: var(--blue-500); }
 
 .header__cta { display: flex; align-items: center; gap: 16px; }
-.phone {
-  display: flex; align-items: center; gap: 6px;
-  font-weight: 700; font-size: 15px;
-  color: var(--text);
-}
-.phone__icon { width: 18px; height: 18px; display: block; object-fit: contain; }
-.header__cta .btn {
+.header__phone {
+  display: inline-flex; align-items: center; gap: 8px;
   padding: 10px 22px;
-  font-size: 14px;
   background: var(--navy-800);
   color: #fff;
-  font-weight: 600;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 14px;
+  transition: background .2s;
 }
-.header__cta .btn:hover { background: var(--navy-700); }
+.header__phone:hover { background: var(--navy-700); }
+.header__phone svg { width: 16px; height: 16px; }
 
 .header__live {
   display: flex; align-items: stretch;
