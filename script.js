@@ -134,6 +134,27 @@ window.addEventListener('scroll', () => {
   update();
 })();
 
+// ============== 광고 유입 경로 캡처 (ref / utm_*) ==============
+// 첫 진입 시 URL 파라미터를 sessionStorage에 저장 — 이후 폼 전송 시 함께 보냄
+(() => {
+  try {
+    const params = new URLSearchParams(location.search);
+    const KEYS = ['ref', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+    const captured = {};
+    let hasAny = false;
+    KEYS.forEach(k => {
+      const v = params.get(k);
+      if (v) { captured[k] = v; hasAny = true; }
+    });
+    if (hasAny) {
+      captured.landingUrl = location.href;
+      captured.referrer = document.referrer || '';
+      captured.capturedAt = new Date().toISOString();
+      sessionStorage.setItem('__tracking', JSON.stringify(captured));
+    }
+  } catch (e) { /* noop */ }
+})();
+
 // ============== 폼 → Google Apps Script 전송 ==============
 // 배포 후 GAS_URL 값에 Web App URL을 채워주세요. (예: https://script.google.com/macros/s/.../exec)
 const GAS_URL = '';
@@ -142,12 +163,28 @@ const GAS_URL = '';
   const forms = document.querySelectorAll('form[data-gas-form]');
   if (!forms.length) return;
 
+  function getTracking() {
+    try {
+      const raw = sessionStorage.getItem('__tracking');
+      return raw ? JSON.parse(raw) : {};
+    } catch (e) { return {}; }
+  }
+
   function collect(form) {
     const data = { type: form.dataset.gasType || 'unknown' };
     new FormData(form).forEach((v, k) => {
       if (k === 'agree') data[k] = true;
       else data[k] = v;
     });
+    const tracking = getTracking();
+    data.ref = tracking.ref || '';
+    data.utm_source = tracking.utm_source || '';
+    data.utm_medium = tracking.utm_medium || '';
+    data.utm_campaign = tracking.utm_campaign || '';
+    data.utm_content = tracking.utm_content || '';
+    data.utm_term = tracking.utm_term || '';
+    data.landingUrl = tracking.landingUrl || location.href;
+    data.referrer = tracking.referrer || document.referrer || '';
     data.submittedAt = new Date().toISOString();
     data.userAgent = navigator.userAgent;
     return data;
