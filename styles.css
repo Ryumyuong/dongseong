@@ -1241,6 +1241,7 @@ ul { list-style: none; }
   padding: 56px 0 48px;
   font-size: 13px;
   line-height: 1.9;
+  border-top: 2px solid #CFCFCF;
 }
 .footer__inner {
   display: grid;
