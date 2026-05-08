@@ -1013,6 +1013,96 @@ ul { list-style: none; }
   object-fit: contain;
 }
 
+/* ============== APPLY (푸터 위 신청 폼) ============== */
+.apply {
+  background: #F4F6FA;
+  padding: 80px 0;
+}
+.apply__inner {
+  display: grid;
+  grid-template-columns: minmax(280px, 360px) 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.apply__title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--text);
+  margin-bottom: 28px;
+}
+.apply__phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--navy-900);
+}
+.apply__phone svg {
+  width: 26px; height: 26px;
+  color: var(--blue-500);
+}
+.apply__form { display: flex; flex-direction: column; gap: 16px; }
+.apply__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.apply__field { display: flex; flex-direction: column; gap: 8px; }
+.apply__field span {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+}
+.apply__field span i {
+  color: #e83d3d;
+  font-style: normal;
+  margin-left: 2px;
+}
+.apply__field input,
+.apply__field textarea {
+  width: 100%;
+  border: 0;
+  border-radius: 6px;
+  background: #fff;
+  padding: 14px 16px;
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--text);
+  resize: vertical;
+}
+.apply__field input { height: 46px; }
+.apply__field textarea { min-height: 96px; }
+.apply__field input:focus,
+.apply__field textarea:focus {
+  outline: 2px solid var(--blue-500);
+  outline-offset: 1px;
+}
+.apply__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+}
+.apply__agree {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 13px;
+  color: var(--text-soft);
+  cursor: pointer;
+}
+.apply__agree input { width: 14px; height: 14px; accent-color: var(--navy-800); }
+.apply__submit {
+  padding: 14px 60px;
+  background: var(--navy-800);
+  color: #fff;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 15px;
+  transition: background .2s;
+}
+.apply__submit:hover { background: var(--navy-700); }
+
 /* ============== FAQ ============== */
 .faq { margin-top: 70px; }
 .faq details {
@@ -1293,6 +1383,10 @@ body { padding-bottom: 80px; }
   .case-slider__controls { padding-right: 0; }
   .check-list { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
+  .apply { padding: 60px 0; }
+  .apply__inner { grid-template-columns: 1fr; gap: 32px; }
+  .apply__bottom { flex-direction: column; align-items: stretch; gap: 14px; }
+  .apply__submit { width: 100%; }
   .footer__inner { grid-template-columns: 1fr; gap: 24px; }
 }
 @media (max-width: 560px) {
