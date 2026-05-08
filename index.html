@@ -70,8 +70,8 @@
       <div class="hero__copy">
         <p class="hero__tag">개인회생 · 채무조정 · 법무법인 동승</p>
         <h1 class="hero__title">
-          혼자 버텨오신 시간,<br />
-          이제 저희가 함께 걷겠습니다
+          <span class="hero__title-soft">혼자 버텨오신 시간,</span><br />
+          이제 저희가<br class="br-m" /> 함께 걷겠습니다
         </h1>
         <p class="hero__desc">
           당신의 잘못이 아닙니다. 길을 잃었을 뿐입니다.<br class="br-m" /> 법무법인 동승은 채무로<br class="br-d" />
@@ -555,6 +555,32 @@
       </p>
     </div>
   </footer>
+
+  <!-- ============== PC QUICK CONSULT BAR ============== -->
+  <form class="pc-quick" onsubmit="event.preventDefault(); alert('상담 신청이 접수되었습니다. 빠르게 연락드리겠습니다.');">
+    <div class="pc-quick__label">
+      <img src="./images/quick-chat.png" alt="" class="pc-quick__chat" />
+      <span>빠른상담신청</span>
+    </div>
+    <div class="pc-quick__fields">
+      <input type="text" placeholder="이름" required class="pc-quick__input" />
+      <input type="tel" placeholder="연락처" required class="pc-quick__input" />
+    </div>
+    <label class="pc-quick__agree">
+      <input type="checkbox" required />
+      <span>개인정보 수집 및 활용 동의</span>
+    </label>
+    <button type="submit" class="pc-quick__submit">상담신청</button>
+  </form>
+
+  <div class="pc-floats" aria-label="빠른 연락">
+    <a href="#" class="pc-floats__btn pc-floats__btn--kakao" aria-label="카카오톡 상담">
+      <img src="./images/quick-kakao.png" alt="" />
+    </a>
+    <a href="tel:070-8095-3018" class="pc-floats__btn pc-floats__btn--call" aria-label="전화 상담">
+      <img src="./images/quick-call.png" alt="" />
+    </a>
+  </div>
 
   <!-- ============== MOBILE BOTTOM BAR ============== -->
   <nav class="mobile-bar" aria-label="모바일 빠른 상담">
