@@ -747,7 +747,8 @@ ul { list-style: none; }
 .success-card.is-center {
   background: #214B91;
   color: #fff;
-  box-shadow: 0 16px 40px rgba(12, 30, 60, 0.4);
+  box-shadow: none;
+  transform: translateY(-24px);
 }
 
 .success-card__badge {
