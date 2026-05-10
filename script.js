@@ -300,17 +300,33 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbztxNjcvxJlrN6fue-1nRy5
     return won.toLocaleString() + '원';
   }
 
-  function openEstimateModal() {
-    const m = document.getElementById('modal-estimate');
-    if (!m) return;
-    m.classList.add('is-open');
-    m.setAttribute('aria-hidden', 'false');
-    document.body.classList.add('modal-open');
-  }
+  const inline = form.querySelector('.estimate-inline');
+  const submitBtn = form.querySelector('button[type="submit"]');
 
-  function render(html) {
-    document.getElementById('estimate-result').innerHTML = html;
-    openEstimateModal();
+  function render({ monthlyRepay, term, totalRepay, totalDebt }) {
+    if (!inline) return;
+    inline.innerHTML = `
+      <div class="estimate-card">
+        <div class="estimate-card__split">
+          <div class="estimate-card__col">
+            <div class="estimate-card__label">예상 월 변제액</div>
+            <div class="estimate-card__num estimate-card__num--navy">${formatKR(monthlyRepay)}</div>
+          </div>
+          <div class="estimate-card__divider"></div>
+          <div class="estimate-card__col">
+            <div class="estimate-card__label">${term}개월 총 변제액</div>
+            <div class="estimate-card__num estimate-card__num--gold">${formatKR(totalRepay)}</div>
+          </div>
+        </div>
+        <p class="estimate-card__desc">
+          원 채무 ${formatKR(totalDebt)}을 ${term}개월 동안 분할하여 변제합니다
+        </p>
+        <a href="#contact" class="estimate-card__cta">지금 상담 신청 →</a>
+        <p class="estimate-card__foot">*예상 금액이며, 정확한 금액은 전문 상담을 통해 확인하세요</p>
+      </div>
+    `;
+    inline.hidden = false;
+    if (submitBtn) submitBtn.textContent = '다시 확인하기 →';
   }
 
   form.addEventListener('submit', e => {
@@ -351,16 +367,7 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbztxNjcvxJlrN6fue-1nRy5
     // 변제 총액은 실제 채무 금액을 넘지 않도록 캡
     const totalRepay = Math.min(monthlyRepay * term, totalDebt);
 
-    render(`
-      <div class="estimate__hero">
-        <div class="estimate__label">예상 변제금액</div>
-        <div class="estimate__amount">${formatKR(totalRepay)}</div>
-      </div>
-      <p class="estimate__note">
-        자세한 내용은 전문 상담을 통해<br />
-        정확한 진행 가능 여부를 확인해드립니다.
-      </p>
-    `);
+    render({ monthlyRepay, term, totalRepay, totalDebt });
   });
 })();
 
