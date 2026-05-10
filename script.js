@@ -436,8 +436,8 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbztxNjcvxJlrN6fue-1nRy5
 // - 분기 B: 36개월 내 전액 변제 가능 → 회생 외 다른 상담 안내
 // - 알고리즘: 최저 30만원 보장 + 최저변제율 15% (감면율 상한 85%)
 (() => {
-  const form = document.querySelector('form[data-estimate-form]');
-  if (!form) return;
+  const forms = document.querySelectorAll('form[data-estimate-form]');
+  if (!forms.length) return;
 
   // 채무 미드포인트 (만원)
   const DEBT_MAP = {
@@ -448,7 +448,6 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbztxNjcvxJlrN6fue-1nRy5
     '1억원 ~ 3억원':         20000,
     '3억원 이상':            40000
   };
-  // 월 소득 미드포인트 (만원)
   const INCOME_MAP = {
     '100만원 미만':       80,
     '100만원 ~ 200만원':  150,
@@ -456,7 +455,6 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbztxNjcvxJlrN6fue-1nRy5
     '300만원 ~ 400만원':  350,
     '400만원 이상':       500
   };
-  // 가구원수별 최저생계비 (만원)
   const FAMILY_MAP = {
     '1인':       130,
     '2인':       215,
@@ -479,10 +477,8 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbztxNjcvxJlrN6fue-1nRy5
   }
 
   const fmt = n => n.toLocaleString('ko-KR');
-  const inline = form.querySelector('.estimate-inline');
-  const submitBtn = form.querySelector('button[type="submit"]');
 
-  function renderA({ monthlyPayment, totalPayment, originalDebt }) {
+  function renderA(inline, { monthlyPayment, totalPayment, originalDebt }) {
     inline.innerHTML = `
       <div class="estimate-card">
         <div class="estimate-card__split">
@@ -504,7 +500,7 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbztxNjcvxJlrN6fue-1nRy5
       </div>
     `;
   }
-  function renderB() {
+  function renderB(inline) {
     inline.innerHTML = `
       <div class="estimate-card estimate-card--alt">
         <div class="estimate-card__alt-head">
@@ -520,20 +516,50 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbztxNjcvxJlrN6fue-1nRy5
     `;
   }
 
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    const debt = DEBT_MAP[form.totalDebt.value];
-    const income = INCOME_MAP[form.monthlyIncome.value];
-    const livingCost = FAMILY_MAP[form.dependents.value];
-    if (debt == null || income == null || livingCost == null) {
-      alert('모든 항목을 선택해주세요.');
-      return;
+  forms.forEach(form => {
+    const inline = form.querySelector('.estimate-inline');
+    const submitBtn = form.querySelector('button[type="submit"]');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const debt = DEBT_MAP[form.totalDebt.value];
+      const income = INCOME_MAP[form.monthlyIncome.value];
+      const livingCost = FAMILY_MAP[form.dependents.value];
+      if (debt == null || income == null || livingCost == null) {
+        alert('모든 항목을 선택해주세요.');
+        return;
+      }
+      const r = calculate(debt, income, livingCost);
+      if (r.branch === 'B') renderB(inline);
+      else renderA(inline, r);
+      if (inline) inline.hidden = false;
+      if (submitBtn) submitBtn.textContent = '다시 확인하기 →';
+    });
+  });
+})();
+
+// ============== 모바일: 예상 변제 입력 모달 오픈 ==============
+(() => {
+  const cta = document.querySelector('.hero__mobile-cta');
+  const modal = document.getElementById('modal-estimate');
+  if (!cta || !modal) return;
+
+  function open() {
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+  }
+  function close() {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    if (!document.querySelector('.modal.is-open')) {
+      document.body.classList.remove('modal-open');
     }
-    const r = calculate(debt, income, livingCost);
-    if (r.branch === 'B') renderB();
-    else renderA(r);
-    inline.hidden = false;
-    if (submitBtn) submitBtn.textContent = '다시 확인하기 →';
+  }
+
+  cta.addEventListener('click', e => { e.preventDefault(); open(); });
+  modal.querySelectorAll('[data-close]').forEach(el => el.addEventListener('click', close));
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) close();
   });
 })();
 

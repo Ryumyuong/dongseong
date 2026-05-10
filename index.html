@@ -625,6 +625,61 @@
     </a>
   </nav>
 
+  <!-- ============== ESTIMATE INPUT MODAL (모바일: 예상 변제 금액 확인) ============== -->
+  <div class="modal modal--estimate" id="modal-estimate" aria-hidden="true">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__dialog modal__dialog--estimate" role="dialog" aria-modal="true" aria-labelledby="modal-estimate-title">
+      <button type="button" class="modal__close modal__close--floating" data-close aria-label="닫기">×</button>
+      <form class="hero-form hero-form--modal" data-estimate-form>
+        <div class="hero-form__head">
+          <h3 id="modal-estimate-title">나의 예상 변제 금액 확인</h3>
+          <div class="hero-form__sub">
+            <span class="badge-time">⏱ 30초 완료</span>
+            <span>익명으로도 확인 가능합니다.</span>
+          </div>
+        </div>
+        <label class="field">
+          <span>총 채무 금액</span>
+          <select name="totalDebt" required>
+            <option value="">선택해주세요</option>
+            <option>1,000만원 미만</option>
+            <option>1,000만원 ~ 3,000만원</option>
+            <option>3,000만원 ~ 5,000만원</option>
+            <option>5,000만원 ~ 1억원</option>
+            <option>1억원 ~ 3억원</option>
+            <option>3억원 이상</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>월 소득 (세후)</span>
+          <select name="monthlyIncome" required>
+            <option value="">선택해주세요</option>
+            <option>100만원 미만</option>
+            <option>100만원 ~ 200만원</option>
+            <option>200만원 ~ 300만원</option>
+            <option>300만원 ~ 400만원</option>
+            <option>400만원 이상</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>부양가족수 (본인 포함)</span>
+          <select name="dependents" required>
+            <option value="">선택해주세요</option>
+            <option>1인</option>
+            <option>2인</option>
+            <option>3인</option>
+            <option>4인</option>
+            <option>5인 이상</option>
+          </select>
+        </label>
+        <p class="form-note">* 최저생계비 산정에 사용됩니다. 정확한 금액 산정에 영향을 줍니다.</p>
+        <button type="submit" class="btn btn--gold btn--block">예상 변제 금액 확인하기 →</button>
+        <div class="estimate-inline" hidden></div>
+        <p class="form-foot">🔒 익명 상담 가능 · 개인정보 안전 보호</p>
+      </form>
+    </div>
+  </div>
+
   <!-- ============== CONSULT MODAL (예상 변제 결과 → 지금 상담 신청) ============== -->
   <div class="modal modal--consult" id="modal-consult" aria-hidden="true">
     <div class="modal__backdrop" data-close></div>

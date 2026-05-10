@@ -1514,6 +1514,22 @@ body.modal-open { overflow: hidden; }
   line-height: 1.7;
 }
 
+/* ============== 예상 변제 입력 모달 (모바일 CTA → 폼) ============== */
+.modal__dialog--estimate {
+  max-width: 460px;
+  border-radius: 18px;
+  overflow: visible;
+}
+.modal--estimate .hero-form {
+  background: transparent;
+  box-shadow: none;
+  border-top: none;
+  border-radius: 18px;
+  padding: 36px 22px 22px;
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+}
+
 /* ============== 상담 신청 모달 ============== */
 .modal__dialog--consult {
   max-width: 460px;
@@ -1655,7 +1671,7 @@ body.modal-open { overflow: hidden; }
   .br-m { display: inline; }
   .br-d { display: none; }
   .hero__stats { display: none; }
-  .hero-form { display: none; }
+  .hero .hero-form { display: none; }
   .hero__mobile-cta {
     display: inline-flex;
     padding: 18px 44px;
