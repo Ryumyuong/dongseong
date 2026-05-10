@@ -1757,6 +1757,10 @@ body.modal-open { overflow: hidden; }
   .success-card__rate { font-size: 60px; }
   .cases-cta--top { display: none; }
   .cases-cta-bottom { display: block; }
+
+  /* case-slider — 1개 슬라이드만 표시 */
+  .case-slider__track { gap: 16px; }
+  .case-slide { flex: 0 0 100%; }
   .qualify__cta { flex-direction: column; }
   .qualify__cta .btn { width: 100%; }
 }
