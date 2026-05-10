@@ -91,57 +91,161 @@ window.addEventListener('scroll', () => {
   window.addEventListener('resize', applyClasses);
 })();
 
-// ============== 이미지 카드 슬라이더 (6번째 섹션) ==============
+// ============== 이미지 카드 슬라이더 (6번째 섹션) — 무한루프 + 드래그 ==============
 (() => {
   const track = document.getElementById('caseSlideTrack');
   const bar   = document.getElementById('caseSlideBar');
-  const prev  = document.getElementById('caseSlidePrev');
-  const next  = document.getElementById('caseSlideNext');
+  const prevBtn = document.getElementById('caseSlidePrev');
+  const nextBtn = document.getElementById('caseSlideNext');
   if (!track || !bar) return;
+  const total = track.children.length;
+  if (total === 0) return;
 
-  const slides = [...track.children];
-  const total  = slides.length;
-  let idx = 0;
+  const ANIM_MS = 700;
   const AUTO_MS = 5000;
+  let logicalIdx = 0;
+  let isAnimating = false;
+  let timer = null;
 
   function step() {
-    const first = slides[0];
+    const first = track.firstElementChild;
     const styles = getComputedStyle(track);
     const gap = parseFloat(styles.columnGap || styles.gap || '0');
     return first.getBoundingClientRect().width + gap;
   }
-
-  function update() {
-    track.style.transform = `translateX(-${idx * step()}px)`;
+  function setTransition(ms) {
+    track.style.transition = ms
+      ? `transform ${ms}ms cubic-bezier(0.4, 0, 0.2, 1)`
+      : 'none';
+  }
+  function updateUi() {
     bar.style.width = (100 / total) + '%';
-    bar.style.transform = `translateX(${idx * 100}%)`;
-    slides.forEach((slide, i) => {
-      slide.classList.toggle('is-active', i === idx);
+    bar.style.transform = `translateX(${logicalIdx * 100}%)`;
+    [...track.children].forEach((el, i) => {
+      el.classList.toggle('is-active', i === 0);
     });
   }
 
-  function go(n) {
-    idx = (n + total) % total;
-    update();
+  // 다음: 현재 transform → -step 으로 애니메이션 후 firstChild를 끝으로 보내고 transform 0
+  function next(fromTransformPx) {
+    if (isAnimating) return;
+    isAnimating = true;
+    const s = step();
+    if (typeof fromTransformPx === 'number') {
+      setTransition(0);
+      track.style.transform = `translateX(${fromTransformPx}px)`;
+      void track.offsetHeight;
+    }
+    setTransition(ANIM_MS);
+    track.style.transform = `translateX(${-s}px)`;
+    setTimeout(() => {
+      setTransition(0);
+      track.appendChild(track.firstElementChild);
+      track.style.transform = 'translateX(0)';
+      void track.offsetHeight;
+      logicalIdx = (logicalIdx + 1) % total;
+      updateUi();
+      isAnimating = false;
+    }, ANIM_MS);
+  }
+  // 이전: lastChild를 앞에 끼우고 transform = -step+delta 에서 0 으로 애니메이션
+  function prev(fromTransformPx) {
+    if (isAnimating) return;
+    isAnimating = true;
+    const s = step();
+    setTransition(0);
+    track.insertBefore(track.lastElementChild, track.firstElementChild);
+    const startTx = (typeof fromTransformPx === 'number')
+      ? (-s + fromTransformPx)
+      : -s;
+    track.style.transform = `translateX(${startTx}px)`;
+    void track.offsetHeight;
+    setTransition(ANIM_MS);
+    track.style.transform = 'translateX(0)';
+    setTimeout(() => {
+      logicalIdx = (logicalIdx - 1 + total) % total;
+      updateUi();
+      isAnimating = false;
+    }, ANIM_MS);
   }
 
-  next && next.addEventListener('click', () => { go(idx + 1); reset(); });
-  prev && prev.addEventListener('click', () => { go(idx - 1); reset(); });
-
-  let timer = setInterval(() => go(idx + 1), AUTO_MS);
-  function reset() {
-    clearInterval(timer);
-    timer = setInterval(() => go(idx + 1), AUTO_MS);
+  function startTimer() {
+    if (timer) clearInterval(timer);
+    timer = setInterval(() => next(), AUTO_MS);
+  }
+  function stopTimer() {
+    if (timer) { clearInterval(timer); timer = null; }
   }
 
-  // 호버 시 일시정지
-  track.addEventListener('mouseenter', () => clearInterval(timer));
-  track.addEventListener('mouseleave', () => { timer = setInterval(() => go(idx + 1), AUTO_MS); });
+  // 초기화
+  updateUi();
+  startTimer();
+
+  nextBtn && nextBtn.addEventListener('click', () => { next(); startTimer(); });
+  prevBtn && prevBtn.addEventListener('click', () => { prev(); startTimer(); });
+
+  // 호버 일시정지 (드래그 중이 아닐 때만)
+  track.addEventListener('mouseenter', () => { if (!dragging) stopTimer(); });
+  track.addEventListener('mouseleave', () => { if (!dragging) startTimer(); });
+
+  // ===== 드래그 (마우스 / 터치) =====
+  let dragging = false;
+  let startX = 0;
+  let delta = 0;
+
+  function pointerX(e) {
+    return e.touches ? e.touches[0].clientX : e.clientX;
+  }
+  function onDown(e) {
+    if (isAnimating) return;
+    dragging = true;
+    startX = pointerX(e);
+    delta = 0;
+    setTransition(0);
+    stopTimer();
+  }
+  function onMove(e) {
+    if (!dragging) return;
+    delta = pointerX(e) - startX;
+    track.style.transform = `translateX(${delta}px)`;
+  }
+  function onUp() {
+    if (!dragging) return;
+    dragging = false;
+    const s = step();
+    const threshold = s * 0.18;
+    if (delta < -threshold) {
+      next(delta);
+    } else if (delta > threshold) {
+      prev(delta);
+    } else {
+      setTransition(ANIM_MS);
+      track.style.transform = 'translateX(0)';
+    }
+    delta = 0;
+    startX = 0;
+    startTimer();
+  }
+
+  track.addEventListener('mousedown', e => { e.preventDefault(); onDown(e); });
+  window.addEventListener('mousemove', onMove);
+  window.addEventListener('mouseup', onUp);
+  track.addEventListener('touchstart', onDown, { passive: true });
+  track.addEventListener('touchmove', onMove, { passive: true });
+  track.addEventListener('touchend', onUp);
+
+  // 이미지 ghost drag 방지
+  track.querySelectorAll('img').forEach(img => {
+    img.draggable = false;
+    img.addEventListener('dragstart', e => e.preventDefault());
+  });
 
   // 리사이즈 시 위치 보정
-  window.addEventListener('resize', update);
-
-  update();
+  window.addEventListener('resize', () => {
+    if (isAnimating || dragging) return;
+    setTransition(0);
+    track.style.transform = 'translateX(0)';
+  });
 })();
 
 // ============== 통계 숫자 카운트업 (stats-band) ==============

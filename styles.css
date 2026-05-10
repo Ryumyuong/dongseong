@@ -907,7 +907,10 @@ ul { list-style: none; }
   align-items: flex-start;
   transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform;
+  cursor: grab;
+  user-select: none;
 }
+.case-slider__track:active { cursor: grabbing; }
 .case-slide {
   flex: 0 0 min(680px, calc(100% - 240px));  /* 최대 680px, 다음 카드 ~240px peek */
   position: relative;
