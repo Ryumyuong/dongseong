@@ -1766,4 +1766,7 @@ body.modal-open { overflow: hidden; }
 }
 @media (max-width: 500px) {
   .contact-grid { grid-template-columns: 1fr; }
+  /* 상담채널 + 신청 섹션 좌우 여백 추가 */
+  #contact .container,
+  .apply .container { padding-left: 36px; padding-right: 36px; }
 }
