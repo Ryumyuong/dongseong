@@ -983,7 +983,7 @@ ul { list-style: none; }
   padding: 200px 0;
 }
 .qualify__sub {
-  font-size: 30px;
+  font-size: clamp(16px, 4.2vw, 30px);
   color: var(--text-mute);
   margin-bottom: 14px;
   font-weight: 400;
