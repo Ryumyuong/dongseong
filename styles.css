@@ -1277,7 +1277,7 @@ ul { list-style: none; }
   align-items: flex-start;
 }
 .footer__logo img {
-  height: 52px; width: auto;
+  height: 36px; width: auto;
   display: block;
 }
 .footer__body { display: flex; flex-direction: column; gap: 4px; }
