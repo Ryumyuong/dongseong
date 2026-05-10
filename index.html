@@ -619,17 +619,62 @@
     </a>
   </nav>
 
-  <!-- ============== ESTIMATE RESULT MODAL ============== -->
-  <div class="modal" id="modal-estimate" aria-hidden="true">
+  <!-- ============== CONSULT MODAL (예상 변제 결과 → 지금 상담 신청) ============== -->
+  <div class="modal modal--consult" id="modal-consult" aria-hidden="true">
     <div class="modal__backdrop" data-close></div>
-    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modal-estimate-title">
-      <div class="modal__head">
-        <h3 id="modal-estimate-title" class="modal__title">예상 변제 금액</h3>
-        <button type="button" class="modal__close" data-close aria-label="닫기">×</button>
-      </div>
-      <div class="modal__body">
-        <div class="estimate" id="estimate-result"></div>
-      </div>
+    <div class="modal__dialog modal__dialog--consult" role="dialog" aria-modal="true" aria-labelledby="modal-consult-title">
+      <button type="button" class="modal__close modal__close--floating" data-close aria-label="닫기">×</button>
+      <form class="consult-form" data-gas-form data-gas-type="consult">
+        <div class="consult-form__head">
+          <h3 id="modal-consult-title">상담 신청</h3>
+          <p>입력하신 정보는 상담 목적으로만 사용되며 외부에 공개되지 않습니다.</p>
+        </div>
+        <label class="consult-field">
+          <span>이름 (익명 가능)</span>
+          <input type="text" name="name" placeholder="홍길동 (또는 '익명'으로 입력 가능)" required />
+        </label>
+        <label class="consult-field">
+          <span>연락처</span>
+          <input type="tel" name="phone" placeholder="010-0000-0000" required />
+        </label>
+        <label class="consult-field">
+          <span>총 채무 금액 (대략)</span>
+          <select name="totalDebt" required>
+            <option value="">선택해주세요</option>
+            <option>1,000만원 ~ 3,000만원</option>
+            <option>3,000만원 ~ 5,000만원</option>
+            <option>5,000만원 ~ 1억원</option>
+            <option>1억원 이상</option>
+          </select>
+        </label>
+        <label class="consult-field">
+          <span>부양가족수 (본인 포함)</span>
+          <select name="dependents" required>
+            <option value="">선택해주세요</option>
+            <option>1명 (본인)</option>
+            <option>2명</option>
+            <option>3명</option>
+            <option>4명</option>
+            <option>5명 이상</option>
+          </select>
+        </label>
+        <label class="consult-field">
+          <span>상담 희망 시간</span>
+          <select name="preferredTime" required>
+            <option value="">선택해주세요</option>
+            <option>지금 바로</option>
+            <option>오전 (09~12시)</option>
+            <option>오후 (12~18시)</option>
+            <option>저녁 (18~21시)</option>
+          </select>
+        </label>
+        <label class="consult-agree">
+          <input type="checkbox" name="agree" required />
+          <span>개인정보 수집·이용에 동의합니다<em>(상담 목적으로만 활용, 제3자 제공 없음, 보유기간 6개월)</em></span>
+        </label>
+        <button type="submit" class="consult-submit">상담 신청하기</button>
+        <p class="consult-foot">🔒 입력하신 정보는 안전하게 암호화 처리됩니다</p>
+      </form>
     </div>
   </div>
 

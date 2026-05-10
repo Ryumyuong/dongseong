@@ -1468,6 +1468,124 @@ body.modal-open { overflow: hidden; }
   text-align: center;
 }
 
+/* ============== 상담 신청 모달 ============== */
+.modal__dialog--consult {
+  max-width: 460px;
+  border-radius: 20px;
+  overflow: visible;
+}
+.modal__close--floating {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(0,0,0,0.04);
+  z-index: 2;
+}
+.consult-form {
+  padding: 36px 28px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+  border-radius: 20px;
+}
+.consult-form__head { margin-bottom: 4px; }
+.consult-form__head h3 {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+.consult-form__head p {
+  font-size: 13px;
+  color: var(--text-mute);
+  line-height: 1.55;
+}
+.consult-field { display: block; }
+.consult-field > span {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+.consult-field input,
+.consult-field select {
+  width: 100%;
+  height: 50px;
+  padding: 0 16px;
+  border: 1px solid #E5E8F0;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: inherit;
+  background: #F4F6FB;
+  color: var(--text);
+  appearance: none;
+  -webkit-appearance: none;
+  transition: border-color .2s, background .2s;
+}
+.consult-field select {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' stroke='%238b94a8' stroke-width='1.5' fill='none' stroke-linecap='round'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+}
+.consult-field input::placeholder { color: var(--text-mute); }
+.consult-field input:focus,
+.consult-field select:focus {
+  outline: none;
+  border-color: var(--navy-800);
+  background: #fff;
+}
+.consult-agree {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 13px;
+  color: var(--text);
+  cursor: pointer;
+  margin-top: 4px;
+  line-height: 1.55;
+}
+.consult-agree input {
+  width: 18px; height: 18px;
+  margin-top: 2px;
+  accent-color: var(--navy-800);
+  flex-shrink: 0;
+}
+.consult-agree em {
+  display: block;
+  margin-top: 4px;
+  font-style: normal;
+  font-size: 12px;
+  color: var(--text-mute);
+}
+.consult-submit {
+  width: 100%;
+  height: 56px;
+  background: #B0B6C5;
+  color: #fff;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 15px;
+  margin-top: 6px;
+  transition: background .2s;
+}
+.consult-form:has(input[name="agree"]:checked) .consult-submit {
+  background: var(--navy-800);
+}
+.consult-form:has(input[name="agree"]:checked) .consult-submit:hover {
+  background: #1a2a54;
+}
+.consult-foot {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-mute);
+  margin-top: 4px;
+}
+
 /* ============== RESPONSIVE ============== */
 @media (max-width: 900px) {
   body { padding-bottom: 68px; }

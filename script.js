@@ -213,6 +213,7 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbztxNjcvxJlrN6fue-1nRy5
       alert('상담 신청이 접수되었습니다. 빠르게 연락드리겠습니다.');
       console.warn('[GAS_URL이 비어 있습니다] — script.js 상단 GAS_URL 상수에 배포한 Apps Script 웹 앱 URL을 채워주세요.');
       form.reset();
+      form.dispatchEvent(new CustomEvent('gas:submitted', { bubbles: true }));
       return;
     }
     const submitBtn = form.querySelector('button[type="submit"], [type="submit"]');
@@ -228,6 +229,7 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbztxNjcvxJlrN6fue-1nRy5
       });
       alert('상담 신청이 접수되었습니다. 빠르게 연락드리겠습니다.');
       form.reset();
+      form.dispatchEvent(new CustomEvent('gas:submitted', { bubbles: true }));
     } catch (err) {
       console.error(err);
       alert('전송 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.');
@@ -321,7 +323,7 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbztxNjcvxJlrN6fue-1nRy5
         <p class="estimate-card__desc">
           원 채무 ${formatKR(totalDebt)}을 ${term}개월 동안 분할하여 변제합니다
         </p>
-        <a href="#contact" class="estimate-card__cta">지금 상담 신청 →</a>
+        <button type="button" class="estimate-card__cta" data-open-consult>지금 상담 신청 →</button>
         <p class="estimate-card__foot">*예상 금액이며, 정확한 금액은 전문 상담을 통해 확인하세요</p>
       </div>
     `;
@@ -369,6 +371,55 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbztxNjcvxJlrN6fue-1nRy5
 
     render({ monthlyRepay, term, totalRepay, totalDebt });
   });
+})();
+
+// ============== 상담 신청 모달 (인라인 결과 → 지금 상담 신청) ==============
+(() => {
+  const modal = document.getElementById('modal-consult');
+  if (!modal) return;
+  const consultForm = modal.querySelector('form[data-gas-form]');
+  const heroForm = document.querySelector('form[data-estimate-form]');
+
+  function openConsult() {
+    if (heroForm && consultForm) {
+      const debt = heroForm.totalDebt && heroForm.totalDebt.value;
+      const dep = heroForm.dependents && heroForm.dependents.value;
+      if (debt && consultForm.totalDebt) consultForm.totalDebt.value = debt;
+      if (dep && consultForm.dependents) consultForm.dependents.value = dep;
+    }
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+  }
+  function closeConsult() {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    if (!document.querySelector('.modal.is-open')) {
+      document.body.classList.remove('modal-open');
+    }
+  }
+
+  // CTA 는 폼 제출 후 동적으로 렌더링되므로 위임으로 처리
+  document.addEventListener('click', e => {
+    const trigger = e.target.closest('[data-open-consult]');
+    if (trigger) {
+      e.preventDefault();
+      openConsult();
+    }
+  });
+
+  // 백드롭 / X 버튼 닫기
+  modal.querySelectorAll('[data-close]').forEach(el => {
+    el.addEventListener('click', closeConsult);
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) closeConsult();
+  });
+
+  // 전송 성공 시 모달 닫기
+  if (consultForm) {
+    consultForm.addEventListener('gas:submitted', closeConsult);
+  }
 })();
 
 // ============== 정책 모달 (개인정보처리방침 / 이용약관) ==============
