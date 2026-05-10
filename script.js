@@ -24,8 +24,8 @@ window.addEventListener('scroll', () => {
   const track = document.getElementById('casesTrack');
   if (!track) return;
 
-  const INTERVAL = 3500;
-  const ANIM_MS = 600;
+  const INTERVAL = 4500;
+  const ANIM_MS = 1000;
 
   // 화면 폭에 따라 보이는 카드 수 결정
   function getVisibleCount() {

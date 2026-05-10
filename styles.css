@@ -741,7 +741,7 @@ ul { list-style: none; }
   border-radius: 16px;
   padding: 24px 26px 26px;
   box-shadow: 0 6px 20px rgba(15, 31, 58, 0.06);
-  transition: filter 0.5s ease, opacity 0.5s ease, transform 0.5s ease, box-shadow 0.5s ease;
+  transition: filter 1s ease, opacity 1s ease, transform 1s ease, box-shadow 1s ease;
   display: flex;
   flex-direction: column;
 }
@@ -752,7 +752,7 @@ ul { list-style: none; }
   background: linear-gradient(90deg, #2051A2 0%, #0C1E3C 100%);
   border-radius: inherit;
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: opacity 1s ease;
   z-index: 1;
   pointer-events: none;
 }
@@ -794,14 +794,14 @@ ul { list-style: none; }
   color: #b3bccd;
   margin-bottom: 6px;
   font-weight: 500;
-  transition: color 0.5s ease;
+  transition: color 1s ease;
 }
 .success-card__rate-label {
   font-size: 22px;
   font-weight: 700;
   color: var(--text);
   margin-bottom: 4px;
-  transition: color 0.5s ease;
+  transition: color 1s ease;
 }
 .success-card__rate {
   font-family: 'KoPub Batang', 'KoPubBatang', serif;
@@ -813,7 +813,7 @@ ul { list-style: none; }
   padding-bottom: 14px;
   border-bottom: 1px solid #e5e8ef;
   letter-spacing: -0.02em;
-  transition: color 0.5s ease, border-bottom-color 0.5s ease;
+  transition: color 1s ease, border-bottom-color 1s ease;
 }
 .success-card__rate span {
   font-family: 'KoPub Batang', 'KoPubBatang', serif;
@@ -825,20 +825,20 @@ ul { list-style: none; }
   font-size: 13.5px;
   line-height: 1.75;
   color: var(--text);
-  transition: color 0.5s ease;
+  transition: color 1s ease;
 }
 .success-card__details li { display: block; }
 .success-card__details span {
   color: var(--text);
   font-weight: 600;
   margin-right: 4px;
-  transition: color 0.5s ease;
+  transition: color 1s ease;
 }
 .success-card__details em {
   font-style: normal;
   color: #ff4444;
   font-weight: 700;
-  transition: color 0.5s ease;
+  transition: color 1s ease;
 }
 
 /* center (highlight) card overrides */
