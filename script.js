@@ -134,6 +134,54 @@ window.addEventListener('scroll', () => {
   update();
 })();
 
+// ============== 통계 숫자 카운트업 (stats-band) ==============
+(() => {
+  const band = document.querySelector('.stats-band');
+  if (!band) return;
+  const nums = band.querySelectorAll('.big-stat__num');
+  if (!nums.length) return;
+
+  const DURATION = 3000;
+  const items = [...nums].map(el => {
+    const suffixEl = el.querySelector('span');
+    const suffix = suffixEl ? suffixEl.outerHTML : '';
+    const numText = suffixEl
+      ? el.textContent.replace(suffixEl.textContent, '')
+      : el.textContent;
+    const target = parseInt(numText.replace(/[^\d]/g, ''), 10) || 0;
+    return { el, target, suffix };
+  });
+
+  // 초기값 0으로 리셋 (스크롤 들어오기 전에 노출되어도 자연스럽게)
+  items.forEach(({ el, suffix }) => { el.innerHTML = '0' + suffix; });
+
+  function animate() {
+    const start = performance.now();
+    function step(now) {
+      const t = Math.min(1, (now - start) / DURATION);
+      const eased = 1 - Math.pow(1 - t, 3);
+      items.forEach(({ el, target, suffix }) => {
+        const v = Math.round(target * eased);
+        el.innerHTML = v.toLocaleString('ko-KR') + suffix;
+      });
+      if (t < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  let triggered = false;
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !triggered) {
+        triggered = true;
+        animate();
+        io.disconnect();
+      }
+    });
+  }, { threshold: 0.3 });
+  io.observe(band);
+})();
+
 // ============== 광고 유입 경로 캡처 (ref) ==============
 // 첫 진입 시 URL의 ?ref= 값을 sessionStorage에 저장 — 이후 폼 전송 시 함께 보냄
 (() => {
