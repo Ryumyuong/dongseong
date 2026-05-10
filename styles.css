@@ -716,6 +716,7 @@ ul { list-style: none; }
 /* ============== CASES CAROUSEL ============== */
 .accent-navy { color: var(--navy-800); font-weight: 700; }
 .cases-cta { margin-top: 28px; padding: 14px 32px; }
+.cases-cta-bottom { display: none; margin-top: 36px; }
 
 /* #numbers 섹션 타이틀과 설명 간격 축소 */
 #numbers .section__title { margin-bottom: 8px; }
@@ -1742,10 +1743,20 @@ body.modal-open { overflow: hidden; }
   .hero__stats { grid-template-columns: 1fr; gap: 16px; padding-top: 24px; }
   .stats-band__grid { grid-template-columns: 1fr; }
   .process, .case-band__cards { grid-template-columns: 1fr; }
-  .cases-viewport { max-width: 100%; padding-left: 24px; padding-right: 24px; }
+  /* 모바일 — 1개 카드 중앙 + 좌우 peek */
+  #numbers.section--soft { overflow: hidden; }
+  .cases-viewport {
+    width: calc(100vw - 80px);
+    max-width: none;
+    margin: 60px auto 0;
+    padding: 24px 0;
+    overflow: visible;
+  }
   .cases-track { gap: 16px; }
   .success-card { flex: 0 0 calc(100vw - 80px); padding: 24px 22px 28px; }
   .success-card__rate { font-size: 60px; }
+  .cases-cta--top { display: none; }
+  .cases-cta-bottom { display: block; }
   .qualify__cta { flex-direction: column; }
   .qualify__cta .btn { width: 100%; }
 }

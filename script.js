@@ -35,25 +35,10 @@ window.addEventListener('scroll', () => {
     return 5;
   }
 
-  function applyClassesShifted(shift) {
-    const visible = getVisibleCount();
-    const centerIdx = Math.floor(visible / 2);
-    [...track.children].forEach((c, i) => {
-      c.classList.remove('is-center', 'is-edge', 'is-near');
-      const t = i - shift;
-      if (t < 0) {
-        // 왼쪽으로 슬라이드 아웃 — edge(또는 near) 스타일 유지해서 자연스럽게 사라짐
-        if (visible >= 5) c.classList.add('is-edge');
-        else c.classList.add('is-near');
-        return;
-      }
-      if (t >= visible) return; // 오른쪽 대기 — 클래스 없음 → 슬라이드되며 페이드인
-      if (t === centerIdx) c.classList.add('is-center');
-      else if (visible >= 5 && (t === 0 || t === visible - 1)) c.classList.add('is-edge');
-      else c.classList.add('is-near');
-    });
-  }
-  function applyClasses() { applyClassesShifted(0); }
+  // 모바일(visible=1)에서는 마지막 카드를 앞에 끼워(phantom) 좌측 peek을 만든다.
+  // 이때 시각적 center 카드는 DOM index 1 → applyClassesShifted 가 이 base 를 인식해야 함.
+  function isShifted() { return track.dataset.shifted === 'true'; }
+  function shouldShift() { return getVisibleCount() === 1; }
 
   function getStep() {
     const first = track.firstElementChild;
@@ -62,33 +47,70 @@ window.addEventListener('scroll', () => {
     const gap = parseFloat(styles.columnGap || styles.gap || '0');
     return first.getBoundingClientRect().width + gap;
   }
+  function baseTransform() { return isShifted() ? -getStep() : 0; }
+
+  function applyClassesShifted(shift) {
+    const visible = getVisibleCount();
+    const centerIdx = Math.floor(visible / 2);
+    const baseShift = isShifted() ? 1 : 0;
+    [...track.children].forEach((c, i) => {
+      c.classList.remove('is-center', 'is-edge', 'is-near');
+      const t = i - shift - baseShift;
+      if (t < 0) {
+        if (visible >= 5) c.classList.add('is-edge');
+        else c.classList.add('is-near');
+        return;
+      }
+      if (t >= visible) return;
+      if (t === centerIdx) c.classList.add('is-center');
+      else if (visible >= 5 && (t === 0 || t === visible - 1)) c.classList.add('is-edge');
+      else c.classList.add('is-near');
+    });
+  }
+  function applyClasses() { applyClassesShifted(0); }
+
+  function ensureShiftMode() {
+    const want = shouldShift();
+    const has = isShifted();
+    if (want && !has) {
+      track.insertBefore(track.lastElementChild, track.firstElementChild);
+      track.dataset.shifted = 'true';
+    } else if (!want && has) {
+      track.appendChild(track.firstElementChild);
+      track.dataset.shifted = 'false';
+    }
+    track.style.transition = 'none';
+    track.style.transform = `translateX(${baseTransform()}px)`;
+    void track.offsetHeight;
+    applyClasses();
+  }
 
   let isAnimating = false;
   function slide() {
     if (isAnimating) return;
     isAnimating = true;
     const step = getStep();
-    // 슬라이드 시작과 동시에 "다음 위치 기준" 클래스 적용 → 색·블러·변형이 슬라이드와 같이 트랜지션
+    const base = baseTransform();
     applyClassesShifted(1);
     track.style.transition = `transform ${ANIM_MS}ms cubic-bezier(0.4, 0, 0.2, 1)`;
-    track.style.transform = `translateX(-${step}px)`;
+    track.style.transform = `translateX(${base - step}px)`;
 
     setTimeout(() => {
       track.style.transition = 'none';
       track.appendChild(track.firstElementChild);
-      track.style.transform = 'translateX(0)';
+      track.style.transform = `translateX(${base}px)`;
       void track.offsetHeight;
       applyClasses();
       isAnimating = false;
     }, ANIM_MS);
   }
 
-  applyClasses();
+  ensureShiftMode();
   let timer = setInterval(slide, INTERVAL);
 
   track.addEventListener('mouseenter', () => clearInterval(timer));
   track.addEventListener('mouseleave', () => { timer = setInterval(slide, INTERVAL); });
-  window.addEventListener('resize', applyClasses);
+  window.addEventListener('resize', ensureShiftMode);
 })();
 
 // ============== 이미지 카드 슬라이더 (6번째 섹션) — 무한루프 + 드래그 ==============
