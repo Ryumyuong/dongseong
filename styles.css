@@ -331,20 +331,20 @@ ul { list-style: none; }
 /* ============== PC QUICK CONSULT BAR (히어로 하단 내장) ============== */
 .pc-quick {
   position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 24px;
+  width: calc(100% - 48px);
+  max-width: 1200px;
   z-index: 90;
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 20px;
-  padding: 14px 28px;
+  padding: 12px 28px;
   background: #1A2A54;
   color: #fff;
-  border-radius: 0;
-  box-shadow: 0 -6px 20px rgba(0,0,0,0.18);
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.28);
 }
 .pc-quick__label {
   display: flex; align-items: center; gap: 10px;
