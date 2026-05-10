@@ -1741,6 +1741,9 @@ body.modal-open { overflow: hidden; }
   }
   .case-band__copy .section__title { text-align: center; }
   .case-band__icon { display: none; }
+  /* 사례 CTA — 카드 위 → 카드 아래 */
+  .cases-cta--top { display: none; }
+  .cases-cta-bottom { display: block; }
   .case-slider__controls { padding-right: 0; }
   .check-list { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: repeat(3, 1fr); gap: 12px; }
@@ -1770,8 +1773,6 @@ body.modal-open { overflow: hidden; }
   .cases-track { gap: 16px; }
   .success-card { flex: 0 0 calc(100vw - 80px); padding: 24px 22px 28px; }
   .success-card__rate { font-size: 60px; }
-  .cases-cta--top { display: none; }
-  .cases-cta-bottom { display: block; }
 
   /* case-slider — 1개 슬라이드만 표시 */
   .case-slider__track { gap: 16px; }
