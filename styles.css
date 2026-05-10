@@ -1746,7 +1746,7 @@ body.modal-open { overflow: hidden; }
   .cases-cta-bottom { display: block; }
   .case-slider__controls { padding-right: 0; }
   .check-list { grid-template-columns: 1fr; }
-  .contact-grid { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .contact-grid { grid-template-columns: 1fr; gap: 14px; }
   /* 상담채널/신청 섹션 좌우 여백 — 컨텐츠가 화면 끝까지 안 닿도록 */
   #contact .container,
   .apply .container { padding-left: 40px; padding-right: 40px; }
@@ -1782,7 +1782,4 @@ body.modal-open { overflow: hidden; }
   .case-slide { flex: 0 0 100%; }
   .qualify__cta { flex-direction: column; }
   .qualify__cta .btn { width: 100%; }
-}
-@media (max-width: 500px) {
-  .contact-grid { grid-template-columns: 1fr; }
 }
