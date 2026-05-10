@@ -1664,7 +1664,7 @@ body.modal-open { overflow: hidden; }
   .hero { padding: 60px 0 80px; min-height: 0; }
   .hero__inner { grid-template-columns: 1fr; gap: 0; }
   .hero__copy { padding-top: 0; text-align: center; }
-  .hero__tag { font-size: 13px; margin-bottom: 22px; }
+  .hero__tag { font-size: 16px; margin-bottom: 22px; }
   .hero__title { font-size: clamp(32px, 8.5vw, 44px); line-height: 1.25; margin-bottom: 26px; }
   .hero__desc { font-size: 15.5px; line-height: 1.85; margin-bottom: 36px; }
   .br-m { display: inline; }
