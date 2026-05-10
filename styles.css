@@ -1753,7 +1753,19 @@ body.modal-open { overflow: hidden; }
   .apply__inner { grid-template-columns: 1fr; gap: 32px; }
   .apply__copy { text-align: center; }
   .apply__bottom { flex-direction: column; align-items: stretch; gap: 14px; }
-  .apply__submit { width: 100%; }
+  .apply__submit { width: 100%; padding: 18px 60px; font-size: 16px; }
+  /* 모바일 — 이름/연락처 1열 + 입력칸 키우기 + 더 둥글게 */
+  .apply__row { grid-template-columns: 1fr; gap: 18px; }
+  .apply__field span { font-size: 14px; }
+  .apply__field input,
+  .apply__field textarea {
+    border-radius: 10px;
+    font-size: 15px;
+    padding: 16px 18px;
+    box-shadow: 0 1px 3px rgba(15,31,58,0.04);
+  }
+  .apply__field input { height: 56px; }
+  .apply__field textarea { min-height: 140px; }
   .footer__inner { grid-template-columns: 1fr; gap: 24px; }
 }
 @media (max-width: 600px) {
