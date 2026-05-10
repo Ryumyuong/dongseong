@@ -408,132 +408,110 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbztxNjcvxJlrN6fue-1nRy5
   });
 })();
 
-// ============== 예상 변제 금액 계산 (히어로 폼) ==============
+// ============== 예상 변제 금액 계산 (히어로 폼) v2 — 150 케이스 매핑 ==============
+// - 단위: 만원
+// - 분기 A: 회생 적합 → 월 변제액 / 36개월 총 변제액 표시
+// - 분기 B: 36개월 내 전액 변제 가능 → 회생 외 다른 상담 안내
+// - 알고리즘: 최저 30만원 보장 + 최저변제율 15% (감면율 상한 85%)
 (() => {
   const form = document.querySelector('form[data-estimate-form]');
   if (!form) return;
 
-  // 부양가족수별 최저생계비 (원)
-  const MIN_COST = {
-    1: 1538543,
-    2: 2519575,
-    3: 3215422,
-    4: 3896843,
-    5: 4534031,
-    6: 5133571
-  };
-
-  // 채무 금액 — 범위의 중간값 또는 보수적 추정 (원)
+  // 채무 미드포인트 (만원)
   const DEBT_MAP = {
-    '1,000만원 미만': 800 * 10000,
-    '1,000만원 ~ 3,000만원': 2000 * 10000,
-    '3,000만원 ~ 5,000만원': 4000 * 10000,
-    '5,000만원 ~ 1억원': 7500 * 10000,
-    '1억원 ~ 3억원': 20000 * 10000,
-    '3억원 이상': 40000 * 10000
+    '1,000만원 미만':       800,
+    '1,000만원 ~ 3,000만원': 2000,
+    '3,000만원 ~ 5,000만원': 4000,
+    '5,000만원 ~ 1억원':     7500,
+    '1억원 ~ 3억원':         20000,
+    '3억원 이상':            40000
   };
-
-  // 월 소득 (원)
+  // 월 소득 미드포인트 (만원)
   const INCOME_MAP = {
-    '100만원 미만': 80 * 10000,
-    '100만원 ~ 200만원': 150 * 10000,
-    '200만원 ~ 300만원': 250 * 10000,
-    '300만원 ~ 400만원': 350 * 10000,
-    '400만원 이상': 500 * 10000
+    '100만원 미만':       80,
+    '100만원 ~ 200만원':  150,
+    '200만원 ~ 300만원':  250,
+    '300만원 ~ 400만원':  350,
+    '400만원 이상':       500
+  };
+  // 가구원수별 최저생계비 (만원)
+  const FAMILY_MAP = {
+    '1인':       130,
+    '2인':       215,
+    '3인':       275,
+    '4인':       335,
+    '5인 이상':  395
   };
 
-  // 부양가족수
-  const DEP_MAP = {
-    '1인': 1,
-    '2인': 2,
-    '3인': 3,
-    '4인': 4,
-    '5인 이상': 5
-  };
-
-  function formatKR(amount) {
-    const won = Math.round(amount);
-    if (won >= 100000000) {
-      const eok = won / 100000000;
-      const m = Math.round((won % 100000000) / 10000);
-      return m
-        ? `약 ${eok.toFixed(0).replace(/\.0$/, '')}억 ${m.toLocaleString()}만원`
-        : `약 ${eok.toFixed(1).replace(/\.0$/, '')}억원`;
-    }
-    if (won >= 10000) {
-      return '약 ' + Math.round(won / 10000).toLocaleString() + '만원';
-    }
-    return won.toLocaleString() + '원';
+  function calculate(debt, income, livingCost) {
+    const incomeMonthly = Math.max(income - livingCost, 30);
+    if (incomeMonthly * 36 >= debt) return { branch: 'B' };
+    const debtFloorMonthly = Math.ceil(debt * 0.15 / 36);
+    const monthlyPayment = Math.max(incomeMonthly, debtFloorMonthly);
+    return {
+      branch: 'A',
+      monthlyPayment,
+      totalPayment: monthlyPayment * 36,
+      originalDebt: debt
+    };
   }
 
+  const fmt = n => n.toLocaleString('ko-KR');
   const inline = form.querySelector('.estimate-inline');
   const submitBtn = form.querySelector('button[type="submit"]');
 
-  function render({ monthlyRepay, term, totalRepay, totalDebt }) {
-    if (!inline) return;
+  function renderA({ monthlyPayment, totalPayment, originalDebt }) {
     inline.innerHTML = `
       <div class="estimate-card">
         <div class="estimate-card__split">
           <div class="estimate-card__col">
             <div class="estimate-card__label">예상 월 변제액</div>
-            <div class="estimate-card__num estimate-card__num--navy">${formatKR(monthlyRepay)}</div>
+            <div class="estimate-card__num estimate-card__num--navy">${fmt(monthlyPayment)}<span>만원</span></div>
           </div>
           <div class="estimate-card__divider"></div>
           <div class="estimate-card__col">
-            <div class="estimate-card__label">${term}개월 총 변제액</div>
-            <div class="estimate-card__num estimate-card__num--gold">${formatKR(totalRepay)}</div>
+            <div class="estimate-card__label">36개월 총 변제액</div>
+            <div class="estimate-card__num estimate-card__num--gold">${fmt(totalPayment)}<span>만원</span></div>
           </div>
         </div>
         <p class="estimate-card__desc">
-          원 채무 ${formatKR(totalDebt)}을 ${term}개월 동안 분할하여 변제합니다
+          원 채무 ${fmt(originalDebt)}만원을 36개월 동안 분할하여 변제합니다
         </p>
         <button type="button" class="estimate-card__cta" data-open-consult>지금 상담 신청 →</button>
         <p class="estimate-card__foot">*예상 금액이며, 정확한 금액은 전문 상담을 통해 확인하세요</p>
       </div>
     `;
-    inline.hidden = false;
-    if (submitBtn) submitBtn.textContent = '다시 확인하기 →';
+  }
+  function renderB() {
+    inline.innerHTML = `
+      <div class="estimate-card estimate-card--alt">
+        <div class="estimate-card__alt-head">
+          <div class="estimate-card__alt-title">회생보다 더 적합한 방향이 있습니다</div>
+          <p class="estimate-card__alt-desc">
+            현재 채무 규모 대비 소득이 충분합니다.<br />
+            개인회생 외 다른 해결 방안을 안내해드립니다.
+          </p>
+        </div>
+        <button type="button" class="estimate-card__cta" data-open-consult>지금 상담 신청 →</button>
+        <p class="estimate-card__foot">*전문 상담을 통해 더 적합한 해결 방향을 안내해드립니다</p>
+      </div>
+    `;
   }
 
   form.addEventListener('submit', e => {
     e.preventDefault();
-
-    const totalDebt = DEBT_MAP[form.totalDebt.value];
+    const debt = DEBT_MAP[form.totalDebt.value];
     const income = INCOME_MAP[form.monthlyIncome.value];
-    const dependents = DEP_MAP[form.dependents.value];
-
-    if (!totalDebt || !income || !dependents) {
+    const livingCost = FAMILY_MAP[form.dependents.value];
+    if (debt == null || income == null || livingCost == null) {
       alert('모든 항목을 선택해주세요.');
       return;
     }
-
-    // 소득 - 최저생계비 ≤ 0 이면 가구원수를 한 명씩 줄여가며 재계산
-    // 1인까지 줄여도 부족하면 기본 월 변제금 40만원으로 산정
-    let depUsed = dependents;
-    let minCost = MIN_COST[depUsed];
-    let monthlyRepay = income - minCost;
-
-    while (monthlyRepay <= 0 && depUsed > 1) {
-      depUsed -= 1;
-      minCost = MIN_COST[depUsed];
-      monthlyRepay = income - minCost;
-    }
-    if (monthlyRepay <= 0) {
-      monthlyRepay = 400000;
-    }
-
-    // 변제 기간(60→48→36) 산정
-    let term = 60;
-    if (monthlyRepay * 60 > totalDebt) {
-      term = 48;
-      if (monthlyRepay * 48 > totalDebt) {
-        term = 36;
-      }
-    }
-    // 변제 총액은 실제 채무 금액을 넘지 않도록 캡
-    const totalRepay = Math.min(monthlyRepay * term, totalDebt);
-
-    render({ monthlyRepay, term, totalRepay, totalDebt });
+    const r = calculate(debt, income, livingCost);
+    if (r.branch === 'B') renderB();
+    else renderA(r);
+    inline.hidden = false;
+    if (submitBtn) submitBtn.textContent = '다시 확인하기 →';
   });
 })();
 
