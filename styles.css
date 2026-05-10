@@ -1055,7 +1055,7 @@ ul { list-style: none; }
   font-weight: 600;
   line-height: 1.6;
   color: var(--text);
-  margin-bottom: 28px;
+  margin-bottom: 0;
 }
 .apply__phone {
   display: inline-flex;
