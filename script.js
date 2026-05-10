@@ -30,7 +30,7 @@ window.addEventListener('scroll', () => {
   // 화면 폭에 따라 보이는 카드 수 결정
   function getVisibleCount() {
     const w = window.innerWidth;
-    if (w <= 560) return 1;
+    if (w <= 600) return 1;
     if (w <= 900) return 3;
     return 5;
   }
