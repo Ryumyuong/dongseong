@@ -263,10 +263,12 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbztxNjcvxJlrN6fue-1nRy5
 
   // 채무 금액 — 범위의 중간값 또는 보수적 추정 (원)
   const DEBT_MAP = {
+    '1,000만원 미만': 800 * 10000,
     '1,000만원 ~ 3,000만원': 2000 * 10000,
     '3,000만원 ~ 5,000만원': 4000 * 10000,
     '5,000만원 ~ 1억원': 7500 * 10000,
-    '1억원 이상': 12000 * 10000
+    '1억원 ~ 3억원': 20000 * 10000,
+    '3억원 이상': 40000 * 10000
   };
 
   // 월 소득 (원)
@@ -280,11 +282,11 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbztxNjcvxJlrN6fue-1nRy5
 
   // 부양가족수
   const DEP_MAP = {
-    '1명 (본인)': 1,
-    '2명': 2,
-    '3명': 3,
-    '4명': 4,
-    '5명 이상': 5
+    '1인': 1,
+    '2인': 2,
+    '3인': 3,
+    '4인': 4,
+    '5인 이상': 5
   };
 
   function formatKR(amount) {
