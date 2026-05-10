@@ -274,8 +274,8 @@ ul { list-style: none; }
   background: #000;
   color: #fff;
   overflow: hidden;
-  padding: 120px 0 240px;
-  min-height: 680px;
+  padding: 120px 0 80px;
+  min-height: 0;
 }
 .hero__video {
   position: absolute; inset: 0;
