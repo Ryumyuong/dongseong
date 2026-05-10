@@ -1051,7 +1051,7 @@ ul { list-style: none; }
   align-items: start;
 }
 .apply__title {
-  font-size: clamp(15px, 2vw, 18px);
+  font-size: clamp(18px, 2.4vw, 22px);
   font-weight: 600;
   line-height: 1.6;
   color: var(--text);
