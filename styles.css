@@ -1725,7 +1725,7 @@ body.modal-open { overflow: hidden; }
     margin-bottom: 36px;
   }
   .case-band__copy .section__title { text-align: center; }
-  .case-band__icon { margin: 24px auto 0; }
+  .case-band__icon { display: none; }
   .case-slider__controls { padding-right: 0; }
   .check-list { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: repeat(3, 1fr); gap: 12px; }
