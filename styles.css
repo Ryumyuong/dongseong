@@ -330,12 +330,12 @@ ul { list-style: none; }
 
 /* ============== PC QUICK CONSULT BAR (히어로 하단 내장) ============== */
 .pc-quick {
-  position: absolute;
+  position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
   width: 100%;
-  z-index: 3;
+  z-index: 90;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -344,6 +344,7 @@ ul { list-style: none; }
   background: #1A2A54;
   color: #fff;
   border-radius: 0;
+  box-shadow: 0 -6px 20px rgba(0,0,0,0.18);
 }
 .pc-quick__label {
   display: flex; align-items: center; gap: 10px;
