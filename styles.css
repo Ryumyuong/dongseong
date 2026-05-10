@@ -579,7 +579,7 @@ ul { list-style: none; }
 }
 .stats-band__copy h2 {
   font-size: clamp(24px, 2.6vw, 32px);
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1.55;
   letter-spacing: -0.02em;
   margin-bottom: 22px;
