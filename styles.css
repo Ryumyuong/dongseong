@@ -1763,7 +1763,6 @@ body.modal-open { overflow: hidden; }
   .nav { display: none; }
   .hero { padding: 50px 0 70px; }
   .hero__stats { grid-template-columns: 1fr; gap: 16px; padding-top: 24px; }
-  .stats-band__grid { grid-template-columns: 1fr; }
   .process, .case-band__cards { grid-template-columns: 1fr; }
   /* 모바일 — 1개 카드 중앙 + 좌우 peek */
   #numbers.section--soft { overflow: hidden; }
