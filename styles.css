@@ -1752,6 +1752,7 @@ body.modal-open { overflow: hidden; }
   .apply .container { padding-left: 40px; padding-right: 40px; }
   .apply { padding: 60px 0; }
   .apply__inner { grid-template-columns: 1fr; gap: 32px; }
+  .apply__copy { text-align: center; }
   .apply__bottom { flex-direction: column; align-items: stretch; gap: 14px; }
   .apply__submit { width: 100%; }
   .footer__inner { grid-template-columns: 1fr; gap: 24px; }
