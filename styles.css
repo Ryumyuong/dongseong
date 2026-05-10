@@ -273,7 +273,7 @@ ul { list-style: none; }
   background: #000;
   color: #fff;
   overflow: hidden;
-  padding: 120px 0 80px;
+  padding: 180px 0 140px;
   min-height: 0;
 }
 .hero__video {
@@ -1661,7 +1661,7 @@ body.modal-open { overflow: hidden; }
   .logo__img { height: 30px; }
 
   /* Hero — 폼/스탯 숨기고 카피 중앙정렬, CTA 버튼 노출 */
-  .hero { padding: 100px 0 120px; min-height: 0; }
+  .hero { padding: 140px 0 160px; min-height: 0; }
   .hero__inner { grid-template-columns: 1fr; gap: 0; }
   .hero__copy { padding-top: 0; text-align: center; }
   .hero__tag { font-size: 16px; margin-bottom: 22px; }
@@ -1761,7 +1761,7 @@ body.modal-open { overflow: hidden; }
   .header__inner { height: 60px; }
   .header__cta .phone { display: none; }
   .nav { display: none; }
-  .hero { padding: 90px 0 110px; }
+  .hero { padding: 130px 0 150px; }
   .hero__stats { grid-template-columns: 1fr; gap: 16px; padding-top: 24px; }
   .process, .case-band__cards { grid-template-columns: 1fr; }
   /* 모바일 — 1개 카드 중앙 + 좌우 peek */
