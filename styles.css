@@ -1729,7 +1729,7 @@ body.modal-open { overflow: hidden; }
 
   .process { grid-template-columns: repeat(2, 1fr); }
   .process__item + .process__item::before { display: none; }
-  .process__item { border-bottom: 1px solid var(--border); }
+  .process__item { border-bottom: 1px solid rgba(246, 248, 251, 0.2); }
   .cases-viewport { max-width: 896px; /* 3 × 280 + 2 × 28 */ }
   .cases-track { gap: 28px; }
   .case-band {
