@@ -1884,7 +1884,7 @@ body.modal-open { overflow: hidden; }
   gap: 28px;
   margin-top: 48px;
   padding: 40px 48px;
-  border-radius: 16px;
+  border-radius: 15px;
   background: var(--navy-800) url('./images/situations-cta-bg.png') center/cover no-repeat;
 }
 .situations__cta-text { position: relative; z-index: 1; }
