@@ -1899,7 +1899,7 @@ body.modal-open { overflow: hidden; }
 }
 .situations__cta-text { position: relative; z-index: 1; }
 .situations__cta-title {
-  font-size: clamp(22px, 2.8vw, 32px);
+  font-size: clamp(20px, 2.5vw, 28px);
   font-weight: 700;
   color: #fff;
   margin-bottom: 12px;
@@ -1907,7 +1907,7 @@ body.modal-open { overflow: hidden; }
 }
 .situations__cta-title .accent-gold { color: #F0C060; }
 .situations__cta-desc {
-  font-size: clamp(12px, 1.4vw, 14px);
+  font-size: clamp(11px, 1.2vw, 13px);
   line-height: 1.75;
   color: rgba(255, 255, 255, 0.8);
 }
