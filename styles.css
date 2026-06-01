@@ -1840,7 +1840,7 @@ body.modal-open { overflow: hidden; }
   color: #2455A6;
   opacity: 1;
   display: block;
-  margin-bottom: 14px;
+  margin-bottom: 2px;
 }
 .situation-card__title {
   font-size: 19px;
@@ -1856,9 +1856,10 @@ body.modal-open { overflow: hidden; }
   margin-bottom: 18px;
 }
 .situation-card__text {
+  font-family: 'Inter', 'Pretendard Variable', Pretendard, sans-serif;
   font-size: 13.5px;
   line-height: 1.8;
-  color: var(--text-soft);
+  color: #000;
   flex: 1;
   margin-bottom: 24px;
 }
