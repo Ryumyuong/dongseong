@@ -1806,7 +1806,7 @@ body.modal-open { overflow: hidden; }
 .situations__title { margin-bottom: 20px; }
 .situations__title .accent-blue { color: #2455A6; }
 .situations__desc {
-  color: var(--text-soft);
+  color: #000;
   font-size: clamp(13px, 1.6vw, 16px);
   line-height: 1.85;
   margin-bottom: 64px;
