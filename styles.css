@@ -1822,8 +1822,8 @@ body.modal-open { overflow: hidden; }
   position: relative;
   display: flex;
   flex-direction: column;
-  background: #fff;
-  border: 1px solid var(--border);
+  background: #FAFAFA;
+  border: 1px solid #E1E1E1;
   border-radius: 14px;
   padding: 34px 30px 30px;
   transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
