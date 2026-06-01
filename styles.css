@@ -1837,8 +1837,8 @@ body.modal-open { overflow: hidden; }
   font-family: Georgia, 'Times New Roman', serif;
   font-size: 52px;
   line-height: 0.8;
-  color: var(--gold-500);
-  opacity: 0.85;
+  color: #2455A6;
+  opacity: 1;
   display: block;
   margin-bottom: 14px;
 }
