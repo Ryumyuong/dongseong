@@ -1865,6 +1865,8 @@ body.modal-open { overflow: hidden; }
   color: #000;
   flex: 1;
   margin-bottom: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
 .situation-card__more {
   align-self: stretch;
