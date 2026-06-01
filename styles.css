@@ -1798,3 +1798,126 @@ body.modal-open { overflow: hidden; }
   .qualify__cta { flex-direction: column; align-items: center; gap: 12px; }
   .qualify__cta .btn { width: 80%; max-width: 340px; }
 }
+
+/* ============== SECTION: 대표 사례 확인 ============== */
+.accent-gold { color: var(--gold-500); font-weight: 700; }
+
+.situations__title { margin-bottom: 20px; }
+.situations__desc {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: clamp(13px, 1.6vw, 16px);
+  line-height: 1.85;
+  margin-bottom: 64px;
+}
+
+.situations__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.situation-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 34px 30px 30px;
+  transition: border-color .2s ease, background .2s ease, transform .2s ease;
+}
+.situation-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(245, 184, 0, 0.4);
+  transform: translateY(-3px);
+}
+.situation-card__quote {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 52px;
+  line-height: 0.8;
+  color: var(--gold-500);
+  opacity: 0.55;
+  display: block;
+  margin-bottom: 14px;
+}
+.situation-card__title {
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.45;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.situation-card__tag {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-mute);
+  margin-bottom: 18px;
+}
+.situation-card__text {
+  font-size: 13.5px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.6);
+  flex: 1;
+  margin-bottom: 24px;
+}
+.situation-card__more {
+  align-self: stretch;
+  text-align: center;
+  background: var(--navy-700);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 12px 18px;
+  border-radius: 8px;
+  transition: background .2s ease;
+}
+.situation-card__more:hover { background: var(--blue-600); }
+
+.situations__cta {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  margin-top: 48px;
+  padding: 40px 48px;
+  border-radius: 16px;
+  background: linear-gradient(120deg, var(--blue-600) 0%, var(--navy-700) 55%, var(--navy-800) 100%);
+}
+.situations__cta::after {
+  content: '';
+  position: absolute;
+  right: -80px;
+  top: -120px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+}
+.situations__cta-text { position: relative; z-index: 1; }
+.situations__cta-title {
+  font-size: clamp(18px, 2.2vw, 24px);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+.situations__cta-desc {
+  font-size: clamp(12px, 1.4vw, 14px);
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.7);
+}
+.situations__cta-btn { position: relative; z-index: 1; flex-shrink: 0; }
+
+@media (max-width: 900px) {
+  .situations__grid { grid-template-columns: repeat(2, 1fr); }
+  .situations__cta { flex-direction: column; align-items: flex-start; text-align: left; padding: 32px 30px; }
+  .situations__cta-btn { width: 100%; max-width: 320px; }
+}
+@media (max-width: 600px) {
+  .situations__grid { grid-template-columns: 1fr; gap: 16px; }
+  .situation-card { padding: 28px 24px 26px; }
+  .situations__desc { margin-bottom: 44px; }
+  .situations__cta-btn { width: 100%; max-width: none; align-self: stretch; }
+}
