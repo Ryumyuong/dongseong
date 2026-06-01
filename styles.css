@@ -1820,11 +1820,33 @@ body.modal-open { overflow: hidden; }
   margin-bottom: 64px;
 }
 
+.situations__carousel { position: relative; }
+.situations__viewport { width: 100%; }
 .situations__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
+/* 화살표 — 데스크탑에서는 숨김, 모바일 캐러셀에서만 노출 */
+.situations__nav {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #E1E1E1;
+  color: #6b7280;
+  box-shadow: 0 4px 14px rgba(10, 22, 40, 0.12);
+}
+.situations__nav svg { width: 14px; height: 14px; }
+.situations__nav--prev { left: -6px; }
+.situations__nav--next { right: -6px; }
 
 .situation-card {
   position: relative;
@@ -1914,14 +1936,36 @@ body.modal-open { overflow: hidden; }
 .situations__cta-btn { position: relative; z-index: 1; flex-shrink: 0; background: #0C1E3C; color: #fff; border-radius: 4px; padding: 10px 44px; }
 .situations__cta-btn:hover { background: #16294d; }
 
+/* ===== 모바일 캐러셀 (펼친 모바일: 2개씩 / 무한루프) ===== */
 @media (max-width: 900px) {
-  .situations__grid { grid-template-columns: repeat(2, 1fr); }
+  .situations__viewport { overflow: hidden; }
+  .situations__grid {
+    display: flex;
+    flex-wrap: nowrap;
+    grid-template-columns: none;
+    gap: 16px;
+    will-change: transform;
+  }
+  .situation-card {
+    flex: 0 0 calc((100% - 16px) / 2);
+    min-width: 0;
+  }
+  .situations__nav { display: flex; }
+
   .situations__cta { flex-direction: column; align-items: flex-start; text-align: left; padding: 32px 30px; }
   .situations__cta-btn { width: 100%; max-width: 320px; }
 }
-@media (max-width: 600px) {
-  .situations__grid { grid-template-columns: 1fr; gap: 16px; }
-  .situation-card { padding: 28px 24px 26px; }
+/* ===== 접은 모바일 (좁은 화면: 1개씩) ===== */
+@media (max-width: 560px) {
+  .situation-card { flex: 0 0 100%; padding: 28px 24px 26px; }
   .situations__desc { margin-bottom: 44px; }
+
+  /* CTA — 세로형 배경 이미지 + 중앙 정렬 */
+  .situations__cta {
+    align-items: center;
+    text-align: center;
+    padding: 40px 26px;
+    background: var(--navy-800) url('./images/situations-cta-bg-m.png') center/cover no-repeat;
+  }
   .situations__cta-btn { width: 100%; max-width: none; align-self: stretch; }
 }

@@ -272,7 +272,12 @@
     </div>
 
     <div class="container">
-      <div class="situations__grid">
+     <div class="situations__carousel">
+      <button class="situations__nav situations__nav--prev" id="situationsPrev" type="button" aria-label="이전 사례">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 3L5 8l5 5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="situations__viewport">
+      <div class="situations__grid" id="situationsTrack">
         <article class="situation-card">
           <span class="situation-card__quote">&ldquo;</span>
           <h3 class="situation-card__title">월 결제금 800만원에서<br />37만원으로</h3>
@@ -321,6 +326,11 @@
           <a href="#contact" class="situation-card__more">내용 더보기 →</a>
         </article>
       </div>
+      </div>
+      <button class="situations__nav situations__nav--next" id="situationsNext" type="button" aria-label="다음 사례">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 3l5 5-5 5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+     </div>
 
       <div class="situations__cta">
         <div class="situations__cta-text">
@@ -1077,7 +1087,7 @@
     </div>
   </div>
 
-  <script src="./script.js"></script>
+  <script src="./script.js?v=20260601"></script>
 
   <!-- ============== JSON-LD: 구조화 데이터 (AI 검색 · SEO) ============== -->
   <script type="application/ld+json">
