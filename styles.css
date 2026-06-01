@@ -1844,7 +1844,7 @@ body.modal-open { overflow: hidden; }
   color: #2455A6;
   opacity: 1;
   display: block;
-  margin-bottom: 2px;
+  margin-bottom: -10px;
 }
 .situation-card__title {
   font-size: 19px;
