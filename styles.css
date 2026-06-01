@@ -1870,7 +1870,7 @@ body.modal-open { overflow: hidden; }
   font-size: 13px;
   font-weight: 600;
   padding: 12px 18px;
-  border-radius: 8px;
+  border-radius: 4px;
   transition: background .2s ease;
 }
 .situation-card__more:hover { background: var(--blue-600); }
@@ -1901,7 +1901,7 @@ body.modal-open { overflow: hidden; }
   line-height: 1.75;
   color: rgba(255, 255, 255, 0.7);
 }
-.situations__cta-btn { position: relative; z-index: 1; flex-shrink: 0; background: #0C1E3C; color: #fff; }
+.situations__cta-btn { position: relative; z-index: 1; flex-shrink: 0; background: #0C1E3C; color: #fff; border-radius: 4px; }
 .situations__cta-btn:hover { background: #16294d; }
 
 @media (max-width: 900px) {
