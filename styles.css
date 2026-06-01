@@ -1889,11 +1889,11 @@ body.modal-open { overflow: hidden; }
   position: relative;
   overflow: hidden;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   gap: 28px;
   margin-top: 48px;
-  padding: 40px 48px;
+  padding: 28px 64px;
   border-radius: 15px;
   background: var(--navy-800) url('./images/situations-cta-bg.png') center/cover no-repeat;
 }
@@ -1909,7 +1909,7 @@ body.modal-open { overflow: hidden; }
 .situations__cta-desc {
   font-size: clamp(12px, 1.4vw, 14px);
   line-height: 1.75;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(0, 0, 0, 0.8);
 }
 .situations__cta-btn { position: relative; z-index: 1; flex-shrink: 0; background: #0C1E3C; color: #fff; border-radius: 4px; }
 .situations__cta-btn:hover { background: #16294d; }
