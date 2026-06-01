@@ -1802,7 +1802,11 @@ body.modal-open { overflow: hidden; }
 /* ============== SECTION: 대표 사례 확인 ============== */
 .accent-gold { color: var(--gold-500); font-weight: 700; }
 
-.situations .eyebrow--gold-soft { color: #D4A843; }
+.situations { font-family: 'Inter', 'Pretendard Variable', Pretendard, sans-serif; }
+.situations .eyebrow--gold-soft {
+  color: #D4A843;
+  font-family: 'Pretendard Variable', Pretendard, sans-serif;
+}
 .situations__title { margin-bottom: 20px; }
 .situations__title .accent-blue { color: #2455A6; }
 .situations__desc {
@@ -1834,7 +1838,7 @@ body.modal-open { overflow: hidden; }
   transform: translateY(-3px);
 }
 .situation-card__quote {
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: 'KoPubBatang', serif;
   font-size: 52px;
   line-height: 0.8;
   color: #2455A6;
@@ -1856,7 +1860,6 @@ body.modal-open { overflow: hidden; }
   margin-bottom: 18px;
 }
 .situation-card__text {
-  font-family: 'Inter', 'Pretendard Variable', Pretendard, sans-serif;
   font-size: 13.5px;
   line-height: 1.8;
   color: #000;
