@@ -1893,7 +1893,7 @@ body.modal-open { overflow: hidden; }
   justify-content: space-between;
   gap: 28px;
   margin-top: 48px;
-  padding: 28px 64px;
+  padding: 44px 64px;
   border-radius: 15px;
   background: var(--navy-800) url('./images/situations-cta-bg.png') center/cover no-repeat;
 }
