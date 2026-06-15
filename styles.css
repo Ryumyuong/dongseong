@@ -227,7 +227,8 @@ ul { list-style: none; }
   width: 100%;
   height: calc(100% + 24px);
   background: #192D54;
-  clip-path: polygon(0 0, 100% 0, calc(100% - 34px) 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 34px) 100%, 0 100%); /* 폴백: 직각 사선 */
+  clip-path: shape(from 0 0, line to 100% 0, line to calc(100% - 24px) calc(100% - 20px), arc to calc(100% - 52px) 100% of 20px cw, line to 0 100%, close); /* 모서리 둥글게 */
   z-index: -1;
 }
 .live-label__icon {
@@ -1703,6 +1704,7 @@ body.modal-open { overflow: hidden; }
   .live-label::before {
     height: calc(100% + 16px);
     clip-path: polygon(0 0, 100% 0, calc(100% - 24px) 100%, 0 100%);
+    clip-path: shape(from 0 0, line to 100% 0, line to calc(100% - 17px) calc(100% - 14px), arc to calc(100% - 38px) 100% of 15px cw, line to 0 100%, close);
   }
   .live-item { font-size: 12px; }
   .live-marquee { animation-duration: 45s; }
