@@ -204,13 +204,13 @@ ul { list-style: none; }
   color: rgba(255,255,255,0.9);
   background: linear-gradient(180deg, #16294d 0%, #0f1f3d 100%);
   border-top: 1px solid rgba(212,175,110,0.4);
-  overflow: hidden;
+  overflow: visible;
   position: relative;
 }
 .live-label {
   display: flex; align-items: center; gap: 8px;
   padding: 11px 56px 11px 24px;
-  background: #192D54;
+  background: transparent;
   color: #fff;
   font-weight: 700;
   font-size: 13px;
@@ -218,7 +218,17 @@ ul { list-style: none; }
   flex-shrink: 0;
   z-index: 2;
   position: relative;
+}
+/* 라벨 배경 = 트랙보다 아래로 더 내려오는 사선 탭 */
+.live-label::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: calc(100% + 24px);
+  background: #192D54;
   clip-path: polygon(0 0, calc(100% - 34px) 0, 100% 100%, 0 100%);
+  z-index: -1;
 }
 .live-label__icon {
   width: 22px; height: 22px;
@@ -1689,7 +1699,10 @@ body.modal-open { overflow: hidden; }
 
   .live-label {
     padding: 8px 40px 8px 14px; font-size: 11px;
-    clip-path: polygon(0 0, calc(100% - 26px) 0, 100% 100%, 0 100%);
+  }
+  .live-label::before {
+    height: calc(100% + 16px);
+    clip-path: polygon(0 0, calc(100% - 24px) 0, 100% 100%, 0 100%);
   }
   .live-item { font-size: 12px; }
   .live-marquee { animation-duration: 45s; }
