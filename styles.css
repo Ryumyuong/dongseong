@@ -227,7 +227,7 @@ ul { list-style: none; }
   width: 100%;
   height: calc(100% + 24px);
   background: #192D54;
-  clip-path: polygon(0 0, calc(100% - 34px) 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 34px) 100%, 0 100%);
   z-index: -1;
 }
 .live-label__icon {
@@ -1702,7 +1702,7 @@ body.modal-open { overflow: hidden; }
   }
   .live-label::before {
     height: calc(100% + 16px);
-    clip-path: polygon(0 0, calc(100% - 24px) 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, calc(100% - 24px) 100%, 0 100%);
   }
   .live-item { font-size: 12px; }
   .live-marquee { animation-duration: 45s; }
