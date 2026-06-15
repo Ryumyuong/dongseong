@@ -303,12 +303,8 @@ ul { list-style: none; }
 }
 .hero__inner {
   position: relative; z-index: 2;
-  display: grid;
-  grid-template-columns: 1fr 420px;
-  gap: 60px;
-  align-items: start;
 }
-.hero__copy { padding-top: 20px; }
+.hero__copy { padding-top: 8px; max-width: 660px; }
 .hero__tag {
   display: inline-block;
   font-size: 14px;
@@ -324,14 +320,53 @@ ul { list-style: none; }
   letter-spacing: -0.02em;
   margin-bottom: 24px;
 }
-.hero__title-soft { font-weight: 400; }
+.hero__title-soft { font-weight: 500; }
+.hero__title-gold { color: var(--gold-500); }
 .hero__desc {
   color: rgba(255,255,255,0.75);
   font-size: clamp(13px, 1.5vw, 16px);
   line-height: 1.85;
   margin-bottom: 60px;
 }
-.hero__mobile-cta { display: none; }
+.hero__cta {
+  display: inline-flex;
+  margin-top: 42px;
+  padding: 16px 40px;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 700;
+  color: #3b2c0a;
+  background: linear-gradient(180deg, #F1C76C 0%, #E2A83D 100%);
+  box-shadow: 0 14px 28px rgba(226,168,61,0.32);
+}
+.hero__cta:hover { filter: brightness(1.05); }
+
+/* 우하단 대표변호사 라벨 */
+.hero__lawyer {
+  position: absolute;
+  right: 0;
+  bottom: 40px;
+  text-align: right;
+  z-index: 2;
+  pointer-events: none;
+  text-shadow: 0 1px 10px rgba(0,0,0,0.45);
+}
+.hero__lawyer-inner { display: inline-block; text-align: right; }
+.hero__lawyer-role {
+  display: block;
+  font-size: 15px;
+  color: rgba(255,255,255,0.9);
+  letter-spacing: 0.02em;
+  margin-bottom: 14px;
+}
+.hero__lawyer-name {
+  display: block;
+  font-size: 30px;
+  font-weight: 700;
+  color: #fff;
+  padding-top: 14px;
+  border-top: 1.5px solid rgba(255,255,255,0.55);
+}
 
 /* 데스크톱/모바일 전용 줄바꿈 */
 .br-m { display: none; }
@@ -428,13 +463,16 @@ ul { list-style: none; }
 .pc-floats__btn--call img { filter: brightness(0) invert(1); }
 
 .hero__stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  padding-top: 40px;
-  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  margin-top: 36px;
 }
-.hero__stats .stat { text-align: center; }
+.hero__stats .stat {
+  text-align: center;
+  padding: 0 34px;
+  border-left: 1px solid rgba(255,255,255,0.22);
+}
+.hero__stats .stat:first-child { padding-left: 0; border-left: none; }
 .stat__num {
   font-family: 'KoPubBatang_Pro', 'KoPub Batang Pro', 'KoPubBatang', serif;
   font-size: clamp(28px, 3.6vw, 40px);
@@ -1686,6 +1724,7 @@ body.modal-open { overflow: hidden; }
   .br-m { display: inline; }
   .br-d { display: none; }
   .hero__stats { display: none; }
+  .hero__lawyer { display: none; }
   .hero .hero-form { display: none; }
   .hero__mobile-cta {
     display: inline-flex;

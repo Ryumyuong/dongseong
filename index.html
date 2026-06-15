@@ -34,7 +34,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
-  <link rel="stylesheet" href="./styles.css?v=20260615f" />
+  <link rel="stylesheet" href="./styles.css?v=20260615g" />
 </head>
 <body>
 
@@ -93,15 +93,10 @@
       <div class="hero__copy">
         <p class="hero__tag">개인회생 · 채무조정 · 법무법인 동승</p>
         <h1 class="hero__title">
-          <span class="hero__title-soft">혼자 버텨오신 시간,</span><br />
-          이제 저희가<br class="br-m" /> 함께 걷겠습니다
+          <span class="hero__title-soft">빚 독촉과 압류가 걱정된다면,</span><br />
+          <span class="hero__title-gold">개인회생 가능 여부</span>부터<br />
+          조용히 확인하세요.
         </h1>
-        <p class="hero__desc">
-          당신의 잘못이 아닙니다. 길을 잃었을 뿐입니다.<br class="br-m" /> 법무법인 동승은 채무로<br class="br-d" />
-          어려움을 겪는 분들의 곁에서<br class="br-m" /> 가장 적합한 회생 절차를 함께 찾아드리고 있습니다.<br />
-          30초만 투자하시면 가능한 길을 알려드립니다.
-        </p>
-        <a href="#contact" class="btn btn--gold hero__mobile-cta">나의 예상 변제 금액 확인</a>
         <div class="hero__stats">
           <div class="stat">
             <div class="stat__num">3,200+</div>
@@ -116,56 +111,15 @@
             <div class="stat__label">연중무휴 상담</div>
           </div>
         </div>
+        <a href="#" class="btn hero__cta hero__mobile-cta">예상 변제 금액 확인하기 →</a>
       </div>
 
-      <!-- Hero form card -->
-      <form class="hero-form" data-estimate-form>
-        <div class="hero-form__head">
-          <h3>나의 예상 변제 금액 확인</h3>
-          <div class="hero-form__sub">
-            <span class="badge-time">⏱ 30초 완료</span>
-            <span>익명으로도 확인 가능합니다.</span>
-          </div>
+      <div class="hero__lawyer">
+        <div class="hero__lawyer-inner">
+          <span class="hero__lawyer-role">개인회생전문 대표변호사</span>
+          <span class="hero__lawyer-name">황성필</span>
         </div>
-        <label class="field">
-          <span>총 채무 금액</span>
-          <select name="totalDebt" required>
-            <option value="">선택해주세요</option>
-            <option>1,000만원 미만</option>
-            <option>1,000만원 ~ 3,000만원</option>
-            <option>3,000만원 ~ 5,000만원</option>
-            <option>5,000만원 ~ 1억원</option>
-            <option>1억원 ~ 3억원</option>
-            <option>3억원 이상</option>
-          </select>
-        </label>
-        <label class="field">
-          <span>월 소득 (세후)</span>
-          <select name="monthlyIncome" required>
-            <option value="">선택해주세요</option>
-            <option>100만원 미만</option>
-            <option>100만원 ~ 200만원</option>
-            <option>200만원 ~ 300만원</option>
-            <option>300만원 ~ 400만원</option>
-            <option>400만원 이상</option>
-          </select>
-        </label>
-        <label class="field">
-          <span>부양가족수 (본인 포함)</span>
-          <select name="dependents" required>
-            <option value="">선택해주세요</option>
-            <option>1인</option>
-            <option>2인</option>
-            <option>3인</option>
-            <option>4인</option>
-            <option>5인 이상</option>
-          </select>
-        </label>
-        <p class="form-note">* 최저생계비 산정에 사용됩니다. 정확한 금액 산정에 영향을 줍니다.</p>
-        <button type="submit" class="btn btn--gold btn--block">예상 변제 금액 확인하기 →</button>
-        <div class="estimate-inline" hidden></div>
-        <p class="form-foot">🔒 익명 상담 가능 · 개인정보 안전 보호</p>
-      </form>
+      </div>
     </div>
 
     <!-- 히어로 하단 빠른상담신청 바 -->
