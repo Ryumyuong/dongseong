@@ -202,14 +202,15 @@ ul { list-style: none; }
   display: flex; align-items: stretch;
   font-size: 13px;
   color: rgba(255,255,255,0.9);
-  background: linear-gradient(180deg, #1f3866 0%, #15294d 100%);
+  background: linear-gradient(180deg, #16294d 0%, #0f1f3d 100%);
+  border-top: 1px solid rgba(212,175,110,0.4);
   overflow: hidden;
   position: relative;
 }
 .live-label {
   display: flex; align-items: center; gap: 8px;
-  padding: 11px 22px;
-  background: rgba(0,0,0,0.25);
+  padding: 11px 52px 11px 24px;
+  background: linear-gradient(180deg, #2c5191 0%, #21437b 100%);
   color: #fff;
   font-weight: 700;
   font-size: 13px;
@@ -217,6 +218,8 @@ ul { list-style: none; }
   flex-shrink: 0;
   z-index: 2;
   position: relative;
+  -webkit-mask: radial-gradient(circle 40px at top right, transparent 39px, #000 40px);
+  mask: radial-gradient(circle 40px at top right, transparent 39px, #000 40px);
 }
 .live-label__icon {
   width: 22px; height: 22px;
@@ -1685,7 +1688,11 @@ body.modal-open { overflow: hidden; }
   }
   .hero__mobile-cta:hover { background: #d9a945; }
 
-  .live-label { padding: 8px 14px; font-size: 11px; }
+  .live-label {
+    padding: 8px 38px 8px 14px; font-size: 11px;
+    -webkit-mask: radial-gradient(circle 30px at top right, transparent 29px, #000 30px);
+    mask: radial-gradient(circle 30px at top right, transparent 29px, #000 30px);
+  }
   .live-item { font-size: 12px; }
   .live-marquee { animation-duration: 45s; }
 
