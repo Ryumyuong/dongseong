@@ -2217,9 +2217,9 @@ body.modal-open { overflow: hidden; }
     top: auto;
     right: auto;
     bottom: auto;
-    text-align: right;
+    text-align: left;
   }
-  .page-index .hero__lawyer-inner { display: inline-block; text-align: right; }
+  .page-index .hero__lawyer-inner { display: inline-block; text-align: left; }
   .page-index .hero__lawyer-role { font-size: 11.5px; margin-bottom: 6px; }
   .page-index .hero__lawyer-name { font-size: 19px; padding-top: 8px; }
 
