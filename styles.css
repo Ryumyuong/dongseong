@@ -354,18 +354,21 @@ ul { list-style: none; }
 .hero__lawyer-inner { display: inline-block; text-align: right; }
 .hero__lawyer-role {
   display: block;
-  font-size: 15px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
   color: rgba(255,255,255,0.9);
   letter-spacing: 0.02em;
   margin-bottom: 14px;
 }
 .hero__lawyer-name {
   display: block;
-  font-size: 30px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 30.86px;
   font-weight: 700;
   color: #fff;
   padding-top: 14px;
-  border-top: 1.5px solid rgba(255,255,255,0.55);
+  border-top: 1px solid #E3E0DE;
 }
 
 /* 데스크톱/모바일 전용 줄바꿈 */
