@@ -935,6 +935,8 @@ ul { list-style: none; }
 }
 #process .process__panel .process__sub { margin-top: 0; }
 #process .process__panel .process { margin-top: 40px; }
+#process .process__panel > .container { max-width: 1360px; }
+#process .process__item { padding-left: 28px; padding-right: 28px; }
 
 /* ============== PROCESS ============== */
 .process__sub {
