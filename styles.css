@@ -1149,7 +1149,7 @@ ul { list-style: none; }
 
 /* ============== CASE BAND (이미지 슬라이더) ============== */
 .case-band {
-  max-width: 1296px;
+  max-width: 1500px;
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -1201,7 +1201,7 @@ ul { list-style: none; }
 }
 .case-slider__track:active { cursor: grabbing; }
 .case-slide {
-  flex: 0 0 min(680px, calc(100% - 240px));  /* 최대 680px, 다음 카드 ~240px peek */
+  flex: 0 0 min(820px, calc(100% - 240px));  /* 최대 820px, 다음 카드 ~240px peek */
   position: relative;
   border-radius: 18px;
   overflow: hidden;
