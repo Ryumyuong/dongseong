@@ -993,7 +993,16 @@ ul { list-style: none; }
 .cases-cta-bottom { display: none; margin-top: 36px; }
 
 /* #numbers 섹션 타이틀과 설명 간격 축소 */
-#numbers .section__title { margin-bottom: 8px; }
+#numbers .section__title { margin-bottom: 8px; font-size: 41px; color: #0C1E3C; }
+#numbers .section__title .accent-navy { font-weight: 800; color: #0C1E3C; }
+#numbers .eyebrow--gold-soft { font-size: 16px; font-weight: 700; color: #D4A843; }
+#numbers .section__desc { font-size: 20px; font-weight: 500; color: #626262; }
+#numbers .cases-cta {
+  font-size: 20px;
+  font-weight: 700;
+  background: #0C1E3C;
+  border-radius: 100px;
+}
 
 .cases-viewport {
   /* 5 cards × 280 + 4 gaps × 24 = 1496px */
@@ -1050,9 +1059,9 @@ ul { list-style: none; }
   padding: 7px 14px;
   background: #3BC91B;
   color: #fff;
+  font-size: 17.02px;
+  font-weight: 500;
   border-radius: 5.1px;
-  font-size: 13px;
-  font-weight: 700;
   margin-bottom: 28px;
   align-self: flex-start;
 }
@@ -1064,22 +1073,22 @@ ul { list-style: none; }
   font-size: 10px; font-weight: 800;
 }
 .success-card__court {
-  font-size: clamp(12px, 1.4vw, 14px);
+  font-size: 17.02px;
   color: #b3bccd;
   margin-bottom: 6px;
   font-weight: 500;
   transition: color 1s ease;
 }
 .success-card__rate-label {
-  font-size: clamp(17px, 2.2vw, 22px);
-  font-weight: 700;
+  font-size: 21.93px;
+  font-weight: 800;
   color: var(--text);
   margin-bottom: 4px;
   transition: color 1s ease;
 }
 .success-card__rate {
   font-family: 'KoPub Batang', 'KoPubBatang', serif;
-  font-size: clamp(44px, 5.5vw, 64px);
+  font-size: 75.27px;
   font-weight: 700;
   color: var(--navy-800);
   line-height: 1;
@@ -1091,8 +1100,8 @@ ul { list-style: none; }
 }
 .success-card__rate span {
   font-family: 'KoPub Batang', 'KoPubBatang', serif;
-  font-size: 32px;
-  font-weight: 500;
+  font-size: 42.54px;
+  font-weight: 400;
   margin-left: 4px;
 }
 .success-card__details {
@@ -1122,7 +1131,7 @@ ul { list-style: none; }
 }
 .success-card.is-center { color: #fff; }
 .success-card--highlight .success-card__court,
-.success-card.is-center .success-card__court { color: rgba(255,255,255,0.55); }
+.success-card.is-center .success-card__court { color: rgba(255,255,255,0.5); }
 .success-card--highlight .success-card__rate-label,
 .success-card.is-center .success-card__rate-label { color: #fff; }
 .success-card--highlight .success-card__rate,
