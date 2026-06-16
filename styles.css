@@ -899,15 +899,30 @@ ul { list-style: none; }
 
 /* ============== SECTION: 진행절차 (#process) ============== */
 #process.section--light { background: #0F1F3B; color: #fff; }
-#process .section__title,
-#process .process__no { color: #fff; }
-#process .eyebrow--gold-soft { color: #E4CFA0; }
+#process .eyebrow--gold-soft { font-size: 16px; font-weight: 700; color: #D4A843; }
+#process .section__title {
+  font-size: clamp(30px, 4vw, 44px);
+  font-weight: 700;
+  color: #fff;
+}
+#process .process__no {
+  font-size: 24.04px;
+  font-weight: 700;
+  color: #F6F8FB;
+}
 #process .process__sub {
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.08);
-  color: rgba(255,255,255,0.85);
+  font-size: 20px;
+  font-weight: 500;
+  color: #F6F8FB;
 }
-#process .process__item p { color: rgba(255,255,255,0.7); }
+#process .process__sub strong { font-weight: 700; }
+#process .process__item p {
+  font-size: 15.14px;
+  font-weight: 500;
+  color: rgba(246,248,251,0.7);
+}
 #process .process__item + .process__item::before { background: rgba(255,255,255,0.12); }
 
 /* ============== PROCESS ============== */
