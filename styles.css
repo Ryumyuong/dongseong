@@ -2402,3 +2402,37 @@ body.modal-open { overflow: hidden; }
   padding: 9px 16px;
   cursor: pointer;
 }
+
+/* 면책 이력 있어도 가능 섹션 */
+.rehab-feat__title { font-size: 40px; font-weight: 800; color: #0C1E3C; margin-bottom: 12px; }
+.rehab-feat__sub { font-size: 16px; color: #718096; margin-bottom: 70px; }
+.rehab-feat__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.rehab-feat__item {
+  padding: 0 40px;
+  text-align: center;
+  position: relative;
+}
+.rehab-feat__item + .rehab-feat__item::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 50%;
+  transform: translateY(-50%);
+  width: 1px; height: 135px;
+  background: rgba(0,0,0,0.2);
+}
+.rehab-feat__icon {
+  width: 76px; height: 76px;
+  object-fit: contain;
+  margin: 0 auto 30px;
+  display: block;
+}
+.rehab-feat__name { font-size: 20px; font-weight: 700; color: #0C1E3C; margin-bottom: 18px; }
+.rehab-feat__desc { font-size: 17px; color: #4A5568; line-height: 1.7; word-break: keep-all; }
+@media (max-width: 900px) {
+  .rehab-feat__grid { grid-template-columns: 1fr; gap: 48px; }
+  .rehab-feat__item + .rehab-feat__item::before { display: none; }
+  .rehab-feat__title { font-size: clamp(28px, 7vw, 40px); }
+}
