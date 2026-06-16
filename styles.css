@@ -634,17 +634,18 @@ ul { list-style: none; }
 /* 인용구 */
 .rep__quote {
   position: relative;
-  max-width: 1000px;
+  width: 100%;
   margin: 0 auto 80px;
-  padding: 0 70px;
+  padding: 0;
   text-align: center;
 }
 .rep__quote p {
+  max-width: 760px;
+  margin: 0 auto;
   font-size: 25.63px;
   line-height: 1.6;
   font-weight: 600;
   color: #0C1E3C;
-  margin: 0;
 }
 .rep__hl {
   background: #2455A6;
