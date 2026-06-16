@@ -2542,6 +2542,30 @@ body.modal-open { overflow: hidden; }
   cursor: pointer;
 }
 
+/* 면책 페이지 — 펼친 모바일에서 상담폼 풀폭 + 글자 확대 + 헤더 중앙정렬 */
+@media (max-width: 900px) {
+  .page-rehab .hero__copy { max-width: 100%; }
+  .page-rehab .hero__lawyer { display: none; }
+  .page-rehab .rehab-form {
+    max-width: 100%;
+    padding: 30px 30px;
+    gap: 18px;
+    border-radius: 18px;
+  }
+  .page-rehab .rehab-form__head { align-items: center; text-align: center; }
+  .page-rehab .rehab-form__title { font-size: 22px; justify-content: center; }
+  .page-rehab .rehab-form__title-icon { width: 22px; height: 22px; }
+  .page-rehab .rehab-form__sub { font-size: 14px; }
+  .page-rehab .rehab-form__field > span { font-size: 14px; text-align: left; }
+  .page-rehab .rehab-form__field input,
+  .page-rehab .rehab-form__field textarea { font-size: 15px; padding: 13px 15px; border-radius: 10px; }
+  .page-rehab .rehab-form__field textarea { min-height: 90px; }
+  .page-rehab .rehab-form__agree { font-size: 14px; gap: 8px; }
+  .page-rehab .rehab-form__agree input { width: 18px; height: 18px; border-radius: 3px; }
+  .page-rehab .rehab-form__agree input:checked::after { left: 6px; top: 2px; width: 5px; height: 10px; border-width: 0 2px 2px 0; }
+  .page-rehab .rehab-form__submit { font-size: 16px; padding: 13px 28px; border-radius: 10px; }
+}
+
 /* 면책 이력 있어도 가능 섹션 */
 .rehab-feat .container { max-width: 1560px; }
 .rehab-feat__title { font-size: 40px; font-weight: 800; color: #0C1E3C; margin-bottom: 12px; }
