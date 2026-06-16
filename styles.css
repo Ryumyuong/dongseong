@@ -332,12 +332,12 @@ ul { list-style: none; }
 .hero__cta {
   display: inline-flex;
   margin-top: 42px;
-  padding: 16px 40px;
-  border-radius: 10px;
+  padding: 13px 64px;
+  border-radius: 9.53px;
   font-size: 18px;
   font-weight: 700;
   color: #0C1E3C;
-  background: linear-gradient(180deg, #F1C76C 0%, #E2A83D 100%);
+  background: linear-gradient(180deg, #D4A843 0%, #F0C060 100%);
   box-shadow: 0 14px 28px rgba(226,168,61,0.32);
 }
 .hero__cta:hover { filter: brightness(1.05); }
