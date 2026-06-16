@@ -591,11 +591,14 @@ ul { list-style: none; }
 }
 
 /* ============== SECTION: 채무 문제 (#about) ============== */
-#about.section--light { background: #FEFCF6; }
-#about .divider-line { background: #000; }
-#about .accent-blue { color: #0C1E3C; }
-#about .section__lead { font-size: clamp(17px, 2.4vw, 24px); }
-#about .section__desc { font-size: clamp(13px, 1.7vw, 17px); }
+#about.section--light { background: rgba(243,244,245,0.8); }
+#about .eyebrow--gold-soft { font-size: 15px; font-weight: 700; color: #8A681B; }
+#about .section__title { font-size: 40px; font-weight: 600; color: #0C1E3C; }
+#about .section__title .accent-blue { font-weight: 800; color: #0C1E3C; }
+#about .divider-line { background: #000; width: 0.83px; }
+#about .section__lead { font-size: 32.94px; font-weight: 600; color: #323232; }
+#about .section__desc { font-size: 23px; color: rgba(0,0,0,0.6); }
+#about .section__desc strong { font-weight: 700; color: rgba(0,0,0,0.6); }
 
 /* ============== PILL GROUP ============== */
 .pill-group {
@@ -608,11 +611,11 @@ ul { list-style: none; }
 .pill {
   padding: 14px 36px;
   background: #fff;
-  border: 1px solid #8A681B52;
-  border-radius: 999px;
-  font-size: 15px;
+  border: 0.83px solid rgba(138,104,27,0.32);
+  border-radius: 0.83px;
+  font-size: 18.32px;
   font-weight: 500;
-  color: var(--text);
+  color: #545454;
   min-width: 360px;
   text-align: center;
 }
