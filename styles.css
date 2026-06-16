@@ -651,7 +651,7 @@ ul { list-style: none; }
   color: #fff;
   font-weight: 900;
   padding: 2px 12px;
-  border-radius: 3px;
+  border-radius: 0;
 }
 .rep__qmark {
   position: absolute;
