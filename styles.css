@@ -659,7 +659,7 @@ ul { list-style: none; }
   font-family: 'KoPubBatang_Pro', 'KoPub Batang Pro', 'KoPubBatang', serif;
   font-size: 86.11px;
   font-weight: 700;
-  color: #313742;
+  color: rgba(49,55,66,0.5);
   line-height: 1;
 }
 .rep__qmark--open { left: 0; }
