@@ -321,7 +321,7 @@ ul { list-style: none; }
   letter-spacing: -0.02em;
   margin-bottom: 24px;
 }
-.hero__title-soft { font-weight: 500; }
+.hero__title-soft { font-weight: 400; }
 .hero__title-gold { color: #D4A843; }
 .hero__desc {
   color: rgba(255,255,255,0.75);
