@@ -781,10 +781,15 @@ ul { list-style: none; }
   gap: 80px;
   align-items: center;
 }
+.stats-band .eyebrow--gold-soft {
+  font-size: 14px;
+  font-weight: 700;
+  color: #D4A843;
+}
 .stats-band__copy h2 {
-  font-size: clamp(24px, 2.6vw, 32px);
-  font-weight: 400;
-  line-height: 1.55;
+  font-size: clamp(32px, 4.4vw, 50px);
+  font-weight: 700;
+  line-height: 1.3;
   letter-spacing: -0.02em;
   margin-bottom: 22px;
   color: #fff;
@@ -793,14 +798,23 @@ ul { list-style: none; }
   font-style: normal;
   font-weight: 700;
 }
+.stats-band__desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.7);
+  margin: 0 0 30px;
+}
 .signature {
-  font-style: italic;
-  color: rgba(255,255,255,0.45);
-  font-size: 22px;
-  font-weight: 300;
+  font-style: normal;
+  color: rgba(255,255,255,0.2);
+  font-size: 45.17px;
+  font-weight: 400;
   letter-spacing: 0.02em;
   font-family: 'Times New Roman', serif;
+  margin: 0;
 }
+.signature em { font-style: italic; }
 .stats-band__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -814,14 +828,22 @@ ul { list-style: none; }
   background: rgba(255,255,255,0.12);
 }
 .stats-band__grid::before {
-  /* vertical line */
-  left: 50%; top: 10%; bottom: 10%;
-  width: 1px;
+  /* 세로선 — 중간 비움 */
+  left: 50%; top: 8%; bottom: 8%;
+  width: 0.87px;
+  background: linear-gradient(to bottom,
+    rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.2) 38%,
+    rgba(255,255,255,0) 38%, rgba(255,255,255,0) 62%,
+    rgba(255,255,255,0.2) 62%, rgba(255,255,255,0.2) 100%);
 }
 .stats-band__grid::after {
-  /* horizontal line */
-  top: 50%; left: 8%; right: 8%;
-  height: 1px;
+  /* 가로선 — 중간 비움 */
+  top: 50%; left: 6%; right: 6%;
+  height: 0.87px;
+  background: linear-gradient(to right,
+    rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.2) 38%,
+    rgba(255,255,255,0) 38%, rgba(255,255,255,0) 62%,
+    rgba(255,255,255,0.2) 62%, rgba(255,255,255,0.2) 100%);
 }
 .big-stat {
   padding: 40px 30px;
@@ -835,8 +857,8 @@ ul { list-style: none; }
 }
 .big-stat__num {
   font-family: 'KoPub Batang', 'KoPubBatang', serif;
-  font-size: clamp(48px, 6.5vw, 72px);
-  font-weight: 500;
+  font-size: 45.67px;
+  font-weight: 700;
   color: #fff;
   line-height: 1;
   margin-bottom: 14px;
@@ -844,15 +866,24 @@ ul { list-style: none; }
 }
 .big-stat__num span {
   font-family: 'KoPub Batang', 'KoPubBatang', serif;
-  font-size: clamp(28px, 3.8vw, 40px);
-  font-weight: 300;
-  color: rgba(255,255,255,0.7);
+  font-size: 30px;
+  font-weight: 700;
+  color: #fff;
   margin-left: 2px;
 }
 .big-stat__label {
-  font-size: clamp(12px, 1.4vw, 14px);
+  font-size: 15.7px;
+  font-weight: 700;
   color: #E4CFA0;
   letter-spacing: 0.02em;
+}
+.big-stat__sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 10.47px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.7);
+  margin: 8px 0 0;
 }
 
 /* ============== SECTION: 진행절차 (#process) ============== */
