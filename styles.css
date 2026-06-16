@@ -2593,7 +2593,7 @@ body.modal-open { overflow: hidden; }
     display: block;
     position: static;
     text-align: left;
-    margin: 38px 0 22px;
+    margin: 100px 0 22px;
   }
   .page-rehab .hero__lawyer-inner { display: inline-block; text-align: left; }
   .page-rehab .hero__lawyer-role { font-size: 13px; margin-bottom: 10px; }
