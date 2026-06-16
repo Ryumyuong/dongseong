@@ -2504,18 +2504,18 @@ body.modal-open { overflow: hidden; }
 .page-rehab .rehab-form__agree {
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-size: 8.22px;
+  gap: 8px;
+  font-size: 14px;
   font-weight: 500;
   color: #5A6478;
   cursor: pointer;
 }
 .page-rehab .rehab-form__agree input {
-  width: 11px; height: 11px;
+  width: 18px; height: 18px;
   appearance: none;
   -webkit-appearance: none;
-  border: 0.37px solid #5A6478;
-  border-radius: 1.5px;
+  border: 1px solid #5A6478;
+  border-radius: 3px;
   background: transparent;
   cursor: pointer;
   position: relative;
@@ -2525,20 +2525,20 @@ body.modal-open { overflow: hidden; }
 .page-rehab .rehab-form__agree input:checked::after {
   content: "";
   position: absolute;
-  left: 3.5px; top: 1px;
-  width: 3px; height: 6px;
+  left: 6px; top: 2px;
+  width: 5px; height: 10px;
   border: solid #fff;
-  border-width: 0 1.5px 1.5px 0;
+  border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
 .page-rehab .rehab-form__submit {
   flex-shrink: 0;
   background: #0C1E3C;
   color: #F9F8F8;
-  border-radius: 6.85px;
-  font-size: 10.97px;
+  border-radius: 10px;
+  font-size: 16px;
   font-weight: 700;
-  padding: 9px 16px;
+  padding: 14px 28px;
   cursor: pointer;
 }
 
