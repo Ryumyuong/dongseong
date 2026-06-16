@@ -928,9 +928,6 @@ ul { list-style: none; }
   position: relative;
   margin-top: 44px;
   padding: 50px 0 70px;
-  border-top: 1px solid #2E6BD6;
-  border-left: 1px solid rgba(46,107,214,0.45);
-  border-right: 1px solid rgba(46,107,214,0.45);
   background:
     linear-gradient(rgba(15,31,60,0.55), rgba(15,31,60,0.55)),
     url('./images/process-bg.png') center/cover no-repeat;
