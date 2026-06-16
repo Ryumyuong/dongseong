@@ -1591,14 +1591,23 @@ ul { list-style: none; }
 
 /* ============== FINAL CTA ============== */
 .final-cta { background: #081934; padding: 130px 0; }
+.final-cta .eyebrow--gold-soft { font-size: 16px; font-weight: 700; color: #D4A843; }
+.final-cta__desc {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.75);
+  margin: 0 0 64px;
+}
 .final-cta__title {
-  font-size: clamp(28px, 3.4vw, 42px);
+  font-size: 41px;
   font-weight: 700;
   line-height: 1.35;
-  margin-bottom: 70px;
+  margin-bottom: 20px;
   letter-spacing: -0.02em;
   color: #fff;
 }
+.final-cta__title strong { font-weight: 900; }
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1610,7 +1619,7 @@ ul { list-style: none; }
 .contact-card {
   background: #192844;
   border: none;
-  border-radius: 14px;
+  border-radius: 10px;
   padding: 32px 30px 0;
   transition: all .25s;
   display: flex; flex-direction: column;
@@ -1630,10 +1639,9 @@ ul { list-style: none; }
   display: block; object-fit: contain;
 }
 .contact-card__title {
-  font-size: 23px;
-  font-weight: 700;
+  font-size: 22px;
+  font-weight: 800;
   letter-spacing: -0.01em;
-  flex: 1;
 }
 .contact-card__badge {
   display: inline-flex;
@@ -1641,20 +1649,25 @@ ul { list-style: none; }
   justify-content: center;
   padding: 4px 11px;
   border-radius: 999px;
-  font-size: 11px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 10.61px;
   font-weight: 700;
   letter-spacing: 0.02em;
   line-height: 1;
+  color: #fff;
 }
-.contact-card__badge--blue { background: #2563eb; color: #fff; }
-.contact-card__badge--green { background: #22c55e; color: #fff; }
+.contact-card__badge--kakao { background: #4E64D5; color: #fff; }
+.contact-card__badge--green { background: #1DB954; color: #fff; }
+.contact-card__badge--live { background: #5492EA; color: #fff; }
+.contact-card__badge--blue { background: #4E64D5; color: #fff; }
 
 .contact-card__list {
   list-style: none;
   padding: 0; margin: 0 0 28px;
 }
 .contact-card__list li {
-  font-size: 14px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 12.38px;
   color: #fff;
   line-height: 1.9;
   padding-left: 12px;
@@ -1673,8 +1686,8 @@ ul { list-style: none; }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 700;
   color: #fff;
   margin-top: auto;
 }
