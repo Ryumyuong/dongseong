@@ -1747,28 +1747,29 @@ ul { list-style: none; }
 .footer__links {
   display: flex; align-items: center; gap: 6px;
   margin-bottom: 8px;
-  font-size: 12px;
-  color: var(--text);
+  font-size: 13px;
+  color: #0E0E0E;
   font-weight: 600;
 }
 .footer__links a {
-  color: var(--text);
+  color: #0E0E0E;
   transition: color .2s;
 }
 .footer__links a:hover { color: var(--blue-500); }
 .footer__links span { color: #c7ccd6; }
-.footer__info-line { margin: 0; color: #5a6478; }
-.footer__info-line strong { color: var(--text); font-weight: 600; }
+.footer__info-line { margin: 0; font-size: 12px; color: rgba(34,34,34,0.86); }
+.footer__info-line strong { color: rgba(34,34,34,0.86); font-weight: 700; }
 .footer__disclaimer {
   margin-top: 14px;
-  font-size: 10.5px;
-  color: #8b94a8;
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(34,34,34,0.47);
   line-height: 1.7;
 }
 .footer__copy {
   margin-top: 10px;
-  font-size: 11px;
-  color: #8b94a8;
+  font-size: 12px;
+  color: #3F4040;
 }
 
 
