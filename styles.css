@@ -162,6 +162,7 @@ ul { list-style: none; }
   top: 0;
   z-index: 100;
 }
+.header__inner.container { max-width: 1400px; }
 .header__inner {
   display: flex;
   align-items: center;
@@ -173,9 +174,9 @@ ul { list-style: none; }
 
 .nav { display: flex; gap: 40px; }
 .nav a {
-  font-size: 15px;
-  color: var(--text);
-  font-weight: 500;
+  font-size: 18px;
+  color: rgba(0,0,0,0.8);
+  font-weight: 700;
   transition: color .2s;
 }
 .nav a:hover { color: var(--blue-500); }
