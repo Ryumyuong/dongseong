@@ -2697,12 +2697,13 @@ body.modal-open { overflow: hidden; }
 /* ============== 접은 모바일(≤500px) — 전체 폰트 축소 ============== */
 @media (max-width: 500px) {
   /* 히어로 */
-  .hero__title { font-size: 28px; }
-  .page-rehab .hero__title { font-size: 30px; }
+  .hero__title { font-size: 24px; }
+  .page-rehab .hero__title { font-size: 28px; }
   .page-success .hero__title { font-size: 27px; }
   .hero__desc, .page-rehab .hero__desc { font-size: 14px; }
   .page-success .hero__desc { font-size: 15px; }
   .page-success .hero__desc-lead { font-size: 14px; }
+  .hero__mobile-cta { padding: 13px 30px; font-size: 16px; }
 
   /* 공통 타이틀/채무문제 */
   .section__title { font-size: 26px; }
