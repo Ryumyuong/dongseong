@@ -595,7 +595,7 @@ ul { list-style: none; }
 #about .eyebrow--gold-soft { font-size: 15px; font-weight: 700; color: #8A681B; }
 #about .section__title { font-size: 40px; font-weight: 600; color: #0C1E3C; }
 #about .section__title .accent-blue { font-weight: 800; color: #0C1E3C; }
-#about .divider-line { background: #000; width: 0.83px; }
+#about .divider-line { background: #000; width: 0.83px; height: 32px; }
 #about .section__lead { font-size: 32.94px; font-weight: 600; color: #323232; }
 #about .section__desc { font-size: 23px; color: rgba(0,0,0,0.6); }
 #about .section__desc strong { font-weight: 700; color: rgba(0,0,0,0.6); }
