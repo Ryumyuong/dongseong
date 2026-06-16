@@ -785,6 +785,7 @@ ul { list-style: none; }
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 40px 0;
 }
 .stats-band__top { display: block; }
 .stats-band .eyebrow--gold-soft {
