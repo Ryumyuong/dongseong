@@ -2290,6 +2290,31 @@ body.modal-open { overflow: hidden; }
   .qualify__cta .btn { width: 80%; max-width: 340px; }
 }
 
+/* ============== 대표성공사례 페이지 히어로 (중앙 정렬) ============== */
+.page-success .hero { padding: 130px 0; }
+.page-success .hero__overlay { background: rgba(8,14,28,0.55); }
+.page-success .hero__inner { display: flex; justify-content: center; }
+.page-success .hero__copy {
+  max-width: 920px;
+  margin: 0 auto;
+  padding-top: 0;
+  text-align: center;
+}
+.page-success .hero__title {
+  font-size: 40px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 22px;
+}
+.page-success .hero__desc {
+  font-size: 23px;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.65;
+  margin: 0;
+}
+.page-success .hero__desc-lead { display: block; font-size: 19px; margin-bottom: 6px; }
+.page-success .hero__desc strong { font-weight: 700; color: #fff; }
+
 /* ============== 면책 후 재회생 페이지 히어로 ============== */
 .page-rehab .hero__copy { max-width: 640px; }
 .page-rehab .hero__lawyer {
