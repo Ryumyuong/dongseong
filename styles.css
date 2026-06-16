@@ -377,6 +377,7 @@ ul { list-style: none; }
 /* 데스크톱/모바일 전용 줄바꿈 */
 .br-m { display: none; }
 .br-d { display: inline; }
+.br-s { display: none; }
 
 /* ============== MOBILE BOTTOM BAR (default hidden) ============== */
 .mobile-bar { display: none; }
@@ -2764,4 +2765,7 @@ body.modal-open { overflow: hidden; }
 
   /* 상단 메뉴 */
   .nav a { font-size: 12px; }
+
+  /* 접은 모바일 전용 줄바꿈 */
+  .br-s { display: inline; }
 }
