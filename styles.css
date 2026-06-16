@@ -1161,14 +1161,18 @@ ul { list-style: none; }
   margin-bottom: 56px;
 }
 .case-band .eyebrow {
-  font-size: 15px;
+  font-size: 16px;
   margin-bottom: 22px;
 }
+.case-band .eyebrow--gold-soft { display: block; text-align: left; color: #D4A843; }
 .case-band .section__title {
-  font-size: clamp(30px, 3.6vw, 46px);
+  font-size: 41px;
+  font-weight: 700;
   line-height: 1.35;
+  color: #0C1E3C;
 }
 .case-band .section__title .accent-blue {
+  font-weight: 800;
   color: #0C1E3C;
 }
 .case-band__copy .section__title { text-align: left; }
