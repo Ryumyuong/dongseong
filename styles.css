@@ -2317,7 +2317,7 @@ body.modal-open { overflow: hidden; }
 
 /* 대표 사례 리스트 (대표성공사례 전용) */
 .scase__list {
-  max-width: 920px;
+  max-width: 840px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
