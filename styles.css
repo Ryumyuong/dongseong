@@ -2689,3 +2689,79 @@ body.modal-open { overflow: hidden; }
   .rcase-card { text-align: center; }
   .rcase-card__top { justify-content: center; }
 }
+
+/* ============== 접은 모바일(≤500px) — 전체 폰트 축소 ============== */
+@media (max-width: 500px) {
+  /* 히어로 */
+  .hero__title { font-size: 28px; }
+  .page-rehab .hero__title { font-size: 30px; }
+  .page-success .hero__title { font-size: 27px; }
+  .hero__desc, .page-rehab .hero__desc { font-size: 14px; }
+  .page-success .hero__desc { font-size: 15px; }
+  .page-success .hero__desc-lead { font-size: 14px; }
+
+  /* 공통 타이틀/채무문제 */
+  .section__title { font-size: 26px; }
+  #about .section__title { font-size: 26px; }
+  #about .section__lead { font-size: 21px; }
+  #about .section__desc { font-size: 15px; }
+  .pill { font-size: 15px; }
+
+  /* 신뢰지표 */
+  .stats-band__copy h2 { font-size: 27px; }
+  .stats-band__desc { font-size: 14px; }
+  .signature { font-size: 30px; }
+  .big-stat__num, .big-stat__num span { font-size: 34px; }
+  .big-stat__num--tight { letter-spacing: -1px; }
+  .big-stat__label { font-size: 14px; }
+  .big-stat__sub { font-size: 11px; }
+
+  /* 프로세스 */
+  #process .section__title { font-size: 26px; }
+  #process .process__sub { font-size: 14px; }
+  #process .process__no { font-size: 17px; }
+  #process .process__item p { font-size: 13px; }
+
+  /* 숫자 증명 */
+  #numbers .section__title { font-size: 26px; }
+  #numbers .section__desc { font-size: 15px; }
+  .success-card__rate { font-size: 52px; }
+  .success-card__rate span { font-size: 30px; }
+  .success-card__rate-label { font-size: 18px; }
+  .success-card__badge { font-size: 14px; }
+  .success-card__court { font-size: 14px; }
+
+  /* 사례밴드 / 자격 / FAQ */
+  .case-band .section__title { font-size: 26px; }
+  .qualify__sub { font-size: 21px; }
+  .qualify__title { font-size: 26px; }
+  .check-list li { font-size: 15px; }
+  .faq summary { font-size: 16px; }
+  .faq p { font-size: 13px; }
+
+  /* 최종 CTA / 신청폼 / 푸터 */
+  .final-cta__title { font-size: 24px; }
+  .final-cta__desc { font-size: 14px; }
+  .contact-card__title { font-size: 19px; }
+  .contact-card__list li { font-size: 13px; }
+  .apply__title { font-size: 18px; }
+  .apply__phone { font-size: 28px; }
+  .hform__title { font-size: 18px; }
+  .hform__phone { font-size: 28px; }
+
+  /* 면책페이지 특징/사례 */
+  .rehab-feat__title { font-size: 26px; }
+  .rehab-feat__name { font-size: 18px; }
+  .rehab-feat__desc { font-size: 14px; }
+  .rcase__title, .scase__title { font-size: 26px; }
+  .rcase-card__name { font-size: 21px; }
+  .rcase-card__text { font-size: 14px; }
+  .scase-card__title { font-size: 21px; }
+  .scase-card__quote { font-size: 46px; }
+  .scase-card__text { font-size: 15px; }
+  .scase-cta__title { font-size: 23px; }
+  .scase-cta__desc { font-size: 14px; }
+
+  /* 상단 메뉴 */
+  .nav a { font-size: 12px; }
+}
