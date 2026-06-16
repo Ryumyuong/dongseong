@@ -2210,6 +2210,7 @@ body.modal-open { overflow: hidden; }
   .process__item { border-bottom: 1px solid rgba(246, 248, 251, 0.2); }
   .cases-viewport { max-width: 896px; /* 3 × 280 + 2 × 28 */ }
   .cases-track { gap: 28px; }
+  .success-card { flex: 0 0 280px; }
   .case-band {
     padding-left: 24px;
     padding-right: 24px;
@@ -2412,11 +2413,11 @@ body.modal-open { overflow: hidden; }
 }
 .scase-cta__btn:hover { background: #16294d; }
 @media (max-width: 760px) {
-  .scase-card { padding: 28px 24px; }
-  .scase-card__head { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .scase-card { padding: 28px 24px; text-align: center; }
+  .scase-card__head { flex-direction: column; align-items: center; gap: 10px; }
   .scase-card__title { font-size: clamp(22px, 6vw, 32px); }
   .scase-card__text { font-size: 16px; }
-  .scase-cta { flex-direction: column; align-items: flex-start; text-align: left; padding: 32px 28px; }
+  .scase-cta { flex-direction: column; align-items: center; text-align: center; padding: 32px 28px; }
   .scase-cta__title { font-size: clamp(22px, 6vw, 33px); }
 }
 
@@ -2654,4 +2655,6 @@ body.modal-open { overflow: hidden; }
 @media (max-width: 900px) {
   .rcase__grid { grid-template-columns: 1fr; max-width: 480px; }
   .rcase__title { font-size: clamp(28px, 7vw, 40px); }
+  .rcase-card { text-align: center; }
+  .rcase-card__top { justify-content: center; }
 }
