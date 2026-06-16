@@ -2121,9 +2121,19 @@ body.modal-open { overflow: hidden; }
   .pc-floats { display: none; }
   .section { padding: 100px 0; }
 
-  /* Header — 로고만 표시 */
-  .header__inner { height: 64px; justify-content: flex-start; }
-  .nav { display: none; }
+  /* Header — 로고 + 메뉴(2번째 줄) */
+  .header__inner { height: auto; flex-wrap: wrap; justify-content: center; padding-top: 12px; padding-bottom: 10px; gap: 8px 0; }
+  .nav {
+    display: flex;
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 18px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 2px;
+  }
+  .nav a { font-size: 14px; white-space: nowrap; }
   .header__cta { display: none; }
   .logo__img { height: 30px; }
 
@@ -2267,9 +2277,10 @@ body.modal-open { overflow: hidden; }
   .hform__field textarea { min-height: 140px; }
 }
 @media (max-width: 600px) {
-  .header__inner { height: 60px; }
+  .header__inner { height: auto; }
   .header__cta .phone { display: none; }
-  .nav { display: none; }
+  .nav { gap: 14px; justify-content: flex-start; }
+  .nav a { font-size: 13px; }
   .hero { padding: 130px 0 150px; }
   .hero__stats { grid-template-columns: 1fr; gap: 16px; padding-top: 24px; }
   .process, .case-band__cards { grid-template-columns: 1fr; }
