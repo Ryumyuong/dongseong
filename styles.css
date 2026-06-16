@@ -1733,6 +1733,7 @@ ul { list-style: none; }
   line-height: 1.85;
   border-top: 2px solid #CFCFCF;
 }
+.footer .container.footer__inner { max-width: 1400px; }
 .footer__inner {
   display: grid;
   grid-template-columns: minmax(180px, 240px) 1fr;
