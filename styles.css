@@ -2407,7 +2407,7 @@ body.modal-open { overflow: hidden; }
   color: #fff;
   background: #0C1E3C;
   border-radius: 4px;
-  padding: 10px 40px;
+  padding: 10px 60px;
   white-space: nowrap;
   transition: background .2s;
 }
