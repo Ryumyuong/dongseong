@@ -904,6 +904,7 @@ ul { list-style: none; }
   font-size: clamp(30px, 4vw, 44px);
   font-weight: 700;
   color: #fff;
+  margin-bottom: 0;
 }
 #process .process__no {
   font-size: 24.04px;
