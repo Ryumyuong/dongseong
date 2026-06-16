@@ -764,7 +764,7 @@ ul { list-style: none; }
   position: relative;
   background: #192D54;
   overflow: hidden;
-  padding: 150px 0;
+  padding: 0;
 }
 .stats-band__bg {
   position: absolute; inset: 0;
