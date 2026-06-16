@@ -898,7 +898,7 @@ ul { list-style: none; }
 }
 
 /* ============== SECTION: 진행절차 (#process) ============== */
-#process.section--light { background: #0F1F3B; color: #fff; padding-bottom: 70px; }
+#process.section--light { background: #0F1F3B; color: #fff; padding-top: 70px; padding-bottom: 70px; }
 #process .eyebrow--gold-soft { font-size: 16px; font-weight: 700; color: #D4A843; }
 #process .section__title {
   font-size: clamp(30px, 4vw, 44px);
