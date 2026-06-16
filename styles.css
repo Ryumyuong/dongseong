@@ -2863,7 +2863,7 @@ body.modal-open { overflow: hidden; }
   .page-index .hero__inner { padding-left: 40px; padding-right: 40px; }
   .page-index .hero__tag { font-size: 18px; font-weight: 500; }
   .page-index .hero__title { font-size: 33.46px; }
-  .page-index .hero__stats { align-items: center; }
+  .page-index .hero__stats { align-items: flex-start; }
   .page-index .hero__stats .stat { text-align: center; }
   .page-index .stat__num { font-size: 28px; }
   .page-index .stat__label { font-size: 9.88px; }
