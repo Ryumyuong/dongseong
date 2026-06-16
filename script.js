@@ -47,7 +47,17 @@ window.addEventListener('scroll', () => {
     const gap = parseFloat(styles.columnGap || styles.gap || '0');
     return first.getBoundingClientRect().width + gap;
   }
-  function baseTransform() { return isShifted() ? -getStep() : 0; }
+  // 활성(center) 카드를 뷰포트 정중앙에 정렬 — 화면이 트랙보다 좁아도 중앙 유지
+  function baseTransform() {
+    const first = track.firstElementChild;
+    if (!first) return 0;
+    const vp = track.parentElement.getBoundingClientRect().width;
+    const cardW = first.getBoundingClientRect().width;
+    const step = getStep();
+    const visible = getVisibleCount();
+    const centerIdx = Math.floor(visible / 2) + (isShifted() ? 1 : 0);
+    return vp / 2 - cardW / 2 - centerIdx * step;
+  }
 
   function applyClassesShifted(shift) {
     const visible = getVisibleCount();

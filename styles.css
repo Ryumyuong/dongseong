@@ -751,17 +751,13 @@ ul { list-style: none; }
   .rep__quote { padding: 0 36px; margin-bottom: 56px; }
   .rep__quote p { font-size: clamp(18px, 4.5vw, 25px); }
   .rep__qmark { font-size: 54px; }
-  .rep__body { grid-template-columns: minmax(0, 300px) 1fr; gap: 20px; }
-  .rep__info { border-radius: 0 0 0 120px; padding: 36px 24px 48px; }
-  .rep__photo { min-height: 420px; }
-  .rep__photo-bg { border-radius: 120px 0 0 0; }
-  .rep__photo-img { right: 0; max-height: 440px; }
-  .rep__name { left: 20px; bottom: 36px; }
-  .rep__fullname { font-size: clamp(30px, 6vw, 47px); letter-spacing: 5px; }
-}
-@media (max-width: 600px) {
   .rep__body { grid-template-columns: 1fr; gap: 0; }
-  .rep__photo { margin-top: 12px; }
+  .rep__info { border-radius: 0 0 0 120px; padding: 40px 32px 56px; }
+  .rep__photo { min-height: 460px; margin-top: 12px; }
+  .rep__photo-bg { border-radius: 120px 0 0 0; }
+  .rep__photo-img { right: 0; max-height: 480px; }
+  .rep__name { left: 28px; bottom: 36px; }
+  .rep__fullname { font-size: clamp(34px, 9vw, 47px); letter-spacing: 6px; }
 }
 
 /* ============== STATS BAND (DARK) ============== */
