@@ -2502,7 +2502,7 @@ body.modal-open { overflow: hidden; }
   color: #003078;
   border: 1.01px solid #003078;
   border-radius: 4.02px;
-  padding: 12px;
+  padding: 8px 12px;
   transition: background .2s;
 }
 .rcase-card__more:hover { background: rgba(0,48,120,0.06); }
