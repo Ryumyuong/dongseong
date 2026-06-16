@@ -472,11 +472,20 @@ ul { list-style: none; }
   margin-top: 36px;
 }
 .hero__stats .stat {
+  position: relative;
   text-align: center;
   padding: 0 52px;
-  border-left: 1px solid rgba(255,255,255,0.22);
 }
-.hero__stats .stat:first-child { padding-left: 0; border-left: none; }
+.hero__stats .stat::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 50%;
+  transform: translateY(-50%);
+  width: 1px; height: 50%;
+  background: rgba(255,255,255,0.22);
+}
+.hero__stats .stat:first-child { padding-left: 0; }
+.hero__stats .stat:first-child::before { display: none; }
 .stat__num {
   font-family: 'KoPubBatang_Pro', 'KoPub Batang Pro', 'KoPubBatang', serif;
   font-size: 37.88px;
