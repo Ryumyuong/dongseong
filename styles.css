@@ -1352,8 +1352,8 @@ ul { list-style: none; }
   align-items: start;
 }
 .apply__title {
-  font-size: clamp(18px, 2.4vw, 22px);
-  font-weight: 600;
+  font-size: 21px;
+  font-weight: 800;
   line-height: 1.6;
   color: var(--text);
   margin-bottom: 0;
@@ -1362,9 +1362,9 @@ ul { list-style: none; }
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-size: clamp(36px, 4.6vw, 40px);
+  font-size: 36.11px;
   font-weight: 700;
-  color: var(--navy-900);
+  color: #192D54;
 }
 .apply__phone img {
   width: 26px; height: 26px;
@@ -1379,12 +1379,14 @@ ul { list-style: none; }
 }
 .apply__field { display: flex; flex-direction: column; gap: 8px; }
 .apply__field span {
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 700;
   color: var(--text);
 }
 .apply__field span i {
-  color: #e83d3d;
+  color: #D80000;
+  font-size: 16px;
+  font-weight: 700;
   font-style: normal;
   margin-left: 2px;
 }
@@ -1392,7 +1394,7 @@ ul { list-style: none; }
 .apply__field textarea {
   width: 100%;
   border: 0;
-  border-radius: 6px;
+  border-radius: 5px;
   background: #fff;
   padding: 14px 16px;
   font-size: 14px;
@@ -1415,18 +1417,41 @@ ul { list-style: none; }
 }
 .apply__agree {
   display: flex; align-items: center; gap: 8px;
-  font-size: 13px;
-  color: var(--text-soft);
+  font-size: 16px;
+  color: rgba(0,0,0,0.5);
   cursor: pointer;
 }
-.apply__agree input { width: 14px; height: 14px; accent-color: var(--navy-800); }
+.apply__agree input {
+  width: 16px; height: 16px;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid #7A7B7C;
+  border-radius: 2px;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+}
+.apply__agree input:checked {
+  background: #192D54;
+  border-color: #192D54;
+}
+.apply__agree input:checked::after {
+  content: "";
+  position: absolute;
+  left: 5px; top: 1px;
+  width: 4px; height: 9px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
 .apply__submit {
-  padding: 14px 60px;
-  background: var(--navy-800);
+  padding: 11px 80px;
+  background: #192D54;
   color: #fff;
   border-radius: 999px;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 20px;
   transition: background .2s;
 }
 .apply__submit:hover { background: var(--navy-700); }
@@ -1702,7 +1727,7 @@ ul { list-style: none; }
 .footer {
   background: #F4F6F8;
   color: #4a5060;
-  padding: 56px 0 48px;
+  padding: 56px 0 140px;
   font-size: 11.5px;
   line-height: 1.85;
   border-top: 2px solid #CFCFCF;
