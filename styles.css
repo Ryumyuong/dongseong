@@ -993,7 +993,7 @@ ul { list-style: none; }
 .cases-cta-bottom { display: none; margin-top: 36px; }
 
 /* #numbers 섹션 타이틀과 설명 간격 축소 */
-#numbers .section__title { margin-bottom: 8px; font-size: 41px; color: #0C1E3C; }
+#numbers .section__title { margin-bottom: 8px; font-size: 41px; font-weight: 400; color: #0C1E3C; }
 #numbers .section__title .accent-navy { font-weight: 800; color: #0C1E3C; }
 #numbers .eyebrow--gold-soft { font-size: 16px; font-weight: 700; color: #D4A843; }
 #numbers .section__desc { font-size: 20px; font-weight: 500; color: #626262; }
