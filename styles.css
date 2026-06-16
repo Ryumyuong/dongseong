@@ -2293,7 +2293,7 @@ body.modal-open { overflow: hidden; }
 .page-rehab .hero__copy { max-width: 640px; }
 .page-rehab .hero__lawyer {
   text-align: left;
-  top: 48%;
+  top: 60%;
   bottom: auto;
   right: auto;
   left: 680px;
