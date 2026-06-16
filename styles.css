@@ -866,10 +866,10 @@ ul { list-style: none; }
 }
 .big-stat__num span {
   font-family: 'KoPub Batang', 'KoPubBatang', serif;
-  font-size: 30px;
+  font-size: 45.67px;
   font-weight: 700;
   color: #fff;
-  margin-left: 2px;
+  margin-left: 4px;
 }
 .big-stat__label {
   font-size: 15.7px;

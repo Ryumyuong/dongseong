@@ -284,21 +284,28 @@ window.addEventListener('scroll', () => {
     const numText = suffixEl
       ? el.textContent.replace(suffixEl.textContent, '')
       : el.textContent;
-    const target = parseInt(numText.replace(/[^\d]/g, ''), 10) || 0;
-    return { el, target, suffix };
+    const cleaned = numText.replace(/[^\d.]/g, '');
+    const decimals = cleaned.includes('.') ? (cleaned.split('.')[1] || '').length : 0;
+    const target = parseFloat(cleaned) || 0;
+    return { el, target, suffix, decimals };
+  });
+
+  const fmt = (v, decimals) => v.toLocaleString('ko-KR', {
+    minimumFractionDigits: decimals,
+    maximumFractionDigits: decimals
   });
 
   // 초기값 0으로 리셋 (스크롤 들어오기 전에 노출되어도 자연스럽게)
-  items.forEach(({ el, suffix }) => { el.innerHTML = '0' + suffix; });
+  items.forEach(({ el, suffix, decimals }) => { el.innerHTML = fmt(0, decimals) + suffix; });
 
   function animate() {
     const start = performance.now();
     function step(now) {
       const t = Math.min(1, (now - start) / DURATION);
       const eased = 1 - Math.pow(1 - t, 3);
-      items.forEach(({ el, target, suffix }) => {
-        const v = Math.round(target * eased);
-        el.innerHTML = v.toLocaleString('ko-KR') + suffix;
+      items.forEach(({ el, target, suffix, decimals }) => {
+        const v = target * eased;
+        el.innerHTML = fmt(v, decimals) + suffix;
       });
       if (t < 1) requestAnimationFrame(step);
     }
