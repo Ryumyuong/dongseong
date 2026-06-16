@@ -2437,3 +2437,89 @@ body.modal-open { overflow: hidden; }
   .rehab-feat__item + .rehab-feat__item::before { display: none; }
   .rehab-feat__title { font-size: clamp(28px, 7vw, 40px); }
 }
+
+/* 실제 진행 사례 섹션 */
+.rcase { background: rgba(243,244,245,0.8); }
+.rcase__title { font-size: 40px; font-weight: 800; color: #0C1E3C; margin-bottom: 60px; }
+.rcase__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+.rcase-card {
+  background: #fff;
+  border: 1.01px solid #E1E1E1;
+  border-radius: 15.09px;
+  padding: 30px 30px 28px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+.rcase-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 6px;
+}
+.rcase-card__quote {
+  font-family: 'KoPubBatang', serif;
+  font-size: 50.28px;
+  font-weight: 700;
+  color: #2455A6;
+  line-height: 0.7;
+}
+.rcase-card__pill {
+  font-size: 13.07px;
+  color: #4E64D5;
+  border: 1.01px solid #4E64D5;
+  border-radius: 25.14px;
+  padding: 4.02px 12.07px;
+  white-space: nowrap;
+}
+.rcase-card__name {
+  font-size: 23.82px;
+  font-weight: 800;
+  color: #0C1E3C;
+  line-height: 1.35;
+  margin: 8px 0 18px;
+}
+.rcase-card__line { height: 1.01px; background: rgba(0,0,0,0.2); margin-bottom: 18px; }
+.rcase-card__text {
+  font-size: 14px;
+  color: #4A5568;
+  line-height: 1.75;
+  margin-bottom: 22px;
+  flex: 1;
+}
+.rcase-card__more {
+  display: block;
+  text-align: center;
+  font-size: 13.07px;
+  font-weight: 700;
+  color: #003078;
+  border: 1.01px solid #003078;
+  border-radius: 4.02px;
+  padding: 12px;
+  transition: background .2s;
+}
+.rcase-card__more:hover { background: rgba(0,48,120,0.06); }
+.rcase__more-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  background: #192D54;
+  border-radius: 100px;
+  padding: 16px 44px;
+  transition: background .2s;
+}
+.rcase__more-btn:hover { background: #213b6e; }
+@media (max-width: 900px) {
+  .rcase__grid { grid-template-columns: 1fr; max-width: 480px; }
+  .rcase__title { font-size: clamp(28px, 7vw, 40px); }
+}
