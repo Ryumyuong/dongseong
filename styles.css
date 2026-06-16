@@ -90,6 +90,7 @@ ul { list-style: none; }
 .eyebrow--gold-soft {
   color: #b88a3a;
   font-weight: 700;
+  padding: 0;
 }
 .eyebrow--gold-soft::before, .eyebrow--gold-soft::after { display: none; }
 
@@ -764,7 +765,7 @@ ul { list-style: none; }
   position: relative;
   background: #192D54;
   overflow: hidden;
-  padding: 0;
+  padding: 150px 0;
 }
 .stats-band__bg {
   position: absolute; inset: 0;
