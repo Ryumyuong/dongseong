@@ -2404,6 +2404,7 @@ body.modal-open { overflow: hidden; }
 }
 
 /* 면책 이력 있어도 가능 섹션 */
+.rehab-feat .container { max-width: 1400px; }
 .rehab-feat__title { font-size: 40px; font-weight: 800; color: #0C1E3C; margin-bottom: 12px; }
 .rehab-feat__sub { font-size: 16px; color: #718096; margin-bottom: 70px; }
 .rehab-feat__grid {
