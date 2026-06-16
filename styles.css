@@ -989,7 +989,7 @@ ul { list-style: none; }
 
 /* ============== CASES CAROUSEL ============== */
 .accent-navy { color: var(--navy-800); font-weight: 700; }
-.cases-cta { margin-top: 28px; padding: 11px 56px; }
+.cases-cta { margin-top: 28px; padding: 11px 40px; }
 .cases-cta-bottom { display: none; margin-top: 36px; }
 
 /* #numbers 섹션 타이틀과 설명 간격 축소 */
