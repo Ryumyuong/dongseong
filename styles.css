@@ -626,7 +626,7 @@ ul { list-style: none; }
 /* ============== 대표변호사 ============== */
 .rep {
   background: #fff;
-  padding: 90px 0;
+  padding: 150px 0 90px;
   overflow: hidden;
 }
 .rep__inner { position: relative; }
