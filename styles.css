@@ -927,13 +927,14 @@ ul { list-style: none; }
 #process .process__panel {
   position: relative;
   margin-top: 44px;
-  padding: 50px 0 70px;
+  padding: 30px 0 70px;
   background:
     linear-gradient(rgba(15,31,60,0.55), rgba(15,31,60,0.55)),
     url('./images/process-bg.png') center/cover no-repeat;
   background-color: #0F1F3B;
 }
 #process .process__panel .process__sub { margin-top: 0; }
+#process .process__panel .process { margin-top: 40px; }
 
 /* ============== PROCESS ============== */
 .process__sub {
