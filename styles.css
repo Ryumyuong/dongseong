@@ -2321,7 +2321,7 @@ body.modal-open { overflow: hidden; }
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 44px;
 }
 .scase-card {
   background: #FAFAFA;
@@ -2390,7 +2390,7 @@ body.modal-open { overflow: hidden; }
   max-width: 920px;
   margin: 0 auto;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   gap: 28px;
   padding: 44px 56px;
