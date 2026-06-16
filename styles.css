@@ -2772,8 +2772,8 @@ body.modal-open { overflow: hidden; }
   .page-success .hero__desc-lead { font-size: 14px; }
   .hero__mobile-cta { padding: 13px 30px; font-size: 16px; }
   /* 접은 모바일 — 면책계열 히어로 여백 조정 */
-  .page-rehab .hero__desc { margin-top: 40px; }
-  .page-rehab .hero__lawyer { margin-top: 100px; }
+  .page-rehab .hero__desc { margin-top: 100px; }
+  .page-rehab .hero__lawyer { margin-top: 40px; }
 
   /* 공통 타이틀/채무문제 */
   .section__title { font-size: 26px; }
