@@ -898,7 +898,7 @@ ul { list-style: none; }
 }
 
 /* ============== SECTION: 진행절차 (#process) ============== */
-#process.section--light { background: #0F1F3B; color: #fff; padding-top: 70px; padding-bottom: 70px; }
+#process.section--light { background: #0F1F3B; color: #fff; padding-bottom: 70px; }
 #process .eyebrow--gold-soft { font-size: 16px; font-weight: 700; color: #D4A843; }
 #process .section__title {
   font-size: clamp(30px, 4vw, 44px);
@@ -926,7 +926,7 @@ ul { list-style: none; }
 #process .process__item + .process__item::before { background: rgba(255,255,255,0.12); }
 #process .process__panel {
   position: relative;
-  margin-top: 44px;
+  margin-top: 20px;
   padding: 30px 0 70px;
   background:
     linear-gradient(rgba(15,31,60,0.55), rgba(15,31,60,0.55)),
