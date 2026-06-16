@@ -1200,6 +1200,127 @@ ul { list-style: none; }
 }
 .apply__submit:hover { background: var(--navy-700); }
 
+/* ============== 히어로 하단 문의 폼 ============== */
+.hform {
+  background: #DDE1EC;
+  padding: 80px 0;
+}
+.hform__inner {
+  display: grid;
+  grid-template-columns: minmax(280px, 360px) 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.hform__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.hform__title {
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1.6;
+  color: var(--text);
+  margin: 0;
+}
+.hform__phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 36.11px;
+  font-weight: 700;
+  color: #192D54;
+}
+.hform__phone img {
+  width: 32px; height: 32px;
+  object-fit: contain;
+  display: block;
+}
+.hform__form { display: flex; flex-direction: column; gap: 16px; }
+.hform__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.hform__field { display: flex; flex-direction: column; gap: 8px; }
+.hform__field span {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+}
+.hform__field span i {
+  color: #D80000;
+  font-size: 16px;
+  font-weight: 700;
+  font-style: normal;
+  margin-left: 2px;
+}
+.hform__field input,
+.hform__field textarea {
+  width: 100%;
+  border: 0;
+  border-radius: 5px;
+  background: #fff;
+  padding: 14px 16px;
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--text);
+  resize: vertical;
+}
+.hform__field input { height: 46px; }
+.hform__field textarea { min-height: 110px; }
+.hform__field input:focus,
+.hform__field textarea:focus {
+  outline: 2px solid var(--blue-500);
+  outline-offset: 1px;
+}
+.hform__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+}
+.hform__agree {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 16px;
+  color: rgba(0,0,0,0.5);
+  cursor: pointer;
+}
+.hform__agree input {
+  width: 16px; height: 16px;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid #7A7B7C;
+  border-radius: 3px;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+}
+.hform__agree input:checked {
+  background: #192D54;
+  border-color: #192D54;
+}
+.hform__agree input:checked::after {
+  content: "";
+  position: absolute;
+  left: 5px; top: 1px;
+  width: 4px; height: 9px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.hform__submit {
+  padding: 14px 60px;
+  background: #192D54;
+  color: #fff;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 20px;
+  transition: background .2s;
+}
+.hform__submit:hover { background: var(--navy-700); }
+
 /* ============== FAQ ============== */
 .faq { margin-top: 70px; }
 .faq details {
@@ -1845,6 +1966,25 @@ body.modal-open { overflow: hidden; }
   .apply__field input { height: 56px; }
   .apply__field textarea { min-height: 140px; }
   .footer__inner { grid-template-columns: 1fr; gap: 24px; }
+
+  /* 히어로 하단 문의 폼 — 모바일 1열 */
+  .hform .container { padding-left: 40px; padding-right: 40px; }
+  .hform { padding: 60px 0; }
+  .hform__inner { grid-template-columns: 1fr; gap: 32px; }
+  .hform__copy { text-align: center; align-items: center; }
+  .hform__title { font-size: 19px; }
+  .hform__phone { font-size: clamp(28px, 8vw, 36px); }
+  .hform__bottom { flex-direction: column; align-items: stretch; gap: 14px; }
+  .hform__submit { width: 100%; padding: 18px 60px; }
+  .hform__row { grid-template-columns: 1fr; gap: 18px; }
+  .hform__field input,
+  .hform__field textarea {
+    font-size: 15px;
+    padding: 16px 18px;
+    box-shadow: 0 1px 3px rgba(15,31,58,0.04);
+  }
+  .hform__field input { height: 56px; }
+  .hform__field textarea { min-height: 140px; }
 }
 @media (max-width: 600px) {
   .header__inner { height: 60px; }
