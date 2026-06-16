@@ -1023,7 +1023,7 @@ ul { list-style: none; }
   background: #fff;
   border-radius: 16px;
   padding: 24px 26px 26px;
-  box-shadow: 0 6px 20px rgba(15, 31, 58, 0.06);
+  box-shadow: none;
   transition: filter 1s ease, opacity 1s ease, transform 1s ease, box-shadow 1s ease;
   display: flex;
   flex-direction: column;
@@ -1105,21 +1105,21 @@ ul { list-style: none; }
   margin-left: 4px;
 }
 .success-card__details {
-  font-size: 13.5px;
+  font-size: 12.76px;
   line-height: 1.75;
-  color: var(--text);
+  color: rgba(0,0,0,0.6);
   transition: color 1s ease;
 }
 .success-card__details li { display: block; }
 .success-card__details span {
-  color: var(--text);
+  color: #000;
   font-weight: 600;
   margin-right: 4px;
   transition: color 1s ease;
 }
 .success-card__details em {
   font-style: normal;
-  color: #ff4444;
+  color: #E84040;
   font-weight: 700;
   transition: color 1s ease;
 }
@@ -1140,11 +1140,11 @@ ul { list-style: none; }
   border-bottom-color: rgba(255,255,255,0.2);
 }
 .success-card--highlight .success-card__details,
-.success-card.is-center .success-card__details { color: rgba(255,255,255,0.85); }
+.success-card.is-center .success-card__details { color: rgba(255,255,255,0.6); }
 .success-card--highlight .success-card__details span,
-.success-card.is-center .success-card__details span { color: rgba(255,255,255,0.7); }
+.success-card.is-center .success-card__details span { color: #fff; }
 .success-card--highlight .success-card__details em,
-.success-card.is-center .success-card__details em { color: #ff8a8a; }
+.success-card.is-center .success-card__details em { color: #E84040; }
 
 /* ============== CASE BAND (이미지 슬라이더) ============== */
 .case-band {
