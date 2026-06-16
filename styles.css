@@ -213,7 +213,7 @@ ul { list-style: none; }
   background: transparent;
   color: #fff;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 17.41px;
   letter-spacing: 0.02em;
   flex-shrink: 0;
   z-index: 2;
@@ -266,10 +266,11 @@ ul { list-style: none; }
 }
 .live-item {
   display: inline-flex; align-items: center; gap: 8px;
-  font-size: 13px;
-  color: rgba(255,255,255,0.9);
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.75);
 }
-.live-item b { color: #fff; font-weight: 700; margin-right: 2px; }
+.live-item b { color: #F0C060; font-weight: 700; }
 .dot {
   width: 6px; height: 6px;
   border-radius: 50%;
