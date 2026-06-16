@@ -1611,7 +1611,7 @@ ul { list-style: none; }
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
+  gap: 40px;
   text-align: left;
   max-width: 1080px;
   margin: 0 auto;
