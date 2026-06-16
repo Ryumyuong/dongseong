@@ -2768,4 +2768,9 @@ body.modal-open { overflow: hidden; }
 
   /* 접은 모바일 전용 줄바꿈 */
   .br-s { display: inline; }
+
+  /* 상담폼 하단 — 동의(위) / 버튼(아래) 세로 배치 */
+  .page-rehab .rehab-form__bottom { flex-direction: column; align-items: stretch; gap: 14px; }
+  .page-rehab .rehab-form__agree { justify-content: flex-start; }
+  .page-rehab .rehab-form__submit { width: 100%; text-align: center; }
 }
