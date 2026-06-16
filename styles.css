@@ -623,6 +623,142 @@ ul { list-style: none; }
   .pill { min-width: 0; width: 100%; padding: 12px 24px; font-size: 14px; }
 }
 
+/* ============== 대표변호사 ============== */
+.rep {
+  background: #fff;
+  padding: 90px 0 0;
+  overflow: hidden;
+}
+.rep__inner { position: relative; }
+
+/* 인용구 */
+.rep__quote {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto 80px;
+  padding: 0 70px;
+  text-align: center;
+}
+.rep__quote p {
+  font-size: 25.63px;
+  line-height: 1.6;
+  font-weight: 600;
+  color: #0C1E3C;
+  margin: 0;
+}
+.rep__hl {
+  background: #2455A6;
+  color: #fff;
+  font-weight: 900;
+  padding: 2px 12px;
+  border-radius: 3px;
+}
+.rep__qmark {
+  position: absolute;
+  top: 6px;
+  font-family: 'KoPubBatang_Pro', 'KoPub Batang Pro', 'KoPubBatang', serif;
+  font-size: 86.11px;
+  font-weight: 700;
+  color: #313742;
+  line-height: 1;
+}
+.rep__qmark--open { left: 0; }
+.rep__qmark--close { right: 0; }
+
+/* 본문 — 좌측 경력/학력 + 우측 사진 */
+.rep__body {
+  display: grid;
+  grid-template-columns: minmax(300px, 420px) 1fr;
+  gap: 40px;
+  align-items: end;
+}
+.rep__info {
+  background: rgba(236,240,250,0.33);
+  border-radius: 0 0 0 224.25px;
+  padding: 56px 56px 80px;
+  align-self: stretch;
+}
+.rep__info-group + .rep__info-group { margin-top: 28px; }
+.rep__info-group h4 {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #4A5568;
+  margin: 0 0 8px;
+}
+.rep__info-group ul { list-style: none; margin: 0; padding: 0; }
+.rep__info-group li {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #4A5568;
+  line-height: 2;
+  padding-left: 11px;
+  position: relative;
+}
+.rep__info-group li::before {
+  content: '·';
+  position: absolute;
+  left: 2px;
+}
+
+/* 사진 영역 */
+.rep__photo {
+  position: relative;
+  align-self: end;
+  min-height: 520px;
+}
+.rep__photo-bg {
+  position: absolute;
+  right: 0; bottom: 0;
+  width: 520px; height: 440px;
+  max-width: 80%;
+  background: #ECF0FA;
+  border-radius: 224.25px 0 0 0;
+  z-index: 0;
+}
+.rep__photo-img {
+  position: absolute;
+  right: 30px; bottom: 0;
+  z-index: 1;
+  max-height: 600px;
+  width: auto;
+  display: block;
+}
+.rep__name {
+  position: absolute;
+  left: 8px; bottom: 70px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.rep__role {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 17.94px;
+  font-weight: 700;
+  color: #001B45;
+}
+.rep__fullname {
+  font-size: 47.38px;
+  font-weight: 800;
+  color: #001B45;
+  letter-spacing: 8.95px;
+}
+@media (max-width: 900px) {
+  .rep { padding-top: 64px; }
+  .rep__quote { padding: 0 36px; margin-bottom: 56px; }
+  .rep__quote p { font-size: clamp(18px, 4.5vw, 25px); }
+  .rep__qmark { font-size: 54px; }
+  .rep__body { grid-template-columns: 1fr; gap: 0; }
+  .rep__info { border-radius: 0 0 0 120px; padding: 40px 32px 56px; }
+  .rep__photo { min-height: 460px; margin-top: 12px; }
+  .rep__photo-bg { width: 300px; height: 320px; }
+  .rep__photo-img { right: 0; max-height: 440px; }
+  .rep__name { bottom: 40px; }
+  .rep__fullname { font-size: clamp(34px, 9vw, 47px); letter-spacing: 6px; }
+}
+
 /* ============== STATS BAND (DARK) ============== */
 .stats-band {
   position: relative;
