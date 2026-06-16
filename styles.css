@@ -2455,37 +2455,37 @@ body.modal-open { overflow: hidden; }
 }
 .page-rehab .rehab-form {
   margin-top: 52px;
-  max-width: 560px;
+  max-width: 100%;
   background: rgba(255,255,255,0.76);
-  border-radius: 14.38px;
-  padding: 22px 24px;
+  border-radius: 18px;
+  padding: 32px 34px;
   box-shadow: 0 16.45px 43.86px rgba(0,0,0,0.35);
   backdrop-filter: blur(14.2px);
   -webkit-backdrop-filter: blur(14.2px);
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 18px;
 }
-.page-rehab .rehab-form__head { display: flex; flex-direction: column; gap: 4px; }
-.page-rehab .rehab-form__title { font-size: 14.38px; font-weight: 800; color: #0C1E3C; display: inline-flex; align-items: center; gap: 6px; }
-.page-rehab .rehab-form__title-icon { width: 15px; height: 15px; object-fit: contain; display: inline-block; }
+.page-rehab .rehab-form__head { display: flex; flex-direction: column; gap: 6px; }
+.page-rehab .rehab-form__title { font-size: 23px; font-weight: 800; color: #0C1E3C; display: inline-flex; align-items: center; gap: 8px; }
+.page-rehab .rehab-form__title-icon { width: 23px; height: 23px; object-fit: contain; display: inline-block; }
 .page-rehab .rehab-form__sub {
   font-family: 'Noto Sans KR', sans-serif;
-  font-size: 9.35px;
+  font-size: 14px;
   color: #5A6478;
 }
-.page-rehab .rehab-form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.page-rehab .rehab-form__field { display: flex; flex-direction: column; gap: 5px; }
-.page-rehab .rehab-form__field > span { font-size: 8.22px; font-weight: 700; color: #0C1E3C; }
+.page-rehab .rehab-form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.page-rehab .rehab-form__field { display: flex; flex-direction: column; gap: 7px; }
+.page-rehab .rehab-form__field > span { font-size: 14px; font-weight: 700; color: #0C1E3C; }
 .page-rehab .rehab-form__field input,
 .page-rehab .rehab-form__field textarea {
   width: 100%;
   border: 1.37px solid #E8ECF2;
-  border-radius: 6.85px;
+  border-radius: 10px;
   background: #F4F6F9;
-  padding: 8px 10px;
+  padding: 13px 15px;
   font-family: inherit;
-  font-size: 8.63px;
+  font-size: 15px;
   color: #000;
   resize: vertical;
 }
@@ -2494,7 +2494,7 @@ body.modal-open { overflow: hidden; }
   font-weight: 300;
   color: rgba(0,0,0,0.7);
 }
-.page-rehab .rehab-form__field textarea { min-height: 56px; }
+.page-rehab .rehab-form__field textarea { min-height: 92px; }
 .page-rehab .rehab-form__bottom {
   display: flex;
   align-items: center;
