@@ -2461,7 +2461,7 @@ body.modal-open { overflow: hidden; }
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 6px;
+  margin-bottom: 0;
 }
 .rcase-card__quote {
   font-family: 'KoPubBatang', serif;
@@ -2484,7 +2484,7 @@ body.modal-open { overflow: hidden; }
   font-weight: 800;
   color: #0C1E3C;
   line-height: 1.35;
-  margin: 8px 0 18px;
+  margin: -6px 0 18px;
 }
 .rcase-card__line { height: 1.01px; background: rgba(0,0,0,0.2); margin-bottom: 18px; }
 .rcase-card__text {
@@ -2516,7 +2516,7 @@ body.modal-open { overflow: hidden; }
   color: #fff;
   background: #192D54;
   border-radius: 100px;
-  padding: 12px 88px;
+  padding: 9px 120px;
   transition: background .2s;
 }
 .rcase__more-btn:hover { background: #213b6e; }
