@@ -1271,6 +1271,7 @@ ul { list-style: none; }
   background-repeat: no-repeat;
   padding: 200px 0;
 }
+.qualify .container.narrow { max-width: 1060px; }
 .qualify__sub {
   font-size: 30px;
   color: #3B3B3B;
@@ -1283,14 +1284,14 @@ ul { list-style: none; }
   letter-spacing: -0.02em;
   color: var(--navy-900);
   line-height: 1.35;
-  margin-bottom: 56px;
+  margin-bottom: 40px;
 }
 .check-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px 24px;
   margin: 0 auto 56px;
-  max-width: 880px;
+  max-width: 1060px;
   text-align: left;
 }
 .check-list li {
@@ -1321,7 +1322,7 @@ ul { list-style: none; }
   padding: 16px 36px;
   font-size: 20px;
   font-weight: 700;
-  width: 280px;
+  width: 340px;
   border-radius: 100px;
 }
 .qualify__cta .qualify__btn:first-child {
