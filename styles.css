@@ -874,7 +874,7 @@ ul { list-style: none; }
 .big-stat__label {
   font-size: 15.7px;
   font-weight: 700;
-  color: #E4CFA0;
+  color: rgba(228,207,160,0.7);
   letter-spacing: 0.02em;
 }
 .big-stat__sub {
