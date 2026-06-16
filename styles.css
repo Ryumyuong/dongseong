@@ -1005,8 +1005,8 @@ ul { list-style: none; }
 }
 
 .cases-viewport {
-  /* 5 cards × 280 + 4 gaps × 24 = 1496px */
-  max-width: 1496px;
+  /* 5 cards × 313.94 + 4 gaps × 24 = 1665.7px */
+  max-width: 1666px;
   margin: 60px auto 0;
   overflow: hidden;
   position: relative;
@@ -1018,7 +1018,8 @@ ul { list-style: none; }
   will-change: transform;
 }
 .success-card {
-  flex: 0 0 280px;
+  flex: 0 0 313.94px;
+  aspect-ratio: 313.94 / 376.9;
   position: relative;
   background: #fff;
   border-radius: 16px;
