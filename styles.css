@@ -343,6 +343,7 @@ ul { list-style: none; }
   box-shadow: 0 14px 28px rgba(226,168,61,0.32);
 }
 .hero__cta:hover { filter: brightness(1.05); }
+.cta-text-m { display: none; }
 
 /* 우하단 대표변호사 라벨 */
 .hero__lawyer {
@@ -2207,6 +2208,8 @@ body.modal-open { overflow: hidden; }
     border-radius: 10px;
     flex-shrink: 0;
   }
+  .page-index .cta-text-d { display: none; }
+  .page-index .cta-text-m { display: inline; }
   .page-index .hero__lawyer {
     display: block;
     position: static;
@@ -2853,4 +2856,18 @@ body.modal-open { overflow: hidden; }
 
   /* 자격확인 버튼 — 잘림 방지(풀폭 + 폰트/패딩 축소) */
   .qualify__cta .btn { width: 100%; max-width: 360px; font-size: 16px; padding: 14px 16px; }
+}
+
+/* ============== 펼친 모바일(501~900px) — index 히어로 ============== */
+@media (min-width: 501px) and (max-width: 900px) {
+  .page-index .hero__inner { padding-left: 40px; padding-right: 40px; }
+  .page-index .hero__tag { font-size: 18px; font-weight: 500; }
+  .page-index .hero__title { font-size: 33.46px; }
+  .page-index .hero__stats { align-items: center; }
+  .page-index .hero__stats .stat { text-align: center; }
+  .page-index .stat__num { font-size: 28px; }
+  .page-index .stat__label { font-size: 9.88px; }
+  .page-index .hero__mobile-cta { font-size: 16px; }
+  .page-index .hero__lawyer-role { font-size: 10.55px; }
+  .page-index .hero__lawyer-name { font-size: 23.26px; }
 }
