@@ -1555,14 +1555,17 @@ ul { list-style: none; }
 /* ============== FAQ ============== */
 .faq { margin-top: 70px; }
 .faq details {
-  border-bottom: 1px solid var(--border);
+  border-bottom: 0.85px solid #DBDBDB;
   padding: 26px 0;
 }
+#faq .eyebrow--gold-soft { font-size: 16px; font-weight: 700; color: #D4A843; }
+#faq .section__title { font-size: 41px; color: #000; }
+#faq .section__title .accent-deep { font-weight: 700; color: #0C1E3C; }
 .faq summary {
   list-style: none;
   cursor: pointer;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 18px;
   color: var(--text);
   display: flex; justify-content: space-between; align-items: center;
   position: relative;
