@@ -1727,6 +1727,7 @@ ul { list-style: none; }
 .footer {
   background: #F4F6F8;
   color: #4a5060;
+  border-top: 2px solid rgba(207,207,207,0.3);
   padding: 56px 0 140px;
   font-size: 11.5px;
   line-height: 1.85;
