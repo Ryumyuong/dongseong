@@ -2291,6 +2291,8 @@ body.modal-open { overflow: hidden; }
 
 /* ============== 면책 후 재회생 페이지 히어로 ============== */
 .page-rehab .hero__copy { max-width: 640px; }
+.page-rehab .hero__lawyer { text-align: left; }
+.page-rehab .hero__lawyer-inner { text-align: left; }
 .page-rehab .hero__title {
   font-size: 47.4px;
   font-weight: 800;
