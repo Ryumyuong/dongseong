@@ -2515,7 +2515,7 @@ body.modal-open { overflow: hidden; }
   color: #fff;
   background: #192D54;
   border-radius: 100px;
-  padding: 16px 44px;
+  padding: 12px 88px;
   transition: background .2s;
 }
 .rcase__more-btn:hover { background: #213b6e; }
