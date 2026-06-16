@@ -2469,6 +2469,7 @@ body.modal-open { overflow: hidden; }
   font-weight: 700;
   color: #2455A6;
   line-height: 0.7;
+  margin-top: 22px;
 }
 .rcase-card__pill {
   font-size: 13.07px;
