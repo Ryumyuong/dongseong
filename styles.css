@@ -879,6 +879,7 @@ ul { list-style: none; }
   color: #fff;
   margin-left: 4px;
 }
+.big-stat__num--tight { letter-spacing: -10.13px; }
 .big-stat__label {
   font-size: 15.7px;
   font-weight: 700;
