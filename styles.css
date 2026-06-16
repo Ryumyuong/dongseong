@@ -473,7 +473,7 @@ ul { list-style: none; }
 }
 .hero__stats .stat {
   text-align: center;
-  padding: 0 34px;
+  padding: 0 52px;
   border-left: 1px solid rgba(255,255,255,0.22);
 }
 .hero__stats .stat:first-child { padding-left: 0; border-left: none; }
