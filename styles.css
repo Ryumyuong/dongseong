@@ -2327,7 +2327,7 @@ body.modal-open { overflow: hidden; }
   background: #FAFAFA;
   border: 1.35px solid #E1E1E1;
   border-radius: 20.26px;
-  padding: 36px 40px 32px;
+  padding: 54px 40px 50px;
 }
 .scase-card__quote {
   display: block;
@@ -2336,7 +2336,7 @@ body.modal-open { overflow: hidden; }
   font-weight: 700;
   color: #2455A6;
   line-height: 0.6;
-  margin-bottom: 16px;
+  margin-bottom: 2px;
 }
 .scase-card__head {
   display: flex;
