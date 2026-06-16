@@ -2299,6 +2299,8 @@ body.modal-open { overflow: hidden; }
   left: 680px;
 }
 .page-rehab .hero__lawyer-inner { text-align: left; }
+.page-rehab .hero__lawyer-role { margin-bottom: 8px; }
+.page-rehab .hero__lawyer-name { padding-top: 8px; }
 .page-rehab .hero__title {
   font-size: 47.4px;
   font-weight: 800;
