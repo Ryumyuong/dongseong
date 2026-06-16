@@ -779,9 +779,17 @@ ul { list-style: none; }
   display: grid;
   grid-template-columns: 1fr 1.05fr;
   gap: 80px;
-  align-items: center;
+  align-items: stretch;
 }
+.stats-band__copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.stats-band__top { display: block; }
 .stats-band .eyebrow--gold-soft {
+  display: block;
+  text-align: left;
   font-size: 14px;
   font-weight: 700;
   color: #D4A843;
@@ -803,7 +811,7 @@ ul { list-style: none; }
   font-size: 18px;
   line-height: 1.7;
   color: rgba(255,255,255,0.7);
-  margin: 0 0 30px;
+  margin: 0;
 }
 .signature {
   font-style: normal;
