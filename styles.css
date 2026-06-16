@@ -1319,7 +1319,7 @@ ul { list-style: none; }
 }
 .qualify__btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-  padding: 16px 36px;
+  padding: 12px 36px;
   font-size: 20px;
   font-weight: 700;
   width: 340px;
