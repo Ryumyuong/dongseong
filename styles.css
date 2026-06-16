@@ -188,7 +188,7 @@ ul { list-style: none; }
   color: #fff;
   border-radius: 999px;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 22.85px;
   transition: background .2s;
 }
 .header__phone:hover { background: #213b6e; }
