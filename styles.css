@@ -2715,9 +2715,10 @@ body.modal-open { overflow: hidden; }
   .stats-band__copy h2 { font-size: 27px; }
   .stats-band__desc { font-size: 14px; }
   .signature { font-size: 30px; }
-  .big-stat__num, .big-stat__num span { font-size: 34px; }
+  .big-stat { padding: 22px 12px; }
+  .big-stat__num, .big-stat__num span { font-size: 30px; }
   .big-stat__num--tight { letter-spacing: -1px; }
-  .big-stat__label { font-size: 14px; }
+  .big-stat__label { font-size: 13px; }
   .big-stat__sub { font-size: 11px; }
 
   /* 프로세스 */
