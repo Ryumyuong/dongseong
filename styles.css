@@ -2291,6 +2291,12 @@ body.modal-open { overflow: hidden; }
 
 /* ============== 면책 후 재회생 페이지 히어로 ============== */
 .page-rehab .hero__copy { max-width: 640px; }
+.page-rehab .hero__lawyer {
+  top: 55%;
+  bottom: auto;
+  right: 70px;
+  transform: translateY(-50%);
+}
 .page-rehab .hero__title {
   font-size: 47.4px;
   font-weight: 800;
@@ -2302,11 +2308,11 @@ body.modal-open { overflow: hidden; }
   font-weight: 600;
   color: #F6F6F7;
   line-height: 1.7;
-  margin: 22px 0 0;
+  margin: 40px 0 0;
 }
 .page-rehab .rehab-form {
-  margin-top: 32px;
-  max-width: 470px;
+  margin-top: 52px;
+  max-width: 560px;
   background: rgba(255,255,255,0.76);
   border-radius: 14.38px;
   padding: 22px 24px;
@@ -2318,7 +2324,8 @@ body.modal-open { overflow: hidden; }
   gap: 12px;
 }
 .page-rehab .rehab-form__head { display: flex; flex-direction: column; gap: 4px; }
-.page-rehab .rehab-form__title { font-size: 14.38px; font-weight: 800; color: #0C1E3C; }
+.page-rehab .rehab-form__title { font-size: 14.38px; font-weight: 800; color: #0C1E3C; display: inline-flex; align-items: center; gap: 6px; }
+.page-rehab .rehab-form__title-icon { width: 15px; height: 15px; object-fit: contain; display: inline-block; }
 .page-rehab .rehab-form__sub {
   font-family: 'Noto Sans KR', sans-serif;
   font-size: 9.35px;
