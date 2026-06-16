@@ -324,7 +324,7 @@ ul { list-style: none; }
   margin-bottom: 24px;
 }
 .hero__title-soft { font-weight: 400; }
-.hero__title-gold { color: #D4A843; }
+.hero__title-gold { color: #FFD980; }
 .hero__desc {
   color: rgba(255,255,255,0.75);
   font-size: clamp(13px, 1.5vw, 16px);
