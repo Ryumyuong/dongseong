@@ -2741,6 +2741,7 @@ body.modal-open { overflow: hidden; }
   .qualify__sub { font-size: 21px; }
   .qualify__title { font-size: 26px; }
   .check-list li { font-size: 15px; }
+  #faq .section__title { font-size: 22px; }
   .faq summary { font-size: 16px; }
   .faq p { font-size: 13px; }
 
