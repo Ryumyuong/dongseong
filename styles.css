@@ -2631,7 +2631,7 @@ body.modal-open { overflow: hidden; }
   .page-rehab .hero__lawyer-name { font-size: 5.5vw; padding-top: 2px; }
   .page-rehab .rehab-form {
     max-width: 100%;
-    margin-top: 8vw;
+    margin-top: 6vw;
     padding: 4vw;
     gap: 1vw;
     border-radius: 18px;
@@ -2857,10 +2857,10 @@ body.modal-open { overflow: hidden; }
   .br-s { display: inline; }
   .br-t { display: none; }
 
-  /* 상담폼 하단 — 동의(위) / 버튼(아래) 세로 배치 */
-  .page-rehab .rehab-form__bottom { flex-direction: column; align-items: stretch; gap: 14px; }
+  /* 상담폼 하단 — 동의 + 버튼 같은 가로 줄 유지 */
+  .page-rehab .rehab-form__bottom { flex-direction: row; align-items: center; justify-content: space-between; gap: 12px; }
   .page-rehab .rehab-form__agree { justify-content: flex-start; }
-  .page-rehab .rehab-form__submit { width: 100%; text-align: center; }
+  .page-rehab .rehab-form__submit { width: auto; text-align: center; }
 
   /* 자격확인 버튼 — 잘림 방지(풀폭 + 폰트/패딩 축소) */
   .qualify__cta .btn { width: 100%; max-width: 360px; font-size: 16px; padding: 14px 16px; }
