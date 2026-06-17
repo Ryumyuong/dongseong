@@ -2632,7 +2632,7 @@ body.modal-open { overflow: hidden; }
   .page-rehab .rehab-form {
     max-width: 100%;
     margin-top: 8vw;
-    padding: 30px 30px;
+    padding: 5vw;
     gap: 18px;
     border-radius: 18px;
   }
