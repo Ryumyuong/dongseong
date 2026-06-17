@@ -2614,23 +2614,24 @@ body.modal-open { overflow: hidden; }
   .page-rehab .hl-gold { color: #D7AE4E; }
   /* 히어로 텍스트 vw 비율(902 디자인 기준) — 접은 모바일(≤500)은 아래 블록에서 고정 */
   .page-rehab .hero__title { font-size: 6.5vw; margin-top: 0; margin-bottom: 10px; }
-  .page-rehab .hero__desc { font-size: 2.8vw; }
+  .page-rehab .hero__desc { font-size: 2.8vw; margin: 0; }
   /* 배경 풀폭 비율(902:1380) + 콘텐츠 absolute 오버레이 — 인덱스와 동일 구조 */
   .page-rehab .hero { aspect-ratio: 902 / 1380; width: 100%; min-width: 100%; min-height: 0; padding: 0; }
   .page-rehab .hero__video { object-fit: cover; object-position: center; }
-  .page-rehab .hero__inner { position: absolute; inset: 0; display: flex; padding: 15vw 11vw; }
+  .page-rehab .hero__inner { position: absolute; inset: 0; display: flex; padding: 11vw 9vw; }
   .page-rehab .hero__lawyer {
     display: block;
     position: static;
     top: auto; right: auto; bottom: auto; left: auto;
     text-align: left;
-    margin: 0;
+    margin: 20vw 0 0;
   }
   .page-rehab .hero__lawyer-inner { display: inline-block; text-align: left; }
-  .page-rehab .hero__lawyer-role { font-size: 13px; margin-bottom: 10px; }
-  .page-rehab .hero__lawyer-name { font-size: 22px; padding-top: 10px; }
+  .page-rehab .hero__lawyer-role { font-size: 2.5vw; margin-bottom: 10px; }
+  .page-rehab .hero__lawyer-name { font-size: 5.5vw; padding-top: 10px; }
   .page-rehab .rehab-form {
     max-width: 100%;
+    margin-top: 8vw;
     padding: 30px 30px;
     gap: 18px;
     border-radius: 18px;
