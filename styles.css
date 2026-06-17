@@ -2166,7 +2166,7 @@ body.modal-open { overflow: hidden; }
   .hero__mobile-cta:hover { background: #d9a945; }
 
   /* index 히어로 모바일 — 배경 전체 노출(902:1380) + 텍스트 vw 비율(902 디자인 기준) */
-  .page-index .hero { aspect-ratio: 902 / 1380; min-height: 0; max-height: 100vh; max-height: 100svh; padding: 0; }
+  .page-index .hero { aspect-ratio: 902 / 1380; width: 100%; min-width: 100%; min-height: 0; max-height: 100vh; max-height: 100svh; padding: 0; }
   .page-index .hero__inner { position: absolute; inset: 0; display: flex; padding: 8vw; }
   .page-index .hero__copy {
     display: flex;
