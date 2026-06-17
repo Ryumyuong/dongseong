@@ -707,3 +707,43 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbztxNjcvxJlrN6fue-1nRy5
     }
   });
 })();
+
+// ============== 대표사례 탕감률 팝업 (내용 더보기) ==============
+(() => {
+  const modal = document.getElementById('modal-scase');
+  if (!modal) return;
+  const triggers = document.querySelectorAll('[data-scase-more]');
+  if (!triggers.length) return;
+
+  function setField(key, val) {
+    modal.querySelectorAll('[data-sc="' + key + '"]').forEach(el => { el.textContent = val || ''; });
+    const row = modal.querySelector('[data-sc-row="' + key + '"]');
+    if (row) row.style.display = val ? '' : 'none';
+  }
+  function open(card) {
+    setField('badge', card.dataset.badge || '인가결정완료');
+    setField('court', card.dataset.court);
+    setField('rate', card.dataset.rate);
+    setField('debtor', card.dataset.debtor);
+    setField('total', card.dataset.total);
+    setField('monthly', card.dataset.monthly);
+    setField('type', card.dataset.type);
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+  }
+  function close() {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    if (!document.querySelector('.modal.is-open')) document.body.classList.remove('modal-open');
+  }
+
+  triggers.forEach(btn => btn.addEventListener('click', () => {
+    const card = btn.closest('.scase-card');
+    if (card) open(card);
+  }));
+  modal.querySelectorAll('[data-close]').forEach(el => el.addEventListener('click', close));
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) close();
+  });
+})();

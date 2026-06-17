@@ -171,7 +171,7 @@
   <section class="section scase">
     <div class="container">
       <div class="scase__list">
-        <article class="scase-card">
+        <article class="scase-card" data-court="서울회생법원" data-rate="95" data-debtor="20대 프리랜서" data-total="9,200만원" data-monthly="기존 800만원 → 월 37만원" data-type="현금서비스·카드론">
           <span class="scase-card__quote">&ldquo;</span>
           <div class="scase-card__head">
             <h3 class="scase-card__title">월 결제금 800만원에서<br class="br-s" />37만원으로</h3>
@@ -179,9 +179,9 @@
           </div>
           <div class="scase-card__line"></div>
           <p class="scase-card__text">프리랜서로 성실하게 일했지만 생활비와 카드값을 막기 위해 현금서비스와 카드론을 반복했습니다. 결제일이 겹치자 월급이 들어와도 남는 돈이 없어졌고, 더 이상 혼자 버티기 어려운 상태였습니다.</p>
-          <a href="#apply" class="scase-card__more">내용 더보기 →</a>
+          <button type="button" class="scase-card__more" data-scase-more>내용 더보기 →</button>
         </article>
-        <article class="scase-card">
+        <article class="scase-card" data-court="수원회생법원" data-rate="88" data-debtor="30대 직장인" data-total="1억 2,400만원" data-monthly="기존 320만원 → 월 38만원" data-type="신용대출·마이너스통장">
           <span class="scase-card__quote">&ldquo;</span>
           <div class="scase-card__head">
             <h3 class="scase-card__title">신용대출과 마이너스통장이<br class="br-s" />함께 쌓인 사례</h3>
@@ -189,9 +189,9 @@
           </div>
           <div class="scase-card__line"></div>
           <p class="scase-card__text">처음에는 은행 대출이라 괜찮다고 생각했습니다. 하지만 신용대출과 마이너스통장 한도가 동시에 소진되면서 이자만 갚는 상황이 반복되었고 생활비까지 부족해졌습니다.</p>
-          <a href="#apply" class="scase-card__more">내용 더보기 →</a>
+          <button type="button" class="scase-card__more" data-scase-more>내용 더보기 →</button>
         </article>
-        <article class="scase-card">
+        <article class="scase-card" data-court="서울회생법원" data-rate="91" data-debtor="40대 간호사" data-total="2억 7,500만원" data-monthly="기존 480만원 → 월 42만원" data-type="캐피탈·대부업">
           <span class="scase-card__quote">&ldquo;</span>
           <div class="scase-card__head">
             <h3 class="scase-card__title">채무액 2억7500만원에서 2500만원으로</h3>
@@ -199,9 +199,9 @@
           </div>
           <div class="scase-card__line"></div>
           <p class="scase-card__text">은행권 대출이 어려워진 뒤 캐피탈과 대부업체를 이용했습니다. 상환일을 맞추지 못하자 독촉 연락이 시작되었고, 가족과 직장에 알려질까 두려워 상담을 결심했습니다.</p>
-          <a href="#apply" class="scase-card__more">내용 더보기 →</a>
+          <button type="button" class="scase-card__more" data-scase-more>내용 더보기 →</button>
         </article>
-        <article class="scase-card">
+        <article class="scase-card" data-court="인천지방법원" data-rate="86" data-debtor="30대 자영업자" data-total="1억 800만원" data-monthly="기존 290만원 → 월 39만원" data-type="사채·개인채무">
           <span class="scase-card__quote">&ldquo;</span>
           <div class="scase-card__head">
             <h3 class="scase-card__title">개인 간 채무와 사채까지 얽혀 말 못 했던 사례</h3>
@@ -209,7 +209,7 @@
           </div>
           <div class="scase-card__line"></div>
           <p class="scase-card__text">급한 운영자금을 막기 위해 지인에게 돈을 빌렸고, 이후 사채와 개인채무까지 겹쳤습니다. 주변에 알려질까 두려워 혼자 해결하려 했지만 채무 구조가 더 복잡해졌습니다.</p>
-          <a href="#apply" class="scase-card__more">내용 더보기 →</a>
+          <button type="button" class="scase-card__more" data-scase-more>내용 더보기 →</button>
         </article>
       </div>
       <div class="scase-cta">
@@ -300,6 +300,26 @@
       <span>카톡상담</span>
     </a>
   </nav>
+
+  <!-- ============== 사례 탕감률 팝업 (내용 더보기) ============== -->
+  <div class="modal modal--scase" id="modal-scase" aria-hidden="true">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__dialog modal__dialog--scase" role="dialog" aria-modal="true" aria-label="사례 결과">
+      <button type="button" class="modal__close modal__close--floating" data-close aria-label="닫기">×</button>
+      <article class="success-card success-card--highlight scase-modal__card">
+        <div class="success-card__badge"><span class="check">✓</span> <span data-sc="badge">인가결정완료</span></div>
+        <div class="success-card__court" data-sc="court"></div>
+        <div class="success-card__rate-label">탕감률</div>
+        <div class="success-card__rate"><span data-sc="rate"></span><span>%</span></div>
+        <ul class="success-card__details">
+          <li data-sc-row="debtor"><span>채무자:</span> <span data-sc="debtor"></span></li>
+          <li data-sc-row="total"><span>총 채무:</span> <span data-sc="total"></span></li>
+          <li data-sc-row="monthly"><span>월 상환액:</span> <span data-sc="monthly"></span></li>
+          <li data-sc-row="type"><span>채무 유형:</span> <span data-sc="type"></span></li>
+        </ul>
+      </article>
+    </div>
+  </div>
 
   <!-- ============== ESTIMATE INPUT MODAL (모바일: 예상 변제 금액 확인) ============== -->
   <div class="modal modal--estimate" id="modal-estimate" aria-hidden="true">

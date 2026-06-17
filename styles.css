@@ -2013,6 +2013,25 @@ body.modal-open { overflow: hidden; }
   background: rgba(0,0,0,0.04);
   z-index: 2;
 }
+/* 사례 탕감률 팝업 */
+.modal__dialog--scase {
+  background: transparent;
+  box-shadow: none;
+  overflow: visible;
+  max-width: 360px;
+}
+.modal__dialog--scase .modal__close--floating {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+}
+.modal__dialog--scase .modal__close--floating:hover { background: rgba(255,255,255,0.28); }
+.scase-modal__card {
+  flex: none;
+  width: 100%;
+  aspect-ratio: auto;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+}
+.scase-modal__card .success-card__details li { margin-top: 2px; }
 .consult-form {
   padding: 36px 28px 26px;
   display: flex;
