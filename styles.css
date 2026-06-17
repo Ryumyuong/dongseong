@@ -2498,10 +2498,10 @@ body.modal-open { overflow: hidden; }
 .page-rehab .hero__copy { max-width: 640px; }
 .page-rehab .hero__lawyer {
   text-align: left;
-  top: 50%;
+  top: 40%;
   bottom: auto;
   right: auto;
-  left: 680px;
+  left: 800px;
 }
 .page-rehab .hero__lawyer-inner { text-align: left; }
 .page-rehab .hero__lawyer-role { margin-bottom: 5px; }
