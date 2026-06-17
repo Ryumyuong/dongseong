@@ -2637,8 +2637,8 @@ body.modal-open { overflow: hidden; }
     border-radius: 18px;
   }
   .page-rehab .rehab-form__head { align-items: flex-start; text-align: left; gap: 0; }
-  .page-rehab .rehab-form__title { font-size: 4vw; justify-content: flex-start; }
-  .page-rehab .rehab-form__title-icon { width: 4vw; height: 4vw; }
+  .page-rehab .rehab-form__title { font-size: 3vw; justify-content: flex-start; }
+  .page-rehab .rehab-form__title-icon { width: 3vw; height: 3vw; }
   .page-rehab .rehab-form__sub { font-size: 2.5vw; }
   .page-rehab .rehab-form__field { gap: 2px; }
   .page-rehab .rehab-form__field > span { font-size: 3vw; text-align: left; }
