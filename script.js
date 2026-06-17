@@ -162,6 +162,26 @@ window.addEventListener('scroll', () => {
     clearInterval(timer);
     timer = setInterval(slide, INTERVAL);
   }, { passive: true });
+
+  // 마우스 드래그 (PC) — 왼쪽으로 끌면 다음, 오른쪽으로 끌면 이전
+  let dragX = null;
+  track.addEventListener('mousedown', (e) => {
+    dragX = e.clientX;
+    clearInterval(timer);
+    e.preventDefault(); // 텍스트/이미지 선택 방지
+  });
+  window.addEventListener('mouseup', (e) => {
+    if (dragX === null) return;
+    const dx = e.clientX - dragX;
+    dragX = null;
+    if (Math.abs(dx) > 40) {
+      if (dx < 0) slide();
+      else slidePrev();
+    }
+    clearInterval(timer);
+    timer = setInterval(slide, INTERVAL);
+  });
+  track.style.cursor = 'grab';
 })();
 
 // ============== 이미지 카드 슬라이더 (6번째 섹션) — 무한루프 + 드래그 ==============
