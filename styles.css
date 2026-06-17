@@ -2512,6 +2512,7 @@ body.modal-open { overflow: hidden; }
   color: #fff;
   line-height: 1.3;
 }
+.page-rehab .hl-gold { color: #D4A843; }
 .page-rehab .hero__desc {
   font-size: 18px;
   font-weight: 600;
@@ -2611,7 +2612,7 @@ body.modal-open { overflow: hidden; }
 /* 면책 페이지 — 펼친 모바일에서 상담폼 풀폭 + 글자 확대 + 헤더 중앙정렬 */
 @media (max-width: 900px) {
   .page-rehab .hero__copy { display: flex; flex-direction: column; width: 100%; max-width: 100%; text-align: left; }
-  .page-rehab .hl-gold { color: #D7AE4E; }
+  .page-rehab .hl-gold { color: #FFD980; }
   /* 히어로 텍스트 vw 비율(902 디자인 기준) — 접은 모바일(≤500)은 아래 블록에서 고정 */
   .page-rehab .hero__title { font-size: 6.5vw; margin-top: 0; margin-bottom: 10px; }
   .page-rehab .hero__desc { font-size: 2.8vw; margin: 0; }
