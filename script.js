@@ -115,12 +115,53 @@ window.addEventListener('scroll', () => {
     }, ANIM_MS);
   }
 
+  // 역방향(이전 카드) — 맨 끝 카드를 앞으로 가져와 좌측에서 들어오게
+  function slidePrev() {
+    if (isAnimating) return;
+    isAnimating = true;
+    const step = getStep();
+    const base = baseTransform();
+    track.style.transition = 'none';
+    track.insertBefore(track.lastElementChild, track.firstElementChild);
+    track.style.transform = `translateX(${base - step}px)`;
+    void track.offsetHeight;
+    applyClasses();
+    track.style.transition = `transform ${ANIM_MS}ms cubic-bezier(0.4, 0, 0.2, 1)`;
+    track.style.transform = `translateX(${base}px)`;
+    setTimeout(() => {
+      track.style.transition = 'none';
+      applyClasses();
+      isAnimating = false;
+    }, ANIM_MS);
+  }
+
   ensureShiftMode();
   let timer = setInterval(slide, INTERVAL);
 
   track.addEventListener('mouseenter', () => clearInterval(timer));
   track.addEventListener('mouseleave', () => { timer = setInterval(slide, INTERVAL); });
   window.addEventListener('resize', ensureShiftMode);
+
+  // 터치 스와이프 — 왼쪽으로 밀면 다음, 오른쪽으로 밀면 이전
+  let touchX = null, touchY = null;
+  track.addEventListener('touchstart', (e) => {
+    if (e.touches.length !== 1) return;
+    touchX = e.touches[0].clientX;
+    touchY = e.touches[0].clientY;
+    clearInterval(timer);
+  }, { passive: true });
+  track.addEventListener('touchend', (e) => {
+    if (touchX === null) return;
+    const dx = e.changedTouches[0].clientX - touchX;
+    const dy = e.changedTouches[0].clientY - touchY;
+    touchX = null;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+      if (dx < 0) slide();
+      else slidePrev();
+    }
+    clearInterval(timer);
+    timer = setInterval(slide, INTERVAL);
+  }, { passive: true });
 })();
 
 // ============== 이미지 카드 슬라이더 (6번째 섹션) — 무한루프 + 드래그 ==============
