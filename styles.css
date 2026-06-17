@@ -2610,19 +2610,21 @@ body.modal-open { overflow: hidden; }
 
 /* 면책 페이지 — 펼친 모바일에서 상담폼 풀폭 + 글자 확대 + 헤더 중앙정렬 */
 @media (max-width: 900px) {
-  .page-rehab .hero__copy { max-width: 100%; text-align: left; }
+  .page-rehab .hero__copy { display: flex; flex-direction: column; width: 100%; max-width: 100%; text-align: left; }
   .page-rehab .hl-gold { color: #D7AE4E; }
   /* 히어로 텍스트 vw 비율(902 디자인 기준) — 접은 모바일(≤500)은 아래 블록에서 고정 */
   .page-rehab .hero__title { font-size: 5.25vw; }
   .page-rehab .hero__desc { font-size: clamp(13px, 1.995vw, 18px); }
-  /* 배경 이미지 전체 노출 — 상단 꽉 차게(902:1380) */
-  .page-rehab .hero { padding: 56px 0 40px; }
-  .page-rehab .hero__video { object-fit: contain; object-position: top center; }
+  /* 배경 풀폭 비율(902:1380) + 콘텐츠 absolute 오버레이 — 인덱스와 동일 구조 */
+  .page-rehab .hero { aspect-ratio: 902 / 1380; width: 100%; min-width: 100%; min-height: 0; padding: 0; }
+  .page-rehab .hero__video { object-fit: cover; object-position: center; }
+  .page-rehab .hero__inner { position: absolute; inset: 0; display: flex; padding: 8vw; }
   .page-rehab .hero__lawyer {
     display: block;
     position: static;
+    top: auto; right: auto; bottom: auto; left: auto;
     text-align: left;
-    margin: 200px 0 22px;
+    margin: 0;
   }
   .page-rehab .hero__lawyer-inner { display: inline-block; text-align: left; }
   .page-rehab .hero__lawyer-role { font-size: 13px; margin-bottom: 10px; }
@@ -2775,15 +2777,12 @@ body.modal-open { overflow: hidden; }
 @media (max-width: 500px) {
   /* 히어로 */
   .hero__title { font-size: 24px; }
-  .page-rehab .hero__title { font-size: 28px; }
   .page-success .hero__title { font-size: 27px; }
-  .hero__desc, .page-rehab .hero__desc { font-size: 14px; }
+  .hero__desc { font-size: 14px; }
   .page-success .hero__desc { font-size: 15px; }
   .page-success .hero__desc-lead { font-size: 14px; }
   .hero__mobile-cta { padding: 13px 30px; font-size: 16px; }
-  /* 접은 모바일 — 면책계열 히어로 여백 조정 */
-  .page-rehab .hero__desc { margin-top: 40px; }
-  .page-rehab .hero__lawyer { margin-top: 100px; }
+  /* 면책계열 히어로는 ≤500 포함 전 구간 vw 비율(아래 @media 900 오버레이) — 고정 px 오버라이드 제거 */
 
   /* 공통 타이틀/채무문제 */
   .section__title { font-size: 26px; }
