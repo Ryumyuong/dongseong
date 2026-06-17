@@ -2636,7 +2636,7 @@ body.modal-open { overflow: hidden; }
     gap: 1vw;
     border-radius: 18px;
   }
-  .page-rehab .rehab-form__head { align-items: flex-start; text-align: left; }
+  .page-rehab .rehab-form__head { align-items: flex-start; text-align: left; gap: 0; }
   .page-rehab .rehab-form__title { font-size: 4vw; justify-content: flex-start; }
   .page-rehab .rehab-form__title-icon { width: 4vw; height: 4vw; }
   .page-rehab .rehab-form__sub { font-size: 2.5vw; }
