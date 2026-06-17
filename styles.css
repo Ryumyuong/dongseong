@@ -2201,19 +2201,19 @@ body.modal-open { overflow: hidden; }
   .page-index .hero__cta-row {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     gap: 1.77vw;
     margin-top: auto;
   }
   .page-index .hero__mobile-cta {
     margin-top: 0;
-    padding: 1.66vw 2.66vw;
+    padding: 1.66vw 6.66vw;
     font-size: 4.5vw;
     border-radius: 1.1vw;
     flex-shrink: 0;
   }
   .page-index .cta-text-d { display: none; }
-  .page-index .cta-text-m { display: inline; }
+  .page-index .cta-text-m { display: inline; font-size: 3vw; }
   .page-index .hero__lawyer {
     display: block;
     position: static;
@@ -2223,8 +2223,8 @@ body.modal-open { overflow: hidden; }
     text-align: left;
   }
   .page-index .hero__lawyer-inner { display: inline-block; text-align: left; }
-  .page-index .hero__lawyer-role { font-size: 2.8vw; margin-bottom: 0.66vw; }
-  .page-index .hero__lawyer-name { font-size: 6vw; padding-top: 0.88vw; }
+  .page-index .hero__lawyer-role { font-size: 1.8vw; margin-bottom: 0.66vw; }
+  .page-index .hero__lawyer-name { font-size: 5vw; padding-top: 0.88vw; }
 
   .live-label {
     padding: 8px 40px 8px 14px; font-size: 11px;
