@@ -2627,8 +2627,8 @@ body.modal-open { overflow: hidden; }
     margin: 20vw 0 0;
   }
   .page-rehab .hero__lawyer-inner { display: inline-block; text-align: left; }
-  .page-rehab .hero__lawyer-role { font-size: 2.5vw; margin-bottom: 10px; }
-  .page-rehab .hero__lawyer-name { font-size: 5.5vw; padding-top: 10px; }
+  .page-rehab .hero__lawyer-role { font-size: 2.5vw; margin-bottom: 2px; }
+  .page-rehab .hero__lawyer-name { font-size: 5.5vw; padding-top: 2px; }
   .page-rehab .rehab-form {
     max-width: 100%;
     margin-top: 8vw;
