@@ -2175,8 +2175,8 @@ body.modal-open { overflow: hidden; }
     text-align: left;
     padding: 6.43vw 0 3.1vw;
   }
-  .page-index .hero__tag { display: block; font-size: 1.995vw; font-weight: 500; color: rgba(255,255,255,0.72); padding-bottom: 1.77vw; margin-bottom: 1.77vw; border-bottom: 1px solid rgba(255,255,255,0.22); }
-  .page-index .hero__title { font-size: 3.71vw; line-height: 1.34; margin-bottom: 0; }
+  .page-index .hero__tag { display: block; font-size: 4vw; font-weight: 500; color: rgba(255,255,255,0.72); padding-bottom: 1.77vw; margin-bottom: 1.77vw; border-bottom: 1px solid rgba(255,255,255,0.22); }
+  .page-index .hero__title { font-size: 7.71vw; line-height: 1.34; margin-bottom: 0; }
   .page-index .hero__stats {
     flex: 1 1 auto;
     display: flex;
@@ -2194,9 +2194,9 @@ body.modal-open { overflow: hidden; }
   }
   .page-index .hero__stats .stat::before { display: none; }
   .page-index .hero__stats .stat + .stat { border-top: 1px solid rgba(255,255,255,0.16); padding-top: 3vw; }
-  .page-index .stat__num { font-size: 3.1vw; margin-bottom: 0.22vw; }
-  .page-index .stat__num span { font-size: 2vw; }
-  .page-index .stat__label { font-size: 1.095vw; }
+  .page-index .stat__num { font-size: 7.1vw; margin-bottom: 0.22vw; }
+  .page-index .stat__num span { font-size: 4.58vw; }
+  .page-index .stat__label { font-size: 3vw; }
   .page-index .hero__cta-row {
     display: flex;
     align-items: center;
@@ -2207,7 +2207,7 @@ body.modal-open { overflow: hidden; }
   .page-index .hero__mobile-cta {
     margin-top: 0;
     padding: 1.66vw 2.66vw;
-    font-size: 1.774vw;
+    font-size: 4.774vw;
     border-radius: 1.1vw;
     flex-shrink: 0;
   }
@@ -2222,8 +2222,8 @@ body.modal-open { overflow: hidden; }
     text-align: left;
   }
   .page-index .hero__lawyer-inner { display: inline-block; text-align: left; }
-  .page-index .hero__lawyer-role { font-size: 1.17vw; margin-bottom: 0.66vw; }
-  .page-index .hero__lawyer-name { font-size: 2.579vw; padding-top: 0.88vw; }
+  .page-index .hero__lawyer-role { font-size: 2.8vw; margin-bottom: 0.66vw; }
+  .page-index .hero__lawyer-name { font-size: 6.579vw; padding-top: 0.88vw; }
 
   .live-label {
     padding: 8px 40px 8px 14px; font-size: 11px;
