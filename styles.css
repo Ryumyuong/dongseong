@@ -2618,7 +2618,7 @@ body.modal-open { overflow: hidden; }
   /* 배경 풀폭 비율(902:1380) + 콘텐츠 absolute 오버레이 — 인덱스와 동일 구조 */
   .page-rehab .hero { aspect-ratio: 902 / 1380; width: 100%; min-width: 100%; min-height: 0; padding: 0; }
   .page-rehab .hero__video { object-fit: cover; object-position: center; }
-  .page-rehab .hero__inner { position: absolute; inset: 0; display: flex; padding: 9vw; }
+  .page-rehab .hero__inner { position: absolute; inset: 0; display: flex; padding: 6vw; }
   .page-rehab .hero__lawyer {
     display: block;
     position: static;
