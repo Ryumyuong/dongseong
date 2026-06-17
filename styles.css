@@ -2642,7 +2642,7 @@ body.modal-open { overflow: hidden; }
   .page-rehab .rehab-form__sub { font-size: 2.5vw; }
   .page-rehab .rehab-form__field > span { font-size: 3vw; text-align: left; }
   .page-rehab .rehab-form__field input,
-  .page-rehab .rehab-form__field textarea { font-size: 15px; padding: 13px 15px; border-radius: 10px; }
+  .page-rehab .rehab-form__field textarea { font-size: 3vw; padding: 2vw; border-radius: 5px; }
   .page-rehab .rehab-form__field textarea { min-height: 90px; }
   .page-rehab .rehab-form__agree { font-size: 14px; gap: 8px; }
   .page-rehab .rehab-form__agree input { width: 18px; height: 18px; border-radius: 3px; }
