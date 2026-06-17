@@ -2167,7 +2167,7 @@ body.modal-open { overflow: hidden; }
 
   /* index 히어로 모바일 — 배경 전체 노출(902:1380) + 텍스트 vw 비율(902 디자인 기준) */
   .page-index .hero { aspect-ratio: 902 / 1380; min-height: 0; max-height: 100vh; max-height: 100svh; padding: 0; }
-  .page-index .hero__inner { position: absolute; inset: 0; display: flex; padding-left: 4.43vw; padding-right: 4.43vw; }
+  .page-index .hero__inner { position: absolute; inset: 0; display: flex; padding: 8vw; }
   .page-index .hero__copy {
     display: flex;
     flex-direction: column;
@@ -2175,8 +2175,9 @@ body.modal-open { overflow: hidden; }
     text-align: left;
     padding: 6.43vw 0 3.1vw;
   }
-  .page-index .hero__tag { display: block; font-size: 4vw; font-weight: 500; color: rgba(255,255,255,0.72); padding-bottom: 1.77vw; margin-bottom: 1.77vw; border-bottom: 1px solid rgba(255,255,255,0.22); }
+  .page-index .hero__tag { display: block; font-size: 3.8vw; font-weight: 500; color: rgba(255,255,255,0.72); padding-bottom: 1.77vw; margin-bottom: 1.77vw; border-bottom: 1px solid rgba(255,255,255,0.22); }
   .page-index .hero__title { font-size: 7.71vw; line-height: 1.34; margin-bottom: 0; }
+  .page-index .hero__title-soft { font-size: 7.1vw; }
   .page-index .hero__stats {
     flex: 1 1 auto;
     display: flex;
@@ -2207,7 +2208,7 @@ body.modal-open { overflow: hidden; }
   .page-index .hero__mobile-cta {
     margin-top: 0;
     padding: 1.66vw 2.66vw;
-    font-size: 4.774vw;
+    font-size: 4.5vw;
     border-radius: 1.1vw;
     flex-shrink: 0;
   }
@@ -2223,7 +2224,7 @@ body.modal-open { overflow: hidden; }
   }
   .page-index .hero__lawyer-inner { display: inline-block; text-align: left; }
   .page-index .hero__lawyer-role { font-size: 2.8vw; margin-bottom: 0.66vw; }
-  .page-index .hero__lawyer-name { font-size: 6.579vw; padding-top: 0.88vw; }
+  .page-index .hero__lawyer-name { font-size: 6vw; padding-top: 0.88vw; }
 
   .live-label {
     padding: 8px 40px 8px 14px; font-size: 11px;
