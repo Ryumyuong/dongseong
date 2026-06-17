@@ -2645,7 +2645,7 @@ body.modal-open { overflow: hidden; }
   .page-rehab .rehab-form__field input,
   .page-rehab .rehab-form__field textarea { font-size: 3vw; padding: 1vw 2vw; border-radius: 5px; }
   .page-rehab .rehab-form__field textarea { min-height: 12vw; }
-  .page-rehab .rehab-form__agree { font-size: 3vw; gap: 8px; }
+  .page-rehab .rehab-form__agree { font-size: 2.7vw; gap: 8px; }
   .page-rehab .rehab-form__agree input { width: 3vw; height: 3vw; border-radius: 3px; }
   .page-rehab .rehab-form__agree input:checked::after { left: 6px; top: 2px; width: 5px; height: 10px; border-width: 0 2px 2px 0; }
   .page-rehab .rehab-form__submit { font-size: 16px; padding: 13px 28px; border-radius: 10px; }
