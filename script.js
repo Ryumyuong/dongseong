@@ -397,12 +397,12 @@ window.addEventListener('scroll', () => {
 })();
 
 // ============== 광고 유입 경로 캡처 (ref) ==============
-// 첫 진입 시 URL의 ?ref= 값을 sessionStorage에 저장 — 이후 폼 전송 시 함께 보냄
+// 첫 진입 시 URL의 ?ref= 값을 localStorage에 저장 — 다른 페이지·새 탭으로 이동해도 유지, 폼 전송 시 함께 보냄
 (() => {
   try {
     const ref = new URLSearchParams(location.search).get('ref');
     if (ref) {
-      sessionStorage.setItem('__tracking', JSON.stringify({
+      localStorage.setItem('__tracking', JSON.stringify({
         ref,
         referrer: document.referrer || '',
         capturedAt: new Date().toISOString()
@@ -421,7 +421,7 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbztxNjcvxJlrN6fue-1nRy5
 
   function getTracking() {
     try {
-      const raw = sessionStorage.getItem('__tracking');
+      const raw = localStorage.getItem('__tracking');
       return raw ? JSON.parse(raw) : {};
     } catch (e) { return {}; }
   }
