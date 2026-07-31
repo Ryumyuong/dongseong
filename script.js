@@ -430,6 +430,24 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbztxNjcvxJlrN6fue-1nRy5
     } catch (e) { return {}; }
   }
 
+  // 문의를 남긴 페이지 — 경로를 사람이 읽는 이름으로 변환 (매핑에 없으면 경로 그대로)
+  const PAGE_LABELS = {
+    '/': '메인',
+    '/면책후재회생/': '면책 후 재회생',
+    '/집경매회생/': '집경매 방어 회생',
+    '/배우자모르게/': '배우자 모르게 진행',
+    '/성공사례/': '대표성공사례'
+  };
+
+  function getPageLabel() {
+    try {
+      // 한글 경로는 인코딩되어 들어오므로 디코딩 후, index.html·끝 슬래시 표기를 통일
+      let path = decodeURIComponent(location.pathname).replace(/index\.html$/, '');
+      if (!path.endsWith('/')) path += '/';
+      return PAGE_LABELS[path] || path;
+    } catch (e) { return location.pathname || ''; }
+  }
+
   // 연락처 정규화: 01012345678 또는 12345678 모두 010-1234-5678 로 변환
   // 그 외 자릿수/접두사는 null 반환 → 호출부에서 유효성 실패 처리
   function normalizePhone(raw) {
@@ -453,6 +471,7 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbztxNjcvxJlrN6fue-1nRy5
     });
     const tracking = getTracking();
     data.ref = tracking.ref || '직접방문';
+    data.page = getPageLabel();
     data.referrer = tracking.referrer || document.referrer || '';
     data.submittedAt = new Date().toISOString();
     return data;
