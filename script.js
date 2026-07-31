@@ -397,12 +397,16 @@ window.addEventListener('scroll', () => {
 })();
 
 // ============== 광고 유입 경로 캡처 (ref) ==============
-// 첫 진입 시 URL의 ?ref= 값을 localStorage에 저장 — 다른 페이지·새 탭으로 이동해도 유지, 폼 전송 시 함께 보냄
+// ?ref= 값을 sessionStorage에 저장 — 같은 탭 세션(사이트 내 페이지 이동, 링크로 연 새 탭) 동안만 유지
+// 브라우저를 껐다 다시 들어오면 초기화 → 그 방문의 유입 경로가 새로 잡힘
 (() => {
   try {
+    // 구버전에서 localStorage에 영구 저장되던 값 제거 (옛 ref가 계속 따라붙는 문제 방지)
+    localStorage.removeItem('__tracking');
+
     const ref = new URLSearchParams(location.search).get('ref');
     if (ref) {
-      localStorage.setItem('__tracking', JSON.stringify({
+      sessionStorage.setItem('__tracking', JSON.stringify({
         ref,
         referrer: document.referrer || '',
         capturedAt: new Date().toISOString()
@@ -421,7 +425,7 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbztxNjcvxJlrN6fue-1nRy5
 
   function getTracking() {
     try {
-      const raw = localStorage.getItem('__tracking');
+      const raw = sessionStorage.getItem('__tracking');
       return raw ? JSON.parse(raw) : {};
     } catch (e) { return {}; }
   }
@@ -448,7 +452,7 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbztxNjcvxJlrN6fue-1nRy5
       else data[k] = v;
     });
     const tracking = getTracking();
-    data.ref = tracking.ref || '';
+    data.ref = tracking.ref || '직접방문';
     data.referrer = tracking.referrer || document.referrer || '';
     data.submittedAt = new Date().toISOString();
     return data;
