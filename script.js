@@ -513,7 +513,7 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbztxNjcvxJlrN6fue-1nRy5
         body: JSON.stringify(data)
       });
       // Meta Pixel Lead — 전송 성공 직후 1회 (광고 차단 등으로 fbq가 없어도 접수 흐름은 유지)
-      if (typeof fbq === 'function') fbq('track', 'Lead');
+      if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: data.page });
       alert('상담 신청이 접수되었습니다. 빠르게 연락드리겠습니다.');
       form.reset();
       form.dispatchEvent(new CustomEvent('gas:submitted', { bubbles: true }));
