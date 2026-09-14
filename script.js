@@ -404,10 +404,14 @@ window.addEventListener('scroll', () => {
     // 구버전에서 localStorage에 영구 저장되던 값 제거 (옛 ref가 계속 따라붙는 문제 방지)
     localStorage.removeItem('__tracking');
 
-    const ref = new URLSearchParams(location.search).get('ref');
-    if (ref) {
+    const params = new URLSearchParams(location.search);
+    const ref = params.get('ref');
+    // Meta 광고 소재명 — 광고 관리자 URL 매개변수에 utm_content={{ad.name}} 으로 넘어옴
+    const ad = params.get('utm_content');
+    if (ref || ad) {
       sessionStorage.setItem('__tracking', JSON.stringify({
-        ref,
+        ref: ref || '',
+        ad: ad || '',
         referrer: document.referrer || '',
         capturedAt: new Date().toISOString()
       }));
@@ -471,6 +475,7 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbztxNjcvxJlrN6fue-1nRy5
     });
     const tracking = getTracking();
     data.ref = tracking.ref || '직접방문';
+    data.ad = tracking.ad || '';
     data.page = getPageLabel();
     data.referrer = tracking.referrer || document.referrer || '';
     data.submittedAt = new Date().toISOString();
